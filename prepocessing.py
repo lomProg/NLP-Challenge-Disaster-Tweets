@@ -1,6 +1,26 @@
 import re
+from typing import List
 
 from text_utils import PUNCTUATIONS, STOPWORDS, EMOTICONS, POS_EMOT, NEG_EMOT, POS_EMOJI, NEG_EMOJI
+
+def extract_hashtag(text:str)->List[str]:
+    """It extracts all the hashtags from the text and it collects all of them in a list
+
+    Parameters
+    ----------
+    text : str
+        Text to preprocess
+
+    Returns
+    -------
+    List[str]
+        List of hashtag without the '#'
+    """
+    hashtag = re.findall(r"#(\w+)", text)
+    if hashtag:
+        #check if list is not empty
+        hashtag = [w.lower() for w in hashtag] #lower case
+    return hashtag
 
 def convert_emoticons(text):
     for e in EMOTICONS:
