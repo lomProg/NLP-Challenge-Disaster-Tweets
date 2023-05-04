@@ -1,6 +1,10 @@
+import re
 import string
 import nltk
 from nltk.corpus import stopwords
+
+import emot
+from emot.emo_unicode import EMOTICONS_EMO
 
 nltk.download('stopwords')
 
@@ -127,15 +131,20 @@ EMOTICONS = {
     u"o\.O":"Surprised"
 }
 POS_EMOT = [
-    'Happy face smiley', 'Wink or smirk', 'Tears of happiness', 'Laughing',
-    'Suprised', 'Kiss', 'Tongue sticking out', 'Angel'
-    ]
+    r'.*(happy).*', r'.*(laugh).*', r'.*(happiness).*', r'.*(surprise).*',
+    r'.*(kiss).*', r'.*(wink).*', r'.*(tongue)(?!-tied).*', r'.*(angel).*',
+    r'.*(cool).*', r'.*(party).*', r'.*(baby).*', r'.*(sleeping).*',
+    r'.*(confused).*', r'.*(ultraman).*', r'.*(joyful).*', r'.*(waving).*',
+    r'.*(excited).*', r'.*(amazed).*', r'.*(headphones).*', r'.*(eyeglasses).*'
+]
 NEG_EMOT = [
-    'Sad face frown', 'Crying', 'Horror', 'Disgust', 'Sadness', 'Yawn',
-    'Great dismay', 'Skeptical or annoyed', 'Surprised', 'Straight face',
-    'Sealed lips', 'Dump', 'Embarrassed or blushing', 'Sad or Crying',
-    'Shame', 'Confusion', 'Worried'
-    ]
+    r'.*(sad).*', r'.*(crying).*', r'.*(horror).*', r'.*(disgust).*',
+    r'.*(dismay).*', r'.*(shock).*', r'.*(yawn).*', r'.*(skeptical).*',
+    r'.*(straight face).*', r'.*(embarrassed).*', r'.*(sealed lips).*',
+    r'.*(evil).*', r'.*(bored).*', r'.*(sick).*', r'.*(dump).*',
+    r'.*(troubled).*', r'.*(shame).*', r'.*(tired).*', r'.*(worried).*',
+    r'.*(dissatisfied).*', r'.*(snubbed).*', r'.*(nervous).*', r'.*(confusion).*'
+]
 
 POS_EMOJI = [
     '\U0001F601', '\U0001F602', '\U0001F603', '\U0001F604', '\U0001F605',
