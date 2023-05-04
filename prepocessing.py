@@ -1,5 +1,10 @@
 import re
+import nltk
+import gensim
 from typing import List
+from nltk.stem import WordNetLemmatizer
+from gensim.parsing.porter import PorterStemmer
+
 
 from text_utils import PUNCTUATIONS, STOPWORDS, EMOTICONS, POS_EMOT, NEG_EMOT, POS_EMOJI, NEG_EMOJI
 
@@ -111,3 +116,27 @@ def remove_stopwords(text:str, s_w:set = STOPWORDS)->str:
 
 def clean_text(text:str):
     out_text = text
+
+def remove_digit(text:str)->str:
+    """Remove digits from text
+
+    Parameters
+    ----------
+    text : str
+        _description_
+
+    Returns
+    -------
+    str
+        _description_
+    """
+    return ''.join([i for i in text if not i.isdigit()])
+
+def lemmatization(text:str)->str:
+    lemmatizer = WordNetLemmatizer()
+    return " ".join([lemmatizer.lemmatize(word) for word in text.split()])
+
+def stemming(text:str)->str:
+    stemmer = PorterStemmer()
+    return stemmer.stem_sentence(text)
+
