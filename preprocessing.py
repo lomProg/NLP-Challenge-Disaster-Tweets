@@ -5,7 +5,7 @@ from typing import List
 from nltk.stem import WordNetLemmatizer
 from gensim.parsing.porter import PorterStemmer
 import emot
-
+import time
 
 from text_utils import PUNCTUATIONS, STOPWORDS, EMOTICONS, POS_EMOT, NEG_EMOT, POS_EMOJI, NEG_EMOJI
 from text_utils import SLANG
@@ -202,20 +202,39 @@ def stemming(text:str)->str:
 #########################
 def clean_text(text:str)->str:
     # Remove URLs
+    t = time.time()
     out_text = remove_urls(text)
+    d1 = time.time() - t
     # Conversion emoticons
+    t = time.time()
     out_text = convert_emoticons(out_text)
+    d2 = time.time() - t
     # Conversion emoji
     # Decontraction slangs
+    t = time.time()
     out_text = convert_slang(out_text)
+    d3 = time.time() - t
     # Text to lowercase
+    t = time.time()
     out_text = lowercase(out_text)
+    d4 = time.time() - t
     # Remove digits
+    t = time.time()
     out_text = remove_digits(out_text)
+    d5 = time.time() - t
     # Remove stopwords
+    t = time.time()
     out_text = remove_stopwords(out_text)
+    d6 = time.time() - t
     # Remove punctuation
+    t = time.time()
     out_text = remove_punctuation(out_text)
+    d7 = time.time() - t
     # Remove whitespaces
+    t = time.time()
     out_text = remove_whitespaces(out_text)
+    d8 = time.time() - t
+    print(f"URLs:\t{d1}\n", f"Emoticons:\t{d2}\n", f"Slang:\t{d3}\n",
+          f"Lowercase:\t{d4}\n", f"Digits:\t{d5}\n", f"Stopwords:\t{d6}\n",
+          f"Punctuations:\t{d7}\n", f"Whitespaces:\t{d8}\n")
     return out_text
