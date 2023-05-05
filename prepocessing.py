@@ -4,9 +4,10 @@ import gensim
 from typing import List
 from nltk.stem import WordNetLemmatizer
 from gensim.parsing.porter import PorterStemmer
-import emot
+
 
 from text_utils import PUNCTUATIONS, STOPWORDS, EMOTICONS, POS_EMOT, NEG_EMOT, POS_EMOJI, NEG_EMOJI
+from text_utils import SLANG
 
 def extract_hashtag(text:str)->List[str]:
     """It extracts all the hashtags from the text and it collects all of them in a list
@@ -27,60 +28,13 @@ def extract_hashtag(text:str)->List[str]:
         hashtag = [w.lower() for w in hashtag] #lower case
     return hashtag
 
-def convert_emoticons_old(text):
-    # TODO Evaluate function, latest version immediately below.
+def convert_emoticons(text):
     for e in EMOTICONS:
         if EMOTICONS[e] in POS_EMOT:
             text = re.sub(u'(' + e + ')', 'positive', text)
         else:
             text = re.sub(u'(' + e + ')', 'negative', text)
     return text
-
-def convert_emoticons(text:str)->str:
-    """Converts all the emoticons present in the input text into the
-    corresponding token. Token value can be `:pos:`, `:neu:` or `:neg:`.
-
-    Parameters
-    ----------
-    text : str
-        Input text in which to apply the conversion.
-
-    Returns
-    -------
-    str
-        If emoticons were found in the text, the output will contain the
-        corresponding tokens instead of symbols. If instead nothing was found,
-        the output string matches the input one.
-
-    Notes
-    -----
-    Be careful with urls: it may happen that a series of symbols is evaluated as
-    emoticons.
-    For example: "https://t.co/gFJfgTodad" --> "https:neg:/t.co/gFJfgTodad"
-    """
-    emot_obj = emot.core.emot()
-    emot_dict = emot_obj.emoticons(text)
-    
-    if not emot_dict['value']:
-        return text
-    
-    text_temp = text
-    for i in range(len(emot_dict['value'])):
-
-        idx = emot_dict['location'][i]
-        d = len(text_temp) - len(text)
-        text_temp = text_temp[0 : idx[0] + d:] + text_temp[idx[1] + d::]
-
-        if any(re.match(p, emot_dict['mean'][i], re.I) for p in POS_EMOT):
-            tkn = ':pos:'
-        elif any(re.match(n, emot_dict['mean'][i], re.I) for n in NEG_EMOT):
-            tkn = ':neg:'
-        else:
-            tkn = ':neu:'
-
-        text_temp = text_temp[:idx[0] + d] + tkn + text_temp[idx[0] +d:]
-
-    return text_temp
 
 def convert_emoji(text):
     for e in POS_EMOJI:
@@ -178,6 +132,27 @@ def remove_digit(text:str)->str:
         _description_
     """
     return ''.join([i for i in text if not i.isdigit()])
+
+def slang_conversion(text:str)->str:
+    """Decontracts colloquial slang in extended form, e.g. 'U' is converted in 'You'
+
+    Parameters
+    ----------
+    text : str
+        _description_
+
+    Returns
+    -------
+    str
+        _description_
+    """
+    new_text = []
+    for w in text.split():
+        if w.upper() in list(SLANG.keys()):
+            new_text.append(SLANG[w.upper()].lower())
+        else:
+            new_text.append(w)
+    return " ".join(new_text)
 
 def lemmatization(text:str)->str:
     lemmatizer = WordNetLemmatizer()
