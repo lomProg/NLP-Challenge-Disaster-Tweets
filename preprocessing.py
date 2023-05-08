@@ -55,29 +55,16 @@ def convert_emoticons(text:str)->str:
         corresponding tokens instead of symbols. If instead nothing was found,
         the output string matches the input one.
     """
-    emot_obj = emot.core.emot()
-    emot_dict = emot_obj.emoticons(text)
-    
-    if not emot_dict['value']:
-        return text
-    
-    text_temp = text
-    for i in range(len(emot_dict['value'])):
-
-        idx = emot_dict['location'][i]
-        d = len(text_temp) - len(text)
-        text_temp = text_temp[0 : idx[0] + d:] + text_temp[idx[1] + d::]
-
-        if any(re.match(p, emot_dict['mean'][i], re.I) for p in POS_EMOT):
-            tkn = ':positive:'
-        elif any(re.match(n, emot_dict['mean'][i], re.I) for n in NEG_EMOT):
-            tkn = ':negative:'
-        else:
-            tkn = ':neutral:'
-
-        text_temp = text_temp[:idx[0] + d] + tkn + text_temp[idx[0] +d:]
-
-    return text_temp
+    for e,m in list(EMOTICONS.items()):
+        if re.search(fr"((\b|^|\s){e})", text):
+            if any(re.match(p, m, re.I) for p in POS_EMOT):
+                tkn = ' :positive:'
+            elif any(re.match(n, m, re.I) for n in NEG_EMOT):
+                tkn = ' :negative:'
+            else:
+                tkn = ' :neutral:'
+            text = re.sub(fr"((\b|^|\s){e})", tkn, text)
+    return text
 
 def convert_emoji(text):
     for e in POS_EMOJI:
