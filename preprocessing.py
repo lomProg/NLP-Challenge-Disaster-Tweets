@@ -8,7 +8,7 @@ import emot
 import time
 
 from text_utils import PUNCTUATIONS, STOPWORDS, EMOTICONS, POS_EMOT, NEG_EMOT, POS_EMOJI, NEG_EMOJI
-from text_utils import SLANG
+from text_utils import SLANG, CONTRACTIONS
 
 def extract_hashtag(text:str)->List[str]:
     """It extracts all the hashtags from the text and it collects all of them in a list
@@ -178,6 +178,14 @@ def convert_slang(text:str)->str:
             new_text.append(w)
     return " ".join(new_text)
 
+def decontract_text(text:str)->str:
+  """
+  Decontract english contracted forms to the extended ones e.g. I'm -> I am
+  """
+  for c in CONTRACTIONS.keys():
+    text = re.sub(c, CONTRACTIONS[c], text)
+  return text
+
 def lemmatization(text:str)->str:
     lemmatizer = WordNetLemmatizer()
     return " ".join([lemmatizer.lemmatize(word) for word in text.split()])
@@ -205,6 +213,10 @@ def clean_text(text:str)->str:
     t = time.time()
     out_text = lowercase(out_text)
     d4 = time.time() - t
+    # Decontractions of short english form
+    #t = time.time()
+    out_text = decontract_text(out_text)
+    #d = time.time() - t
     # Remove digits
     t = time.time()
     out_text = remove_digits(out_text)
