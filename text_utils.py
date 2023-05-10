@@ -11,7 +11,9 @@ from emot.emo_unicode import EMOTICONS_EMO
 nltk.download('stopwords')
 
 PUNCTUATIONS = string.punctuation
+
 STOPWORDS = set(stopwords.words('english'))
+
 EMOTICONS = {
     ":(-|‑)?(\)+|\])":"Happy face or very happy face or smiley",
     ":(-|‑)?(3|>)":"Happy face smiley",
@@ -144,6 +146,7 @@ EMOTICONS = {
     "\(\*￣m￣\)":"Dissatisfied",
     "\(‘A`\)":"Snubbed or Deflated"
 }
+
 POS_EMOT = [
     r'.*(happy).*', r'.*(laugh).*', r'.*(happiness).*', r'.*(surprise).*',
     r'.*(kiss).*', r'.*(wink).*', r'.*(tongue)(?!-tied).*', r'.*(angel).*',
@@ -151,6 +154,7 @@ POS_EMOT = [
     r'.*(confused).*', r'.*(ultraman).*', r'.*(joyful).*', r'.*(waving).*',
     r'.*(excited).*', r'.*(amazed).*', r'.*(headphones).*', r'.*(eyeglasses).*'
 ]
+
 NEG_EMOT = [
     r'.*(sad).*', r'.*(crying).*', r'.*(horror).*', r'.*(disgust).*',
     r'.*(dismay).*', r'.*(shock).*', r'.*(yawn).*', r'.*(skeptical).*',
@@ -160,93 +164,7 @@ NEG_EMOT = [
     r'.*(dissatisfied).*', r'.*(snubbed).*', r'.*(nervous).*', r'.*(confusion).*'
 ]
 
-POS_EMOJI = [
-    '\U0001F601', '\U0001F602', '\U0001F603', '\U0001F604', '\U0001F605',
-    '\U0001F606', '\U0001F609', '\U0001F60A', '\U0001F60B', '\U0001F60C',
-    '\U0001F60D', '\U0001F60F', '\U0001F618', '\U0001F61A', '\U0001F61C',
-    '\U0001F61D', '\U0001F64C', '\U0001F600', '\U0001F607', '\U0001F60E',
-    '\U0001F525', '\U0001F44D', '\U0001F4AA', '\U0001F4AF'
-    ]
-NEG_EMOJI = [
-    '\U0001F612', '\U0001F613', '\U0001F614', '\U0001F616', '\U0001F61E',
-    '\U0001F620', '\U0001F621', '\U0001F622', '\U0001F623', '\U0001F624',
-    '\U0001F625', '\U0001F628', '\U0001F629', '\U0001F62A', '\U0001F62B',
-    '\U0001F62D', '\U0001F630', '\U0001F631', '\U0001F632', '\U0001F633',
-    '\U0001F635', '\U0001F637', '\U0001F645', '\U0001F610', '\U0001F611',
-    '\U0001F615', '\U0001F61F', '\U0001F626', '\U0001F627', '\U0001F4A9', 
-    '\U0001F44E'
-    ]
-
-SLANG = {
-    'AFAIK': 'As Far As I Know',
-    'AFK': 'Away From Keyboard',
-    'ASAP': 'As Soon As Possible',
-    'ATK': 'At The Keyboard',
-    'ATM': 'At The Moment',
-    'A3': 'Anytime, Anywhere, Anyplace',
-    'BAK': 'Back At Keyboard',
-    'BBL': 'Be Back Later',
-    'BBS': 'Be Back Soon',
-    'BFN': 'Bye For Now',
-    'B4N': 'Bye For Now',
-    'BRB': 'Be Right Back',
-    'BRT': 'Be Right There',
-    'BTW': 'By The Way',
-    'B4': 'Before',
-    'CU': 'See You',
-    'CUL8R': 'See You Later',
-    'CYA': 'See You',
-    'FAQ': 'Frequently Asked Questions',
-    'FC': 'Fingers Crossed',
-    'FWIW': "For What It's Worth",
-    'FYI': 'For Your Information',
-    'GAL': 'Get A Life',
-    'GG': 'Good Game',
-    'GN': 'Good Night',
-    'GMTA': 'Great Minds Think Alike',
-    'GR8': 'Great!',
-    'G9': 'Genius',
-    'IC': 'I See',
-    'ICQ': 'I Seek you',
-    'ILU': 'ILU: I Love You',
-    'IMHO': 'In My Honest Opinion',
-    'IMO': 'In My Opinion',
-    'IOW': 'In Other Words',
-    'IRL': 'In Real Life',
-    'KISS': 'Keep It Simple, Stupid',
-    'LDR': 'Long Distance Relationship',
-    'LMAO': 'Laugh My Aaa Off',
-    'LOL': 'Laughing Out Loud',
-    'LTNS': 'Long Time No See',
-    'L8R': 'Later',
-    'MTE': 'My Thoughts Exactly',
-    'M8': 'Mate',
-    'NRN': 'No Reply Necessary',
-    'OIC': 'Oh I See',
-    'PITA': 'Pain In The Ass',
-    'PRT': 'Party',
-    'PRW': 'Parents Are Watching',
-    'ROFL': 'Rolling On The Floor Laughing',
-    'ROFLOL': 'Rolling On The Floor Laughing Out Loud',
-    'ROTFLMAO': 'Rolling On The Floor Laughing My Ass Off',
-    'SK8': 'Skate',
-    'STATS': 'Your sex and age',
-    'ASL': 'Age Sex Location',
-    'THX': 'Thank You',
-    'TTFN': 'Ta-Ta For Now!',
-    'TTYL': 'Talk To You Later',
-    'U': 'You',
-    'U2': 'You Too',
-    'U4E': 'Yours For Ever',
-    'WB': 'Welcome Back',
-    'WTF': 'What The Fuck',
-    'WTG': 'Way To Go!',
-    'WUF': 'Where Are You From?',
-    'W8': 'Wait'
-    }
-
 EMOJI_URL = "https://kt.ijs.si/data/Emoji_sentiment_ranking/"
-
 def scrape_emojis(url:str=EMOJI_URL)->dict:
     """Through scraping from site [1], site related to the article [2], it
     extracts from the emoji sentiment ranking: the relative unicode code, the
@@ -4062,6 +3980,82 @@ STMT_EMOJI = {
         'sentiment_score': 0.0,
         'emoji_tkn': ':neutral:'
         }
+        }
+
+ADDITIONAL_EMOJI = {
+    '\\U0001f642': {
+        'meaning': 'slightly_smiling_face',
+        'sentiment_score': 0.999,
+        'emoji_tkn': ':positive:'
+        }
+        }
+
+SLANG = {
+    'AFAIK': 'As Far As I Know',
+    'AFK': 'Away From Keyboard',
+    'ASAP': 'As Soon As Possible',
+    'ATK': 'At The Keyboard',
+    'ATM': 'At The Moment',
+    'A3': 'Anytime, Anywhere, Anyplace',
+    'BAK': 'Back At Keyboard',
+    'BBL': 'Be Back Later',
+    'BBS': 'Be Back Soon',
+    'BFN': 'Bye For Now',
+    'B4N': 'Bye For Now',
+    'BRB': 'Be Right Back',
+    'BRT': 'Be Right There',
+    'BTW': 'By The Way',
+    'B4': 'Before',
+    'CU': 'See You',
+    'CUL8R': 'See You Later',
+    'CYA': 'See You',
+    'FAQ': 'Frequently Asked Questions',
+    'FC': 'Fingers Crossed',
+    'FWIW': "For What It's Worth",
+    'FYI': 'For Your Information',
+    'GAL': 'Get A Life',
+    'GG': 'Good Game',
+    'GN': 'Good Night',
+    'GMTA': 'Great Minds Think Alike',
+    'GR8': 'Great!',
+    'G9': 'Genius',
+    'IC': 'I See',
+    'ICQ': 'I Seek you',
+    'ILU': 'ILU: I Love You',
+    'IMHO': 'In My Honest Opinion',
+    'IMO': 'In My Opinion',
+    'IOW': 'In Other Words',
+    'IRL': 'In Real Life',
+    'KISS': 'Keep It Simple, Stupid',
+    'LDR': 'Long Distance Relationship',
+    'LMAO': 'Laugh My Aaa Off',
+    'LOL': 'Laughing Out Loud',
+    'LTNS': 'Long Time No See',
+    'L8R': 'Later',
+    'MTE': 'My Thoughts Exactly',
+    'M8': 'Mate',
+    'NRN': 'No Reply Necessary',
+    'OIC': 'Oh I See',
+    'PITA': 'Pain In The Ass',
+    'PRT': 'Party',
+    'PRW': 'Parents Are Watching',
+    'ROFL': 'Rolling On The Floor Laughing',
+    'ROFLOL': 'Rolling On The Floor Laughing Out Loud',
+    'ROTFLMAO': 'Rolling On The Floor Laughing My Ass Off',
+    'SK8': 'Skate',
+    'STATS': 'Your sex and age',
+    'ASL': 'Age Sex Location',
+    'THX': 'Thank You',
+    'TTFN': 'Ta-Ta For Now!',
+    'TTYL': 'Talk To You Later',
+    'U': 'You',
+    'U2': 'You Too',
+    'U4E': 'Yours For Ever',
+    'WB': 'Welcome Back',
+    'WTF': 'What The Fuck',
+    'WTG': 'Way To Go!',
+    'WUF': 'Where Are You From?',
+    'W8': 'Wait'
     }
 
 CONTRACTIONS = { 
