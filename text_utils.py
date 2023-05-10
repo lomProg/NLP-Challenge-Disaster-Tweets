@@ -1603,1479 +1603,2463 @@ STMT_EMOJI = {
         'sentiment_score': 0.958,
         'emoji_tkn': ':positive:'
         },
-    '\\U0001f425': {'meaning': 'front-facing_baby_chick',
-    'sentiment_score': 0.586,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f300': {'meaning': 'cyclone',
-    'sentiment_score': 0.101,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f43c': {'meaning': 'panda_face',
-    'sentiment_score': 0.261,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3a5': {'meaning': 'movie_camera',
-    'sentiment_score': 0.29,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f484': {'meaning': 'lipstick',
-    'sentiment_score': 0.435,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4b8': {'meaning': 'money_with_wings',
-    'sentiment_score': 0.159,
-    'emoji_tkn': ':neutral:'},
-    '\\u26d4': {'meaning': 'no_entry',
-    'sentiment_score': 0.485,
-    'emoji_tkn': ':positive:'},
-    '\\u25cf': {'meaning': 'black_circle',
-    'sentiment_score': 0.176,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3c0': {'meaning': 'basketball_and_hoop',
-    'sentiment_score': 0.254,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f489': {'meaning': 'syringe',
-    'sentiment_score': 0.358,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f49f': {'meaning': 'heart_decoration',
-    'sentiment_score': 0.682,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f697': {'meaning': 'automobile',
-    'sentiment_score': 0.231,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f62f': {'meaning': 'hushed_face',
-    'sentiment_score': 0.123,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4dd': {'meaning': 'memo',
-    'sentiment_score': 0.231,
-    'emoji_tkn': ':neutral:'},
-    '\\u2550': {'meaning': 'box_drawings_double_horizontal',
-    'sentiment_score': 0.015,
-    'emoji_tkn': ':neutral:'},
-    '\\u2666': {'meaning': 'black_diamond_suit',
-    'sentiment_score': 0.453,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4ad': {'meaning': 'thought_balloon',
-    'sentiment_score': 0.206,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f319': {'meaning': 'crescent_moon',
-    'sentiment_score': 0.59,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f41f': {'meaning': 'fish',
-    'sentiment_score': 0.689,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f463': {'meaning': 'footprints',
-    'sentiment_score': 0.344,
-    'emoji_tkn': ':positive:'},
-    '\\u261e': {'meaning': 'white_right_pointing_index',
-    'sentiment_score': 0.115,
-    'emoji_tkn': ':neutral:'},
-    '\\u2702': {'meaning': 'black_scissors',
-    'sentiment_score': -0.459,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f5ff': {'meaning': 'moyai',
-    'sentiment_score': 0.443,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f35d': {'meaning': 'spaghetti',
-    'sentiment_score': 0.117,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f46a': {'meaning': 'family',
-    'sentiment_score': -0.017,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f36d': {'meaning': 'lollipop',
-    'sentiment_score': 0.3,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f303': {'meaning': 'night_with_stars',
-    'sentiment_score': 0.39,
-    'emoji_tkn': ':positive:'},
-    '\\u274c': {'meaning': 'cross_mark',
-    'sentiment_score': 0.271,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f430': {'meaning': 'rabbit_face',
-    'sentiment_score': 0.586,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f48a': {'meaning': 'pill',
-    'sentiment_score': 0.431,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f6a8': {'meaning': 'police_cars_revolving_light',
-    'sentiment_score': 0.638,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f626': {'meaning': 'frowning_face_with_open_mouth',
-    'sentiment_score': -0.368,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f36a': {'meaning': 'cookie',
-    'sentiment_score': 0.316,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f363': {'meaning': 'sushi',
-    'sentiment_score': -0.232,
-    'emoji_tkn': ':negative:'},
-    '\\u256d': {'meaning': 'box_drawings_light_arc_down_and_right',
-    'sentiment_score': 0.161,
-    'emoji_tkn': ':neutral:'},
-    '\\u2727': {'meaning': 'white_four_pointed_star',
-    'sentiment_score': 0.321,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f386': {'meaning': 'fireworks',
-    'sentiment_score': 0.709,
-    'emoji_tkn': ':positive:'},
-    '\\u256e': {'meaning': 'box_drawings_light_arc_down_and_left',
-    'sentiment_score': 0.127,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f38e': {'meaning': 'japanese_dolls',
-    'sentiment_score': 0.907,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f1e9': {'meaning': 'regional_indicator_symbol_letter_d',
-    'sentiment_score': 0.611,
-    'emoji_tkn': ':positive:'},
-    '\\u2705': {'meaning': 'white_heavy_check_mark',
-    'sentiment_score': 0.407,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f479': {'meaning': 'japanese_ogre',
-    'sentiment_score': 0.058,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4f1': {'meaning': 'mobile_phone',
-    'sentiment_score': 0.308,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f64d': {'meaning': 'person_frowning',
-    'sentiment_score': -0.327,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f351': {'meaning': 'peach',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3bc': {'meaning': 'musical_score',
-    'sentiment_score': 0.327,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f50a': {'meaning': 'speaker_with_three_sound_waves',
-    'sentiment_score': 0.404,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f30c': {'meaning': 'milky_way',
-    'sentiment_score': 0.52,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f34e': {'meaning': 'red_apple',
-    'sentiment_score': 0.32,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f43b': {'meaning': 'bear_face',
-    'sentiment_score': 0.44,
-    'emoji_tkn': ':positive:'},
-    '\\u2500': {'meaning': 'box_drawings_light_horizontal',
-    'sentiment_score': 0.14,
-    'emoji_tkn': ':neutral:'},
-    '\\u2570': {'meaning': 'box_drawings_light_arc_up_and_right',
-    'sentiment_score': -0.06,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f487': {'meaning': 'haircut',
-    'sentiment_score': 0.327,
-    'emoji_tkn': ':positive:'},
-    '\\u266c': {'meaning': 'beamed_sixteenth_notes',
-    'sentiment_score': 0.245,
-    'emoji_tkn': ':neutral:'},
-    '\\u265a': {'meaning': 'black_chess_king',
-    'sentiment_score': 0.041,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f534': {'meaning': 'large_red_circle',
-    'sentiment_score': 0.396,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f371': {'meaning': 'bento_box',
-    'sentiment_score': -0.313,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f34a': {'meaning': 'tangerine',
-    'sentiment_score': 0.417,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f352': {'meaning': 'cherries',
-    'sentiment_score': 0.313,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f42d': {'meaning': 'mouse_face',
-    'sentiment_score': 0.688,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f45f': {'meaning': 'athletic_shoe',
-    'sentiment_score': 0.417,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f30e': {'meaning': 'earth_globe_americas',
-    'sentiment_score': 0.319,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f34d': {'meaning': 'pineapple',
-    'sentiment_score': 0.468,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f42e': {'meaning': 'cow_face',
-    'sentiment_score': 0.587,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4f2': {'meaning': 'mobile_phone_with_rightwards_arrow_at_left',
-    'sentiment_score': 0.239,
-    'emoji_tkn': ':positive:'},
-    '\\u263c': {'meaning': 'white_sun_with_rays',
-    'sentiment_score': 0.196,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f305': {'meaning': 'sunrise',
-    'sentiment_score': 0.356,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f1f7': {'meaning': 'regional_indicator_symbol_letter_r',
-    'sentiment_score': 0.667,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f460': {'meaning': 'high-heeled_shoe',
-    'sentiment_score': 0.356,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f33d': {'meaning': 'ear_of_maize',
-    'sentiment_score': 0.444,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4a7': {'meaning': 'droplet',
-    'sentiment_score': -0.159,
-    'emoji_tkn': ':negative:'},
-    '\\u2753': {'meaning': 'black_question_mark_ornament',
-    'sentiment_score': 0.068,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f36c': {'meaning': 'candy',
-    'sentiment_score': 0.364,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f63a': {'meaning': 'smiling_cat_face_with_open_mouth',
-    'sentiment_score': 0.395,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f434': {'meaning': 'horse_face',
-    'sentiment_score': 0.07,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f680': {'meaning': 'rocket',
-    'sentiment_score': 0.488,
-    'emoji_tkn': ':positive:'},
-    '\\u00a6': {'meaning': 'broken_bar',
-    'sentiment_score': 0.581,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4a2': {'meaning': 'anger_symbol',
-    'sentiment_score': 0.233,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3ac': {'meaning': 'clapper_board',
-    'sentiment_score': 0.279,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f367': {'meaning': 'shaved_ice',
-    'sentiment_score': 0.302,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f35c': {'meaning': 'steaming_bowl',
-    'sentiment_score': 0.395,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f40f': {'meaning': 'ram',
-    'sentiment_score': 0.558,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f418': {'meaning': 'elephant',
-    'sentiment_score': 0.023,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f467': {'meaning': 'girl',
-    'sentiment_score': 0.14,
-    'emoji_tkn': ':neutral:'},
-    '\\u2800': {'meaning': 'braille_pattern_blank',
-    'sentiment_score': 0.047,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3c4': {'meaning': 'surfer',
-    'sentiment_score': 0.524,
-    'emoji_tkn': ':positive:'},
-    '\\u27a4': {'meaning': 'black_rightwards_arrowhead',
-    'sentiment_score': 0.31,
-    'emoji_tkn': ':neutral:'},
-    '\\u2b06': {'meaning': 'upwards_black_arrow',
-    'sentiment_score': 0.286,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f34b': {'meaning': 'lemon',
-    'sentiment_score': 0.244,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f197': {'meaning': 'squared_ok',
-    'sentiment_score': 0.537,
-    'emoji_tkn': ':positive:'},
-    '\\u26aa': {'meaning': 'medium_white_circle',
-    'sentiment_score': 0.45,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4fa': {'meaning': 'television',
-    'sentiment_score': 0.375,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f345': {'meaning': 'tomato',
-    'sentiment_score': 0.35,
-    'emoji_tkn': ':positive:'},
-    '\\u26c5': {'meaning': 'sun_behind_cloud',
-    'sentiment_score': 0.45,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f422': {'meaning': 'turtle',
-    'sentiment_score': 0.2,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f459': {'meaning': 'bikini',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3e1': {'meaning': 'house_with_garden',
-    'sentiment_score': 0.436,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f33e': {'meaning': 'ear_of_rice',
-    'sentiment_score': 0.538,
-    'emoji_tkn': ':positive:'},
-    '\\u25c9': {'meaning': 'fisheye',
-    'sentiment_score': 0.256,
-    'emoji_tkn': ':neutral:'},
-    '\\u270f': {'meaning': 'pencil',
-    'sentiment_score': 0.342,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f42c': {'meaning': 'dolphin',
-    'sentiment_score': 0.421,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f364': {'meaning': 'fried_shrimp',
-    'sentiment_score': 0.053,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f1f9': {'meaning': 'regional_indicator_symbol_letter_t',
-    'sentiment_score': 0.579,
-    'emoji_tkn': ':positive:'},
-    '\\u2663': {'meaning': 'black_club_suit',
-    'sentiment_score': 0.342,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f41d': {'meaning': 'honeybee',
-    'sentiment_score': 0.211,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f31d': {'meaning': 'full_moon_with_face',
-    'sentiment_score': 0.189,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f1ee': {'meaning': 'regional_indicator_symbol_letter_i',
-    'sentiment_score': 0.595,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f50b': {'meaning': 'battery',
-    'sentiment_score': -0.486,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f40d': {'meaning': 'snake',
-    'sentiment_score': 0.351,
-    'emoji_tkn': ':positive:'},
-    '\\u2654': {'meaning': 'white_chess_king',
-    'sentiment_score': 0.541,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f373': {'meaning': 'cooking',
-    'sentiment_score': 0.028,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f535': {'meaning': 'large_blue_circle',
-    'sentiment_score': 0.306,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f63e': {'meaning': 'pouting_cat_face',
-    'sentiment_score': -0.333,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f315': {'meaning': 'full_moon_symbol',
-    'sentiment_score': 0.556,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f428': {'meaning': 'koala',
-    'sentiment_score': 0.444,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f510': {'meaning': 'closed_lock_with_key',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4bf': {'meaning': 'optical_disc',
-    'sentiment_score': 0.611,
-    'emoji_tkn': ':positive:'},
-    '\\u2741': {'meaning': 'eight_petalled_outlined_black_florette',
-    'sentiment_score': 0.056,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f333': {'meaning': 'deciduous_tree',
-    'sentiment_score': 0.486,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f470': {'meaning': 'bride_with_veil',
-    'sentiment_score': 0.486,
-    'emoji_tkn': ':positive:'},
-    '\\u2740': {'meaning': 'white_florette',
-    'sentiment_score': 0.4,
-    'emoji_tkn': ':positive:'},
-    '\\u2693': {'meaning': 'anchor',
-    'sentiment_score': 0.571,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f6b4': {'meaning': 'bicyclist',
-    'sentiment_score': 0.657,
-    'emoji_tkn': ':positive:'},
-    '\\u2580': {'meaning': 'upper_half_block',
-    'sentiment_score': -0.143,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f457': {'meaning': 'dress',
-    'sentiment_score': 0.235,
-    'emoji_tkn': ':positive:'},
-    '\\u2795': {'meaning': 'heavy_plus_sign',
-    'sentiment_score': 0.529,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4ac': {'meaning': 'speech_balloon',
-    'sentiment_score': 0.364,
-    'emoji_tkn': ':positive:'},
-    '\\u2592': {'meaning': 'medium_shade',
-    'sentiment_score': -0.03,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f51c': {'meaning': 'soon_with_rightwards_arrow_above',
-    'sentiment_score': 0.273,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f368': {'meaning': 'ice_cream',
-    'sentiment_score': 0.212,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4b2': {'meaning': 'heavy_dollar_sign',
-    'sentiment_score': 0.242,
-    'emoji_tkn': ':neutral:'},
-    '\\u26fd': {'meaning': 'fuel_pump',
-    'sentiment_score': 0.152,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f359': {'meaning': 'rice_ball',
-    'sentiment_score': 0.281,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f357': {'meaning': 'poultry_leg',
-    'sentiment_score': 0.063,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f372': {'meaning': 'pot_of_food',
-    'sentiment_score': 0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f365': {'meaning': 'fish_cake_with_swirl_design',
-    'sentiment_score': -0.594,
-    'emoji_tkn': ':negative:'},
-    '\\u25b8': {'meaning': 'black_right-pointing_small_triangle',
-    'sentiment_score': 0.219,
-    'emoji_tkn': ':neutral:'},
-    '\\u265b': {'meaning': 'black_chess_queen',
-    'sentiment_score': 0.188,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f63c': {'meaning': 'cat_face_with_wry_smile',
-    'sentiment_score': 0.355,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f419': {'meaning': 'octopus',
-    'sentiment_score': 0.387,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f468': {'meaning': 'man',
-    'sentiment_score': 0.516,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f35a': {'meaning': 'cooked_rice',
-    'sentiment_score': 0.452,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f356': {'meaning': 'meat_on_bone',
-    'sentiment_score': 0.129,
-    'emoji_tkn': ':neutral:'},
-    '\\u2668': {'meaning': 'hot_springs',
-    'sentiment_score': 0.871,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3b9': {'meaning': 'musical_keyboard',
-    'sentiment_score': 0.355,
-    'emoji_tkn': ':positive:'},
-    '\\u2655': {'meaning': 'white_chess_queen',
-    'sentiment_score': 0.387,
-    'emoji_tkn': ':positive:'},
-    '\\u2583': {'meaning': 'lower_three_eighths_block',
-    'sentiment_score': 0.903,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f698': {'meaning': 'oncoming_automobile',
-    'sentiment_score': 0.067,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f34f': {'meaning': 'green_apple',
-    'sentiment_score': 0.067,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f469': {'meaning': 'woman',
-    'sentiment_score': 0.067,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f466': {'meaning': 'boy',
-    'sentiment_score': 0.133,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f1ec': {'meaning': 'regional_indicator_symbol_letter_g',
-    'sentiment_score': 0.267,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f1e7': {'meaning': 'regional_indicator_symbol_letter_b',
-    'sentiment_score': 0.267,
-    'emoji_tkn': ':positive:'},
-    '\\u2620': {'meaning': 'skull_and_crossbones',
-    'sentiment_score': -0.033,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f420': {'meaning': 'tropical_fish',
-    'sentiment_score': 0.414,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f6b9': {'meaning': 'mens_symbol',
-    'sentiment_score': 0.69,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4b5': {'meaning': 'banknote_with_dollar_sign',
-    'sentiment_score': 0.379,
-    'emoji_tkn': ':positive:'},
-    '\\u2730': {'meaning': 'shadowed_white_star',
-    'sentiment_score': 0.793,
-    'emoji_tkn': ':positive:'},
-    '\\u2560': {'meaning': 'box_drawings_double_vertical_and_right',
-    'sentiment_score': 0.207,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f45b': {'meaning': 'purse',
-    'sentiment_score': 0.357,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f699': {'meaning': 'recreational_vehicle',
-    'sentiment_score': 0.036,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f331': {'meaning': 'seedling',
-    'sentiment_score': 0.571,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4bb': {'meaning': 'personal_computer',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f30f': {'meaning': 'earth_globe_asia-australia',
-    'sentiment_score': 0.321,
-    'emoji_tkn': ':positive:'},
-    '\\u2584': {'meaning': 'lower_half_block',
-    'sentiment_score': -0.071,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f453': {'meaning': 'eyeglasses',
-    'sentiment_score': 0.296,
-    'emoji_tkn': ':neutral:'},
-    '\\u25c4': {'meaning': 'black_left-pointing_pointer',
-    'sentiment_score': 0.222,
-    'emoji_tkn': ':neutral:'},
-    '\\u26be': {'meaning': 'baseball',
-    'sentiment_score': -0.037,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f332': {'meaning': 'evergreen_tree',
-    'sentiment_score': 0.385,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f474': {'meaning': 'older_man',
-    'sentiment_score': 0.231,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3e0': {'meaning': 'house_building',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f347': {'meaning': 'grapes',
-    'sentiment_score': 0.269,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f358': {'meaning': 'rice_cracker',
-    'sentiment_score': 0.385,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f35b': {'meaning': 'curry_and_rice',
-    'sentiment_score': 0.038,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f407': {'meaning': 'rabbit',
-    'sentiment_score': 0.231,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f51e': {'meaning': 'no_one_under_eighteen_symbol',
-    'sentiment_score': -0.038,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f475': {'meaning': 'older_woman',
-    'sentiment_score': 0.423,
-    'emoji_tkn': ':positive:'},
-    '\\u25c0': {'meaning': 'black_left-pointing_triangle',
-    'sentiment_score': 0.269,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f519': {'meaning': 'back_with_leftwards_arrow_above',
-    'sentiment_score': 0.192,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f335': {'meaning': 'cactus',
-    'sentiment_score': 0.192,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f43d': {'meaning': 'pig_nose',
-    'sentiment_score': 0.12,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f36e': {'meaning': 'custard',
-    'sentiment_score': -0.12,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f387': {'meaning': 'firework_sparkler',
-    'sentiment_score': 0.68,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f40e': {'meaning': 'horse',
-    'sentiment_score': 0.4,
-    'emoji_tkn': ':positive:'},
-    '\\u2794': {'meaning': 'heavy_wide-headed_rightwards_arrow',
-    'sentiment_score': -0.12,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4b6': {'meaning': 'banknote_with_euro_sign',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f424': {'meaning': 'baby_chick',
-    'sentiment_score': 0.52,
-    'emoji_tkn': ':positive:'},
-    '\\u2569': {'meaning': 'box_drawings_double_up_and_horizontal',
-    'sentiment_score': 0.2,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f6c0': {'meaning': 'bath',
-    'sentiment_score': 0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f311': {'meaning': 'new_moon_symbol',
-    'sentiment_score': 0.458,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f6b2': {'meaning': 'bicycle',
-    'sentiment_score': 0.375,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f411': {'meaning': 'sheep',
-    'sentiment_score': -0.167,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3c1': {'meaning': 'chequered_flag',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f35e': {'meaning': 'bread',
-    'sentiment_score': 0.042,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3be': {'meaning': 'tennis_racquet_and_ball',
-    'sentiment_score': 0.542,
-    'emoji_tkn': ':positive:'},
-    '\\u255a': {'meaning': 'box_drawings_double_up_and_right',
-    'sentiment_score': 0.292,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f239': {'meaning': 'squared_cjk_unified_ideograph-5272',
-    'sentiment_score': 0.292,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f433': {'meaning': 'spouting_whale',
-    'sentiment_score': 0.13,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f46e': {'meaning': 'police_officer',
-    'sentiment_score': -0.348,
-    'emoji_tkn': ':negative:'},
-    '\\u2639': {'meaning': 'white_frowning_face',
-    'sentiment_score': -0.522,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f435': {'meaning': 'monkey_face',
-    'sentiment_score': 0.478,
-    'emoji_tkn': ':positive:'},
-    '\\u272a': {'meaning': 'circled_white_star',
-    'sentiment_score': 0.304,
-    'emoji_tkn': ':neutral:'},
-    '\\u25d5': {'meaning': 'circle_with_all_but_upper_left_quadrant_black',
-    'sentiment_score': 0.435,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f5fc': {'meaning': 'tokyo_tower',
-    'sentiment_score': 0.522,
-    'emoji_tkn': ':positive:'},
-    '\\u2590': {'meaning': 'right_half_block',
-    'sentiment_score': -0.13,
-    'emoji_tkn': ':neutral:'},
-    '\\u2660': {'meaning': 'black_spade_suit',
-    'sentiment_score': 0.304,
-    'emoji_tkn': ':neutral:'},
-    '\\u2533': {'meaning': 'box_drawings_heavy_down_and_horizontal',
-    'sentiment_score': -0.348,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f47a': {'meaning': 'japanese_goblin',
-    'sentiment_score': -0.182,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f41a': {'meaning': 'spiral_shell',
-    'sentiment_score': 0.227,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f442': {'meaning': 'ear',
-    'sentiment_score': -0.136,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f5fd': {'meaning': 'statue_of_liberty',
-    'sentiment_score': 0.318,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f375': {'meaning': 'teacup_without_handle',
-    'sentiment_score': 0.364,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f192': {'meaning': 'squared_cool',
-    'sentiment_score': 0.364,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f36f': {'meaning': 'honey_pot',
-    'sentiment_score': 0.045,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f43a': {'meaning': 'wolf_face',
-    'sentiment_score': 0.227,
-    'emoji_tkn': ':neutral:'},
-    '\\u21e8': {'meaning': 'rightwards_white_arrow',
-    'sentiment_score': 0.455,
-    'emoji_tkn': ':positive:'},
-    '\\u27a8': {'meaning': 'heavy_concave-pointed_black_rightwards_arrow',
-    'sentiment_score': 0.136,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f313': {'meaning': 'first_quarter_moon_symbol',
-    'sentiment_score': 0.591,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f512': {'meaning': 'lock',
-    'sentiment_score': 0.182,
-    'emoji_tkn': ':positive:'},
-    '\\u256c': {'meaning': 'box_drawings_double_vertical_and_horizontal',
-    'sentiment_score': -0.136,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f473': {'meaning': 'man_with_turban',
-    'sentiment_score': 0.619,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f302': {'meaning': 'closed_umbrella',
-    'sentiment_score': 0.238,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f68c': {'meaning': 'bus',
-    'sentiment_score': 0.19,
-    'emoji_tkn': ':neutral:'},
-    '\\u2669': {'meaning': 'quarter_note',
-    'sentiment_score': 0.524,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f361': {'meaning': 'dango',
-    'sentiment_score': -0.048,
-    'emoji_tkn': ':neutral:'},
-    '\\u2765': {'meaning': 'rotated_heavy_black_heart_bullet',
-    'sentiment_score': 0.238,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3a1': {'meaning': 'ferris_wheel',
-    'sentiment_score': 0.286,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f48c': {'meaning': 'love_letter',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f429': {'meaning': 'poodle',
-    'sentiment_score': 0.35,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f31c': {'meaning': 'last_quarter_moon_with_face',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\u231a': {'meaning': 'watch',
-    'sentiment_score': 0.2,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f6bf': {'meaning': 'shower',
-    'sentiment_score': 0.6,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f416': {'meaning': 'pig',
-    'sentiment_score': 0.15,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f506': {'meaning': 'high_brightness_symbol',
-    'sentiment_score': 0.55,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f31b': {'meaning': 'first_quarter_moon_with_face',
-    'sentiment_score': 0.55,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f482': {'meaning': 'guardsman',
-    'sentiment_score': -0.15,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f414': {'meaning': 'chicken',
-    'sentiment_score': 0.3,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f64e': {'meaning': 'person_with_pouting_face',
-    'sentiment_score': -0.05,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3e9': {'meaning': 'love_hotel',
-    'sentiment_score': 0.421,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f1eb': {'meaning': 'regional_indicator_symbol_letter_f',
-    'sentiment_score': 0.474,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f528': {'meaning': 'hammer',
-    'sentiment_score': -0.105,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4e2': {'meaning': 'public_address_loudspeaker',
-    'sentiment_score': 0.421,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f426': {'meaning': 'bird',
-    'sentiment_score': 0.421,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f432': {'meaning': 'dragon_face',
-    'sentiment_score': -0.053,
-    'emoji_tkn': ':neutral:'},
-    '\\u267b': {'meaning': 'black_universal_recycling_symbol',
-    'sentiment_score': 0.474,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f318': {'meaning': 'waning_crescent_moon_symbol',
-    'sentiment_score': 0.579,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f350': {'meaning': 'pear',
-    'sentiment_score': 0.158,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f314': {'meaning': 'waxing_gibbous_moon_symbol',
-    'sentiment_score': 0.579,
-    'emoji_tkn': ':positive:'},
-    '\\u2565': {'meaning': 'box_drawings_down_double_and_horizontal_single',
-    'sentiment_score': 0.105,
-    'emoji_tkn': ':positive:'},
-    '\\u274a': {'meaning': 'eight_teardrop-spoked_propeller_asterisk',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f456': {'meaning': 'jeans',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f6ba': {'meaning': 'womens_symbol',
-    'sentiment_score': 0.167,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f617': {'meaning': 'kissing_face',
-    'sentiment_score': 0.611,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3ad': {'meaning': 'performing_arts',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f404': {'meaning': 'cow',
-    'sentiment_score': 0.278,
-    'emoji_tkn': ':positive:'},
-    '\\u25df': {'meaning': 'lower_left_quadrant_circular_arc',
-    'sentiment_score': -0.056,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f362': {'meaning': 'oden',
-    'sentiment_score': -0.111,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3a8': {'meaning': 'artist_palette',
-    'sentiment_score': 0.167,
-    'emoji_tkn': ':neutral:'},
-    '\\u2b07': {'meaning': 'downwards_black_arrow',
-    'sentiment_score': 0.389,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f6bc': {'meaning': 'baby_symbol',
-    'sentiment_score': 0.556,
-    'emoji_tkn': ':positive:'},
-    '\\u26f2': {'meaning': 'fountain',
-    'sentiment_score': 0.056,
-    'emoji_tkn': ':neutral:'},
-    '\\u2581': {'meaning': 'lower_one_eighth_block',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f1f4': {'meaning': 'regional_indicator_symbol_letter_o',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f317': {'meaning': 'last_quarter_moon_symbol',
-    'sentiment_score': 0.611,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f316': {'meaning': 'waning_gibbous_moon_symbol',
-    'sentiment_score': 0.611,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f505': {'meaning': 'low_brightness_symbol',
-    'sentiment_score': 0.833,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f45c': {'meaning': 'handbag',
-    'sentiment_score': 0.235,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f40c': {'meaning': 'snail',
-    'sentiment_score': 0.647,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4bc': {'meaning': 'briefcase',
-    'sentiment_score': 0.529,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f695': {'meaning': 'taxi',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f439': {'meaning': 'hamster_face',
-    'sentiment_score': 0.294,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f320': {'meaning': 'shooting_star',
-    'sentiment_score': 0.529,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f408': {'meaning': 'cat',
-    'sentiment_score': 0.294,
-    'emoji_tkn': ':neutral:'},
-    '\\u21e7': {'meaning': 'upwards_white_arrow',
-    'sentiment_score': 0.118,
-    'emoji_tkn': ':neutral:'},
-    '\\u260e': {'meaning': 'black_telephone',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f301': {'meaning': 'foggy',
-    'sentiment_score': 0.176,
-    'emoji_tkn': ':neutral:'},
-    '\\u26ab': {'meaning': 'medium_black_circle',
-    'sentiment_score': 0.235,
-    'emoji_tkn': ':positive:'},
-    '\\u2667': {'meaning': 'white_club_suit',
-    'sentiment_score': 0.471,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3f0': {'meaning': 'european_castle',
-    'sentiment_score': 0.294,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f6b5': {'meaning': 'mountain_bicyclist',
-    'sentiment_score': 0.353,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3a2': {'meaning': 'roller_coaster',
-    'sentiment_score': 0.471,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3b7': {'meaning': 'saxophone',
-    'sentiment_score': 0.647,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f390': {'meaning': 'wind_chime',
-    'sentiment_score': 0.176,
-    'emoji_tkn': ':neutral:'},
-    '\\u2508': {'meaning': 'box_drawings_light_quadruple_dash_horizontal',
-    'sentiment_score': -0.588,
-    'emoji_tkn': ':negative:'},
-    '\\u2557': {'meaning': 'box_drawings_double_down_and_left',
-    'sentiment_score': 0.353,
-    'emoji_tkn': ':positive:'},
-    '\\u2571': {'meaning': 'box_drawings_light_diagonal_upper_right_to_lower_left',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f307': {'meaning': 'sunset_over_buildings',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\u23f0': {'meaning': 'alarm_clock',
-    'sentiment_score': 0.438,
-    'emoji_tkn': ':positive:'},
-    '\\u21e9': {'meaning': 'downwards_white_arrow',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f682': {'meaning': 'steam_locomotive',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':neutral:'},
-    '\\u25e0': {'meaning': 'upper_half_circle',
-    'sentiment_score': 0.438,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3bf': {'meaning': 'ski_and_ski_boot',
-    'sentiment_score': 0.375,
-    'emoji_tkn': ':positive:'},
-    '\\u2726': {'meaning': 'black_four_pointed_star',
-    'sentiment_score': 0.063,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f194': {'meaning': 'squared_id',
-    'sentiment_score': 0.75,
-    'emoji_tkn': ':positive:'},
-    '\\u26ea': {'meaning': 'church',
-    'sentiment_score': 0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f312': {'meaning': 'waxing_crescent_moon_symbol',
-    'sentiment_score': 0.563,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f42a': {'meaning': 'dromedary_camel',
-    'sentiment_score': 0.563,
-    'emoji_tkn': ':positive:'},
-    '\\u2554': {'meaning': 'box_drawings_double_down_and_right',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':neutral:'},
-    '\\u255d': {'meaning': 'box_drawings_double_up_and_left',
-    'sentiment_score': 0.438,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f454': {'meaning': 'necktie',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f531': {'meaning': 'trident_emblem',
-    'sentiment_score': 0.067,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f193': {'meaning': 'squared_free',
-    'sentiment_score': 0.2,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f40b': {'meaning': 'whale',
-    'sentiment_score': 0.2,
-    'emoji_tkn': ':positive:'},
-    '\\u25bd': {'meaning': 'white_down-pointing_triangle',
-    'sentiment_score': 0.4,
-    'emoji_tkn': ':positive:'},
-    '\\u2582': {'meaning': 'lower_one_quarter_block',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f41b': {'meaning': 'bug',
-    'sentiment_score': 0.267,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f455': {'meaning': 't-shirt',
-    'sentiment_score': 0.4,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f68b': {'meaning': 'tram_car',
-    'sentiment_score': 0.067,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4b3': {'meaning': 'credit_card',
-    'sentiment_score': 0.4,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f306': {'meaning': 'cityscape_at_dusk',
-    'sentiment_score': 0.133,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3e7': {'meaning': 'automated_teller_machine',
-    'sentiment_score': 0.8,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4a1': {'meaning': 'electric_light_bulb',
-    'sentiment_score': 0.6,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f539': {'meaning': 'small_blue_diamond',
-    'sentiment_score': 0.133,
-    'emoji_tkn': ':neutral:'},
-    '\\u2b05': {'meaning': 'leftwards_black_arrow',
-    'sentiment_score': 0.467,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f360': {'meaning': 'roasted_sweet_potato',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f42b': {'meaning': 'bactrian_camel',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3ea': {'meaning': 'convenience_store',
-    'sentiment_score': 0.067,
-    'emoji_tkn': ':neutral:'},
-    '\\u06e9': {'meaning': 'arabic_place_of_sajdah',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f1f1': {'meaning': 'regional_indicator_symbol_letter_l',
-    'sentiment_score': 0.4,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4f9': {'meaning': 'video_camera',
-    'sentiment_score': 0.429,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f45e': {'meaning': 'mans_shoe',
-    'sentiment_score': 0.429,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f691': {'meaning': 'ambulance',
-    'sentiment_score': 0.071,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f198': {'meaning': 'squared_sos',
-    'sentiment_score': 0.071,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f45a': {'meaning': 'womans_clothes',
-    'sentiment_score': 0.571,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f68d': {'meaning': 'oncoming_bus',
-    'sentiment_score': 0.071,
-    'emoji_tkn': ':neutral:'},
-    '\\u25a1': {'meaning': 'white_square',
-    'sentiment_score': -0.214,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f402': {'meaning': 'ox',
-    'sentiment_score': 0.143,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f6a3': {'meaning': 'rowboat',
-    'sentiment_score': 0.571,
-    'emoji_tkn': ':positive:'},
-    '\\u2733': {'meaning': 'eight_spoked_asterisk',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3c9': {'meaning': 'rugby_football',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f5fb': {'meaning': 'mount_fuji',
-    'sentiment_score': 0.571,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f400': {'meaning': 'rat',
-    'sentiment_score': 0.143,
-    'emoji_tkn': ':neutral:'},
-    '\\u2566': {'meaning': 'box_drawings_double_down_and_horizontal',
-    'sentiment_score': 0.357,
-    'emoji_tkn': ':positive:'},
-    '\\u26fa': {'meaning': 'tent',
-    'sentiment_score': 0.462,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f415': {'meaning': 'dog',
-    'sentiment_score': 0.231,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3c2': {'meaning': 'snowboarder',
-    'sentiment_score': 0.385,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f461': {'meaning': 'womans_sandal',
-    'sentiment_score': 0.385,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4fb': {'meaning': 'radio',
-    'sentiment_score': 0.308,
-    'emoji_tkn': ':positive:'},
-    '\\u2712': {'meaning': 'black_nib',
-    'sentiment_score': 0.231,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f330': {'meaning': 'chestnut',
-    'sentiment_score': 0.538,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3e2': {'meaning': 'office_building',
-    'sentiment_score': 0.154,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f392': {'meaning': 'school_satchel',
-    'sentiment_score': 0.462,
-    'emoji_tkn': ':positive:'},
-    '\\u2312': {'meaning': 'arc',
-    'sentiment_score': 0.538,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3eb': {'meaning': 'school',
-    'sentiment_score': -0.231,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f4f4': {'meaning': 'mobile_phone_off',
-    'sentiment_score': 0.615,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f6a2': {'meaning': 'ship',
-    'sentiment_score': 0.231,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f69a': {'meaning': 'delivery_truck',
-    'sentiment_score': -0.077,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f409': {'meaning': 'dragon',
-    'sentiment_score': 0.154,
-    'emoji_tkn': ':neutral:'},
-    '\\u2752': {'meaning': 'upper_right_shadowed_white_square',
-    'sentiment_score': 0.231,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f40a': {'meaning': 'crocodile',
-    'sentiment_score': 0.077,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f514': {'meaning': 'bell',
-    'sentiment_score': 0.769,
-    'emoji_tkn': ':positive:'},
-    '\\u25e2': {'meaning': 'black_lower_right_triangle',
-    'sentiment_score': 0.615,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3e5': {'meaning': 'hospital',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':positive:'},
-    '\\u2754': {'meaning': 'white_question_mark_ornament',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f696': {'meaning': 'oncoming_taxi',
-    'sentiment_score': -0.083,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f0cf': {'meaning': 'playing_card_black_joker',
-    'sentiment_score': 0.083,
-    'emoji_tkn': ':neutral:'},
-    '\\u25bc': {'meaning': 'black_down-pointing_triangle',
-    'sentiment_score': 0.083,
-    'emoji_tkn': ':neutral:'},
-    '\\u258c': {'meaning': 'left_half_block',
-    'sentiment_score': -0.25,
-    'emoji_tkn': ':negative:'},
-    '\\u261b': {'meaning': 'black_right_pointing_index',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\u2729': {'meaning': 'stress_outlined_white_star',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f492': {'meaning': 'wedding',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f6a4': {'meaning': 'speedboat',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f410': {'meaning': 'goat',
-    'sentiment_score': 0.417,
-    'emoji_tkn': ':positive:'},
-    '\\u25a0': {'meaning': 'black_square',
-    'sentiment_score': -0.25,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f51a': {'meaning': 'end_with_leftwards_arrow_above',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3bb': {'meaning': 'violin',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f537': {'meaning': 'large_blue_diamond',
-    'sentiment_score': 0.167,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f6a6': {'meaning': 'vertical_traffic_light',
-    'sentiment_score': 0.083,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f513': {'meaning': 'open_lock',
-    'sentiment_score': 0.083,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3bd': {'meaning': 'running_shirt_with_sash',
-    'sentiment_score': 0.417,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4c5': {'meaning': 'calendar',
-    'sentiment_score': 0.167,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3ba': {'meaning': 'trumpet',
-    'sentiment_score': 0.583,
-    'emoji_tkn': ':positive:'},
-    '\\u272f': {'meaning': 'pinwheel_star',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f348': {'meaning': 'melon',
-    'sentiment_score': -0.333,
-    'emoji_tkn': ':negative:'},
-    '\\u2709': {'meaning': 'envelope',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':positive:'},
-    '\\u2563': {'meaning': 'box_drawings_double_vertical_and_left',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\u25e4': {'meaning': 'black_upper_left_triangle',
-    'sentiment_score': 0.75,
-    'emoji_tkn': ':positive:'},
-    '\\u25cb': {'meaning': 'white_circle',
-    'sentiment_score': 0.455,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f37c': {'meaning': 'baby_bottle',
-    'sentiment_score': 0.455,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4c0': {'meaning': 'dvd',
-    'sentiment_score': 0.091,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f69b': {'meaning': 'articulated_lorry',
-    'sentiment_score': -0.182,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4d3': {'meaning': 'notebook',
-    'sentiment_score': 0.182,
-    'emoji_tkn': ':neutral:'},
-    '\\u2609': {'meaning': 'sun',
-    'sentiment_score': 0.182,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4b4': {'meaning': 'banknote_with_yen_sign',
-    'sentiment_score': -0.182,
-    'emoji_tkn': ':neutral:'},
-    '\\u253c': {'meaning': 'box_drawings_light_vertical_and_horizontal',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f403': {'meaning': 'water_buffalo',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\u27b0': {'meaning': 'curly_loop',
-    'sentiment_score': -0.091,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f50c': {'meaning': 'electric_plug',
-    'sentiment_score': -0.091,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f344': {'meaning': 'mushroom',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4d5': {'meaning': 'closed_book',
-    'sentiment_score': 0.182,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4e3': {'meaning': 'cheering_megaphone',
-    'sentiment_score': 0.364,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f693': {'meaning': 'police_car',
-    'sentiment_score': 0.273,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f417': {'meaning': 'boar',
-    'sentiment_score': 0.455,
-    'emoji_tkn': ':positive:'},
-    '\\u21aa': {'meaning': 'rightwards_arrow_with_hook',
-    'sentiment_score': 0.091,
-    'emoji_tkn': ':neutral:'},
-    '\\u26f3': {'meaning': 'flag_in_hole',
-    'sentiment_score': 0.636,
-    'emoji_tkn': ':positive:'},
-    '\\u253b': {'meaning': 'box_drawings_heavy_up_and_horizontal',
-    'sentiment_score': -0.364,
-    'emoji_tkn': ':negative:'},
-    '\\u251b': {'meaning': 'box_drawings_heavy_up_and_left',
-    'sentiment_score': 0.545,
-    'emoji_tkn': ':positive:'},
-    '\\u2503': {'meaning': 'box_drawings_heavy_vertical',
-    'sentiment_score': 0.364,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f471': {'meaning': 'person_with_blond_hair',
-    'sentiment_score': 0.1,
-    'emoji_tkn': ':neutral:'},
-    '\\u23f3': {'meaning': 'hourglass_with_flowing_sand',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4ba': {'meaning': 'seat',
-    'sentiment_score': 0.2,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3c7': {'meaning': 'horse_racing',
-    'sentiment_score': -0.1,
-    'emoji_tkn': ':neutral:'},
-    '\\u263b': {'meaning': 'black_smiling_face',
-    'sentiment_score': 0.2,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4de': {'meaning': 'telephone_receiver',
-    'sentiment_score': 0.4,
-    'emoji_tkn': ':positive:'},
-    '\\u24b6': {'meaning': 'circled_latin_capital_letter_a',
-    'sentiment_score': -0.1,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f309': {'meaning': 'bridge_at_night',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f6a9': {'meaning': 'triangular_flag_on_post',
-    'sentiment_score': -0.2,
-    'emoji_tkn': ':negative:'},
-    '\\u270e': {'meaning': 'lower_right_pencil',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4c3': {'meaning': 'page_with_curl',
-    'sentiment_score': 0.4,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3e8': {'meaning': 'hotel',
-    'sentiment_score': 0.2,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4cc': {'meaning': 'pushpin',
-    'sentiment_score': -0.4,
-    'emoji_tkn': ':negative:'},
-    '\\u264e': {'meaning': 'libra',
-    'sentiment_score': -0.1,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4b7': {'meaning': 'banknote_with_pound_sign',
-    'sentiment_score': 0.4,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f684': {'meaning': 'high-speed_train',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\u25b2': {'meaning': 'black_up-pointing_triangle',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\u26f5': {'meaning': 'sailboat',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f538': {'meaning': 'small_orange_diamond',
-    'sentiment_score': 0.2,
-    'emoji_tkn': ':neutral:'},
-    '\\u231b': {'meaning': 'hourglass',
-    'sentiment_score': 0.1,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f69c': {'meaning': 'tractor',
-    'sentiment_score': 0.7,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f406': {'meaning': 'leopard',
-    'sentiment_score': 0.3,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f452': {'meaning': 'womans_hat',
-    'sentiment_score': 0.2,
-    'emoji_tkn': ':positive:'},
-    '\\u2755': {'meaning': 'white_exclamation_mark_ornament',
-    'sentiment_score': 0.2,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f51b': {'meaning': 'on_with_exclamation_mark_with_left_right_arrow_above',
-    'sentiment_score': 0.4,
-    'emoji_tkn': ':positive:'},
-    '\\u2662': {'meaning': 'white_diamond_suit',
-    'sentiment_score': 0.3,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f1f2': {'meaning': 'regional_indicator_symbol_letter_m',
-    'sentiment_score': 0.4,
-    'emoji_tkn': ':positive:'},
-    '\\u2745': {'meaning': 'tight_trifoliate_snowflake',
-    'sentiment_score': 0.6,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f45d': {'meaning': 'pouch',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\u271e': {'meaning': 'shadowed_white_latin_cross',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\u25e1': {'meaning': 'lower_half_circle',
-    'sentiment_score': 0.222,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f38b': {'meaning': 'tanabata_tree',
-    'sentiment_score': 0.444,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f465': {'meaning': 'busts_in_silhouette',
-    'sentiment_score': 0.222,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4f5': {'meaning': 'no_mobile_phones',
-    'sentiment_score': 0.111,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f421': {'meaning': 'blowfish',
-    'sentiment_score': 0.222,
-    'emoji_tkn': ':neutral:'},
-    '\\u25c6': {'meaning': 'black_diamond',
-    'sentiment_score': 0.556,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3ef': {'meaning': 'japanese_castle',
-    'sentiment_score': 0.111,
-    'emoji_tkn': ':neutral:'},
-    '\\u2602': {'meaning': 'umbrella',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f52d': {'meaning': 'telescope',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f3aa': {'meaning': 'circus_tent',
-    'sentiment_score': 0.222,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f41c': {'meaning': 'ant',
-    'sentiment_score': 0.444,
-    'emoji_tkn': ':positive:'},
-    '\\u264c': {'meaning': 'leo',
-    'sentiment_score': 0.556,
-    'emoji_tkn': ':positive:'},
-    '\\u2610': {'meaning': 'ballot_box',
-    'sentiment_score': -0.667,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f477': {'meaning': 'construction_worker',
-    'sentiment_score': 0.222,
-    'emoji_tkn': ':positive:'},
-    '\\u21b3': {'meaning': 'downwards_arrow_with_tip_rightwards',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f508': {'meaning': 'speaker',
-    'sentiment_score': 0.222,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4c4': {'meaning': 'page_facing_up',
-    'sentiment_score': 0.667,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4cd': {'meaning': 'round_pushpin',
-    'sentiment_score': 0.111,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f690': {'meaning': 'minibus',
-    'sentiment_score': 0.556,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f694': {'meaning': 'oncoming_police_car',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f30b': {'meaning': 'volcano',
-    'sentiment_score': 0.444,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4e1': {'meaning': 'satellite_antenna',
-    'sentiment_score': 0.222,
-    'emoji_tkn': ':positive:'},
-    '\\u23e9': {'meaning': 'black_right-pointing_double_triangle',
-    'sentiment_score': 0.111,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f6b3': {'meaning': 'no_bicycles',
-    'sentiment_score': 0.667,
-    'emoji_tkn': ':positive:'},
-    '\\u2718': {'meaning': 'heavy_ballot_x',
-    'sentiment_score': 0.556,
-    'emoji_tkn': ':positive:'},
-    '\\u06de': {'meaning': 'arabic_start_of_rub_el_hizb',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\u263e': {'meaning': 'last_quarter_moon',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f170': {'meaning': 'negative_squared_latin_capital_letter_a',
-    'sentiment_score': 0.222,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4e5': {'meaning': 'inbox_tray',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f1fc': {'meaning': 'regional_indicator_symbol_letter_w',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\u2513': {'meaning': 'box_drawings_heavy_down_and_left',
-    'sentiment_score': 0.444,
-    'emoji_tkn': ':positive:'},
-    '\\u2523': {'meaning': 'box_drawings_heavy_vertical_and_right',
-    'sentiment_score': 0.444,
-    'emoji_tkn': ':positive:'},
-    '\\u24c1': {'meaning': 'circled_latin_capital_letter_l',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\u24ba': {'meaning': 'circled_latin_capital_letter_e',
-    'sentiment_score': 0.333,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f526': {'meaning': 'electric_torch',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f464': {'meaning': 'bust_in_silhouette',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f681': {'meaning': 'helicopter',
-    'sentiment_score': 0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3a0': {'meaning': 'carousel_horse',
-    'sentiment_score': 0.375,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f401': {'meaning': 'mouse',
-    'sentiment_score': -0.25,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4d7': {'meaning': 'green_book',
-    'sentiment_score': 0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\u2510': {'meaning': 'box_drawings_light_down_and_left',
-    'sentiment_score': -0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\u262e': {'meaning': 'peace_symbol',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\u2642': {'meaning': 'male_sign',
-    'sentiment_score': 0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\u25de': {'meaning': 'lower_right_quadrant_circular_arc',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4ef': {'meaning': 'postal_horn',
-    'sentiment_score': -0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f529': {'meaning': 'nut_and_bolt',
-    'sentiment_score': 0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f462': {'meaning': 'womans_boots',
-    'sentiment_score': 0.5,
-    'emoji_tkn': ':positive:'},
-    '\\u25c2': {'meaning': 'black_left-pointing_small_triangle',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f4f0': {'meaning': 'newspaper',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f4f6': {'meaning': 'antenna_with_bars',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f6a5': {'meaning': 'horizontal_traffic_light',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f304': {'meaning': 'sunrise_over_mountains',
-    'sentiment_score': 0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f5fe': {'meaning': 'silhouette_of_japan',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f536': {'meaning': 'large_orange_diamond',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3e4': {'meaning': 'european_post_office',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f3a9': {'meaning': 'top_hat',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':neutral:'},
-    '\\u24c2': {'meaning': 'circled_latin_capital_letter_m',
-    'sentiment_score': 0.25,
-    'emoji_tkn': ':positive:'},
-    '\\U0001f527': {'meaning': 'wrench',
-    'sentiment_score': -0.375,
-    'emoji_tkn': ':negative:'},
-    '\\U0001f405': {'meaning': 'tiger',
-    'sentiment_score': 0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\u266e': {'meaning': 'music_natural_sign',
-    'sentiment_score': 0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f17e': {'meaning': 'negative_squared_latin_capital_letter_o',
-    'sentiment_score': -0.125,
-    'emoji_tkn': ':neutral:'},
-    '\\U0001f504': {'meaning': 'anticlockwise_downwards_and_upwards_open_circle_arrows',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\u2604': {'meaning': 'comet',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'},
-    '\\u2628': {'meaning': 'cross_of_lorraine',
-    'sentiment_score': 0.0,
-    'emoji_tkn': ':neutral:'}}
+    '\\U0001f425': {
+        'meaning': 'front-facing_baby_chick',
+        'sentiment_score': 0.586,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f300': {
+        'meaning': 'cyclone',
+        'sentiment_score': 0.101,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f43c': {
+        'meaning': 'panda_face',
+        'sentiment_score': 0.261,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3a5': {
+        'meaning': 'movie_camera',
+        'sentiment_score': 0.29,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f484': {
+        'meaning': 'lipstick',
+        'sentiment_score': 0.435,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4b8': {
+        'meaning': 'money_with_wings',
+        'sentiment_score': 0.159,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u26d4': {
+        'meaning': 'no_entry',
+        'sentiment_score': 0.485,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u25cf': {
+        'meaning': 'black_circle',
+        'sentiment_score': 0.176,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3c0': {
+        'meaning': 'basketball_and_hoop',
+        'sentiment_score': 0.254,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f489': {
+        'meaning': 'syringe',
+        'sentiment_score': 0.358,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f49f': {
+        'meaning': 'heart_decoration',
+        'sentiment_score': 0.682,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f697': {
+        'meaning': 'automobile',
+        'sentiment_score': 0.231,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f62f': {
+        'meaning': 'hushed_face',
+        'sentiment_score': 0.123,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4dd': {
+        'meaning': 'memo',
+        'sentiment_score': 0.231,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2550': {
+        'meaning': 'box_drawings_double_horizontal',
+        'sentiment_score': 0.015,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2666': {
+        'meaning': 'black_diamond_suit',
+        'sentiment_score': 0.453,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4ad': {
+        'meaning': 'thought_balloon',
+        'sentiment_score': 0.206,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f319': {
+        'meaning': 'crescent_moon',
+        'sentiment_score': 0.59,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f41f': {
+        'meaning': 'fish',
+        'sentiment_score': 0.689,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f463': {
+        'meaning': 'footprints',
+        'sentiment_score': 0.344,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u261e': {
+        'meaning': 'white_right_pointing_index',
+        'sentiment_score': 0.115,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2702': {
+        'meaning': 'black_scissors',
+        'sentiment_score': -0.459,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f5ff': {
+        'meaning': 'moyai',
+        'sentiment_score': 0.443,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f35d': {
+        'meaning': 'spaghetti',
+        'sentiment_score': 0.117,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f46a': {
+        'meaning': 'family',
+        'sentiment_score': -0.017,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f36d': {
+        'meaning': 'lollipop',
+        'sentiment_score': 0.3,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f303': {
+        'meaning': 'night_with_stars',
+        'sentiment_score': 0.39,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u274c': {
+        'meaning': 'cross_mark',
+        'sentiment_score': 0.271,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f430': {
+        'meaning': 'rabbit_face',
+        'sentiment_score': 0.586,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f48a': {
+        'meaning': 'pill',
+        'sentiment_score': 0.431,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f6a8': {
+        'meaning': 'police_cars_revolving_light',
+        'sentiment_score': 0.638,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f626': {
+        'meaning': 'frowning_face_with_open_mouth',
+        'sentiment_score': -0.368,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f36a': {
+        'meaning': 'cookie',
+        'sentiment_score': 0.316,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f363': {
+        'meaning': 'sushi',
+        'sentiment_score': -0.232,
+        'emoji_tkn': ':negative:'
+        },
+    '\\u256d': {
+        'meaning': 'box_drawings_light_arc_down_and_right',
+        'sentiment_score': 0.161,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2727': {
+        'meaning': 'white_four_pointed_star',
+        'sentiment_score': 0.321,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f386': {
+        'meaning': 'fireworks',
+        'sentiment_score': 0.709,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u256e': {
+        'meaning': 'box_drawings_light_arc_down_and_left',
+        'sentiment_score': 0.127,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f38e': {
+        'meaning': 'japanese_dolls',
+        'sentiment_score': 0.907,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f1e9': {
+        'meaning': 'regional_indicator_symbol_letter_d',
+        'sentiment_score': 0.611,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2705': {
+        'meaning': 'white_heavy_check_mark',
+        'sentiment_score': 0.407,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f479': {
+        'meaning': 'japanese_ogre',
+        'sentiment_score': 0.058,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4f1': {
+        'meaning': 'mobile_phone',
+        'sentiment_score': 0.308,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f64d': {
+        'meaning': 'person_frowning',
+        'sentiment_score': -0.327,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f351': {
+        'meaning': 'peach',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3bc': {
+        'meaning': 'musical_score',
+        'sentiment_score': 0.327,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f50a': {
+        'meaning': 'speaker_with_three_sound_waves',
+        'sentiment_score': 0.404,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f30c': {
+        'meaning': 'milky_way',
+        'sentiment_score': 0.52,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f34e': {
+        'meaning': 'red_apple',
+        'sentiment_score': 0.32,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f43b': {
+        'meaning': 'bear_face',
+        'sentiment_score': 0.44,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2500': {
+        'meaning': 'box_drawings_light_horizontal',
+        'sentiment_score': 0.14,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2570': {
+        'meaning': 'box_drawings_light_arc_up_and_right',
+        'sentiment_score': -0.06,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f487': {
+        'meaning': 'haircut',
+        'sentiment_score': 0.327,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u266c': {
+        'meaning': 'beamed_sixteenth_notes',
+        'sentiment_score': 0.245,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u265a': {
+        'meaning': 'black_chess_king',
+        'sentiment_score': 0.041,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f534': {
+        'meaning': 'large_red_circle',
+        'sentiment_score': 0.396,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f371': {
+        'meaning': 'bento_box',
+        'sentiment_score': -0.313,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f34a': {
+        'meaning': 'tangerine',
+        'sentiment_score': 0.417,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f352': {
+        'meaning': 'cherries',
+        'sentiment_score': 0.313,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f42d': {
+        'meaning': 'mouse_face',
+        'sentiment_score': 0.688,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f45f': {
+        'meaning': 'athletic_shoe',
+        'sentiment_score': 0.417,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f30e': {
+        'meaning': 'earth_globe_americas',
+        'sentiment_score': 0.319,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f34d': {
+        'meaning': 'pineapple',
+        'sentiment_score': 0.468,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f42e': {
+        'meaning': 'cow_face',
+        'sentiment_score': 0.587,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4f2': {
+        'meaning': 'mobile_phone_with_rightwards_arrow_at_left',
+        'sentiment_score': 0.239,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u263c': {
+        'meaning': 'white_sun_with_rays',
+        'sentiment_score': 0.196,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f305': {
+        'meaning': 'sunrise',
+        'sentiment_score': 0.356,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f1f7': {
+        'meaning': 'regional_indicator_symbol_letter_r',
+        'sentiment_score': 0.667,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f460': {
+        'meaning': 'high-heeled_shoe',
+        'sentiment_score': 0.356,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f33d': {
+        'meaning': 'ear_of_maize',
+        'sentiment_score': 0.444,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4a7': {
+        'meaning': 'droplet',
+        'sentiment_score': -0.159,
+        'emoji_tkn': ':negative:'
+        },
+    '\\u2753': {
+        'meaning': 'black_question_mark_ornament',
+        'sentiment_score': 0.068,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f36c': {
+        'meaning': 'candy',
+        'sentiment_score': 0.364,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f63a': {
+        'meaning': 'smiling_cat_face_with_open_mouth',
+        'sentiment_score': 0.395,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f434': {
+        'meaning': 'horse_face',
+        'sentiment_score': 0.07,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f680': {
+        'meaning': 'rocket',
+        'sentiment_score': 0.488,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u00a6': {
+        'meaning': 'broken_bar',
+        'sentiment_score': 0.581,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4a2': {
+        'meaning': 'anger_symbol',
+        'sentiment_score': 0.233,
+        'emoji_tkn': ':positive:'},
+    '\\U0001f3ac': {
+        'meaning': 'clapper_board',
+        'sentiment_score': 0.279,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f367': {
+        'meaning': 'shaved_ice',
+        'sentiment_score': 0.302,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f35c': {
+        'meaning': 'steaming_bowl',
+        'sentiment_score': 0.395,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f40f': {
+        'meaning': 'ram',
+        'sentiment_score': 0.558,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f418': {
+        'meaning': 'elephant',
+        'sentiment_score': 0.023,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f467': {
+        'meaning': 'girl',
+        'sentiment_score': 0.14,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2800': {
+        'meaning': 'braille_pattern_blank',
+        'sentiment_score': 0.047,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3c4': {
+        'meaning': 'surfer',
+        'sentiment_score': 0.524,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u27a4': {
+        'meaning': 'black_rightwards_arrowhead',
+        'sentiment_score': 0.31,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2b06': {
+        'meaning': 'upwards_black_arrow',
+        'sentiment_score': 0.286,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f34b': {
+        'meaning': 'lemon',
+        'sentiment_score': 0.244,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f197': {
+        'meaning': 'squared_ok',
+        'sentiment_score': 0.537,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u26aa': {
+        'meaning': 'medium_white_circle',
+        'sentiment_score': 0.45,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4fa': {
+        'meaning': 'television',
+        'sentiment_score': 0.375,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f345': {
+        'meaning': 'tomato',
+        'sentiment_score': 0.35,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u26c5': {
+        'meaning': 'sun_behind_cloud',
+        'sentiment_score': 0.45,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f422': {
+        'meaning': 'turtle',
+        'sentiment_score': 0.2,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f459': {
+        'meaning': 'bikini',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3e1': {
+        'meaning': 'house_with_garden',
+        'sentiment_score': 0.436,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f33e': {
+        'meaning': 'ear_of_rice',
+        'sentiment_score': 0.538,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u25c9': {
+        'meaning': 'fisheye',
+        'sentiment_score': 0.256,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u270f': {
+        'meaning': 'pencil',
+        'sentiment_score': 0.342,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f42c': {
+        'meaning': 'dolphin',
+        'sentiment_score': 0.421,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f364': {
+        'meaning': 'fried_shrimp',
+        'sentiment_score': 0.053,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f1f9': {
+        'meaning': 'regional_indicator_symbol_letter_t',
+        'sentiment_score': 0.579,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2663': {
+        'meaning': 'black_club_suit',
+        'sentiment_score': 0.342,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f41d': {
+        'meaning': 'honeybee',
+        'sentiment_score': 0.211,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f31d': {
+        'meaning': 'full_moon_with_face',
+        'sentiment_score': 0.189,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f1ee': {
+        'meaning': 'regional_indicator_symbol_letter_i',
+        'sentiment_score': 0.595,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f50b': {
+        'meaning': 'battery',
+        'sentiment_score': -0.486,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f40d': {
+        'meaning': 'snake',
+        'sentiment_score': 0.351,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2654': {
+        'meaning': 'white_chess_king',
+        'sentiment_score': 0.541,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f373': {
+        'meaning': 'cooking',
+        'sentiment_score': 0.028,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f535': {
+        'meaning': 'large_blue_circle',
+        'sentiment_score': 0.306,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f63e': {
+        'meaning': 'pouting_cat_face',
+        'sentiment_score': -0.333,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f315': {
+        'meaning': 'full_moon_symbol',
+        'sentiment_score': 0.556,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f428': {
+        'meaning': 'koala',
+        'sentiment_score': 0.444,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f510': {
+        'meaning': 'closed_lock_with_key',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4bf': {
+        'meaning': 'optical_disc',
+        'sentiment_score': 0.611,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2741': {
+        'meaning': 'eight_petalled_outlined_black_florette',
+        'sentiment_score': 0.056,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f333': {
+        'meaning': 'deciduous_tree',
+        'sentiment_score': 0.486,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f470': {
+        'meaning': 'bride_with_veil',
+        'sentiment_score': 0.486,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2740': {
+        'meaning': 'white_florette',
+        'sentiment_score': 0.4,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2693': {
+        'meaning': 'anchor',
+        'sentiment_score': 0.571,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f6b4': {
+        'meaning': 'bicyclist',
+        'sentiment_score': 0.657,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2580': {
+        'meaning': 'upper_half_block',
+        'sentiment_score': -0.143,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f457': {
+        'meaning': 'dress',
+        'sentiment_score': 0.235,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2795': {
+        'meaning': 'heavy_plus_sign',
+        'sentiment_score': 0.529,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4ac': {
+        'meaning': 'speech_balloon',
+        'sentiment_score': 0.364,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2592': {
+        'meaning': 'medium_shade',
+        'sentiment_score': -0.03,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f51c': {
+        'meaning': 'soon_with_rightwards_arrow_above',
+        'sentiment_score': 0.273,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f368': {
+        'meaning': 'ice_cream',
+        'sentiment_score': 0.212,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4b2': {
+        'meaning': 'heavy_dollar_sign',
+        'sentiment_score': 0.242,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u26fd': {
+        'meaning': 'fuel_pump',
+        'sentiment_score': 0.152,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f359': {
+        'meaning': 'rice_ball',
+        'sentiment_score': 0.281,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f357': {
+        'meaning': 'poultry_leg',
+        'sentiment_score': 0.063,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f372': {
+        'meaning': 'pot_of_food',
+        'sentiment_score': 0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f365': {
+        'meaning': 'fish_cake_with_swirl_design',
+        'sentiment_score': -0.594,
+        'emoji_tkn': ':negative:'
+        },
+    '\\u25b8': {
+        'meaning': 'black_right-pointing_small_triangle',
+        'sentiment_score': 0.219,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u265b': {
+        'meaning': 'black_chess_queen',
+        'sentiment_score': 0.188,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f63c': {
+        'meaning': 'cat_face_with_wry_smile',
+        'sentiment_score': 0.355,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f419': {
+        'meaning': 'octopus',
+        'sentiment_score': 0.387,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f468': {
+        'meaning': 'man',
+        'sentiment_score': 0.516,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f35a': {
+        'meaning': 'cooked_rice',
+        'sentiment_score': 0.452,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f356': {
+        'meaning': 'meat_on_bone',
+        'sentiment_score': 0.129,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2668': {
+        'meaning': 'hot_springs',
+        'sentiment_score': 0.871,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3b9': {
+        'meaning': 'musical_keyboard',
+        'sentiment_score': 0.355,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2655': {
+        'meaning': 'white_chess_queen',
+        'sentiment_score': 0.387,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2583': {
+        'meaning': 'lower_three_eighths_block',
+        'sentiment_score': 0.903,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f698': {
+        'meaning': 'oncoming_automobile',
+        'sentiment_score': 0.067,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f34f': {
+        'meaning': 'green_apple',
+        'sentiment_score': 0.067,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f469': {
+        'meaning': 'woman',
+        'sentiment_score': 0.067,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f466': {
+        'meaning': 'boy',
+        'sentiment_score': 0.133,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f1ec': {
+        'meaning': 'regional_indicator_symbol_letter_g',
+        'sentiment_score': 0.267,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f1e7': {
+        'meaning': 'regional_indicator_symbol_letter_b',
+        'sentiment_score': 0.267,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2620': {
+        'meaning': 'skull_and_crossbones',
+        'sentiment_score': -0.033,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f420': {
+        'meaning': 'tropical_fish',
+        'sentiment_score': 0.414,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f6b9': {
+        'meaning': 'mens_symbol',
+        'sentiment_score': 0.69,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4b5': {
+        'meaning': 'banknote_with_dollar_sign',
+        'sentiment_score': 0.379,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2730': {
+        'meaning': 'shadowed_white_star',
+        'sentiment_score': 0.793,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2560': {
+        'meaning': 'box_drawings_double_vertical_and_right',
+        'sentiment_score': 0.207,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f45b': {
+        'meaning': 'purse',
+        'sentiment_score': 0.357,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f699': {
+        'meaning': 'recreational_vehicle',
+        'sentiment_score': 0.036,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f331': {
+        'meaning': 'seedling',
+        'sentiment_score': 0.571,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4bb': {
+        'meaning': 'personal_computer',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f30f': {
+        'meaning': 'earth_globe_asia-australia',
+        'sentiment_score': 0.321,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2584': {
+        'meaning': 'lower_half_block',
+        'sentiment_score': -0.071,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f453': {
+        'meaning': 'eyeglasses',
+        'sentiment_score': 0.296,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u25c4': {
+        'meaning': 'black_left-pointing_pointer',
+        'sentiment_score': 0.222,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u26be': {
+        'meaning': 'baseball',
+        'sentiment_score': -0.037,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f332': {
+        'meaning': 'evergreen_tree',
+        'sentiment_score': 0.385,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f474': {
+        'meaning': 'older_man',
+        'sentiment_score': 0.231,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3e0': {
+        'meaning': 'house_building',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f347': {
+        'meaning': 'grapes',
+        'sentiment_score': 0.269,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f358': {
+        'meaning': 'rice_cracker',
+        'sentiment_score': 0.385,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f35b': {
+        'meaning': 'curry_and_rice',
+        'sentiment_score': 0.038,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f407': {
+        'meaning': 'rabbit',
+        'sentiment_score': 0.231,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f51e': {
+        'meaning': 'no_one_under_eighteen_symbol',
+        'sentiment_score': -0.038,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f475': {
+        'meaning': 'older_woman',
+        'sentiment_score': 0.423,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u25c0': {
+        'meaning': 'black_left-pointing_triangle',
+        'sentiment_score': 0.269,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f519': {
+        'meaning': 'back_with_leftwards_arrow_above',
+        'sentiment_score': 0.192,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f335': {
+        'meaning': 'cactus',
+        'sentiment_score': 0.192,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f43d': {
+        'meaning': 'pig_nose',
+        'sentiment_score': 0.12,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f36e': {
+        'meaning': 'custard',
+        'sentiment_score': -0.12,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f387': {
+        'meaning': 'firework_sparkler',
+        'sentiment_score': 0.68,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f40e': {
+        'meaning': 'horse',
+        'sentiment_score': 0.4,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2794': {
+        'meaning': 'heavy_wide-headed_rightwards_arrow',
+        'sentiment_score': -0.12,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4b6': {
+        'meaning': 'banknote_with_euro_sign',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f424': {
+        'meaning': 'baby_chick',
+        'sentiment_score': 0.52,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2569': {
+        'meaning': 'box_drawings_double_up_and_horizontal',
+        'sentiment_score': 0.2,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f6c0': {
+        'meaning': 'bath',
+        'sentiment_score': 0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f311': {
+        'meaning': 'new_moon_symbol',
+        'sentiment_score': 0.458,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f6b2': {
+        'meaning': 'bicycle',
+        'sentiment_score': 0.375,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f411': {
+        'meaning': 'sheep',
+        'sentiment_score': -0.167,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3c1': {
+        'meaning': 'chequered_flag',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f35e': {
+        'meaning': 'bread',
+        'sentiment_score': 0.042,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3be': {
+        'meaning': 'tennis_racquet_and_ball',
+        'sentiment_score': 0.542,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u255a': {
+        'meaning': 'box_drawings_double_up_and_right',
+        'sentiment_score': 0.292,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f239': {
+        'meaning': 'squared_cjk_unified_ideograph-5272',
+        'sentiment_score': 0.292,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f433': {
+        'meaning': 'spouting_whale',
+        'sentiment_score': 0.13,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f46e': {
+        'meaning': 'police_officer',
+        'sentiment_score': -0.348,
+        'emoji_tkn': ':negative:'
+        },
+    '\\u2639': {
+        'meaning': 'white_frowning_face',
+        'sentiment_score': -0.522,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f435': {
+        'meaning': 'monkey_face',
+        'sentiment_score': 0.478,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u272a': {
+        'meaning': 'circled_white_star',
+        'sentiment_score': 0.304,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u25d5': {
+        'meaning': 'circle_with_all_but_upper_left_quadrant_black',
+        'sentiment_score': 0.435,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f5fc': {
+        'meaning': 'tokyo_tower',
+        'sentiment_score': 0.522,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2590': {
+        'meaning': 'right_half_block',
+        'sentiment_score': -0.13,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2660': {
+        'meaning': 'black_spade_suit',
+        'sentiment_score': 0.304,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2533': {
+        'meaning': 'box_drawings_heavy_down_and_horizontal',
+        'sentiment_score': -0.348,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f47a': {
+        'meaning': 'japanese_goblin',
+        'sentiment_score': -0.182,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f41a': {
+        'meaning': 'spiral_shell',
+        'sentiment_score': 0.227,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f442': {
+        'meaning': 'ear',
+        'sentiment_score': -0.136,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f5fd': {
+        'meaning': 'statue_of_liberty',
+        'sentiment_score': 0.318,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f375': {
+        'meaning': 'teacup_without_handle',
+        'sentiment_score': 0.364,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f192': {
+        'meaning': 'squared_cool',
+        'sentiment_score': 0.364,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f36f': {
+        'meaning': 'honey_pot',
+        'sentiment_score': 0.045,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f43a': {
+        'meaning': 'wolf_face',
+        'sentiment_score': 0.227,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u21e8': {
+        'meaning': 'rightwards_white_arrow',
+        'sentiment_score': 0.455,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u27a8': {
+        'meaning': 'heavy_concave-pointed_black_rightwards_arrow',
+        'sentiment_score': 0.136,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f313': {
+        'meaning': 'first_quarter_moon_symbol',
+        'sentiment_score': 0.591,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f512': {
+        'meaning': 'lock',
+        'sentiment_score': 0.182,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u256c': {
+        'meaning': 'box_drawings_double_vertical_and_horizontal',
+        'sentiment_score': -0.136,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f473': {
+        'meaning': 'man_with_turban',
+        'sentiment_score': 0.619,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f302': {
+        'meaning': 'closed_umbrella',
+        'sentiment_score': 0.238,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f68c': {
+        'meaning': 'bus',
+        'sentiment_score': 0.19,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2669': {
+        'meaning': 'quarter_note',
+        'sentiment_score': 0.524,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f361': {
+        'meaning': 'dango',
+        'sentiment_score': -0.048,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2765': {
+        'meaning': 'rotated_heavy_black_heart_bullet',
+        'sentiment_score': 0.238,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3a1': {
+        'meaning': 'ferris_wheel',
+        'sentiment_score': 0.286,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f48c': {
+        'meaning': 'love_letter',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f429': {
+        'meaning': 'poodle',
+        'sentiment_score': 0.35,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f31c': {
+        'meaning': 'last_quarter_moon_with_face',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u231a': {
+        'meaning': 'watch',
+        'sentiment_score': 0.2,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f6bf': {
+        'meaning': 'shower',
+        'sentiment_score': 0.6,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f416': {
+        'meaning': 'pig',
+        'sentiment_score': 0.15,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f506': {
+        'meaning': 'high_brightness_symbol',
+        'sentiment_score': 0.55,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f31b': {
+        'meaning': 'first_quarter_moon_with_face',
+        'sentiment_score': 0.55,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f482': {
+        'meaning': 'guardsman',
+        'sentiment_score': -0.15,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f414': {
+        'meaning': 'chicken',
+        'sentiment_score': 0.3,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f64e': {
+        'meaning': 'person_with_pouting_face',
+        'sentiment_score': -0.05,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3e9': {
+        'meaning': 'love_hotel',
+        'sentiment_score': 0.421,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f1eb': {
+        'meaning': 'regional_indicator_symbol_letter_f',
+        'sentiment_score': 0.474,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f528': {
+        'meaning': 'hammer',
+        'sentiment_score': -0.105,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4e2': {
+        'meaning': 'public_address_loudspeaker',
+        'sentiment_score': 0.421,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f426': {
+        'meaning': 'bird',
+        'sentiment_score': 0.421,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f432': {
+        'meaning': 'dragon_face',
+        'sentiment_score': -0.053,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u267b': {
+        'meaning': 'black_universal_recycling_symbol',
+        'sentiment_score': 0.474,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f318': {
+        'meaning': 'waning_crescent_moon_symbol',
+        'sentiment_score': 0.579,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f350': {
+        'meaning': 'pear',
+        'sentiment_score': 0.158,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f314': {
+        'meaning': 'waxing_gibbous_moon_symbol',
+        'sentiment_score': 0.579,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2565': {
+        'meaning': 'box_drawings_down_double_and_horizontal_single',
+        'sentiment_score': 0.105,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u274a': {
+        'meaning': 'eight_teardrop-spoked_propeller_asterisk',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f456': {
+        'meaning': 'jeans',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f6ba': {
+        'meaning': 'womens_symbol',
+        'sentiment_score': 0.167,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f617': {
+        'meaning': 'kissing_face',
+        'sentiment_score': 0.611,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3ad': {
+        'meaning': 'performing_arts',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f404': {
+        'meaning': 'cow',
+        'sentiment_score': 0.278,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u25df': {
+        'meaning': 'lower_left_quadrant_circular_arc',
+        'sentiment_score': -0.056,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f362': {
+        'meaning': 'oden',
+        'sentiment_score': -0.111,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3a8': {
+        'meaning': 'artist_palette',
+        'sentiment_score': 0.167,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2b07': {
+        'meaning': 'downwards_black_arrow',
+        'sentiment_score': 0.389,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f6bc': {
+        'meaning': 'baby_symbol',
+        'sentiment_score': 0.556,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u26f2': {
+        'meaning': 'fountain',
+        'sentiment_score': 0.056,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2581': {
+        'meaning': 'lower_one_eighth_block',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f1f4': {
+        'meaning': 'regional_indicator_symbol_letter_o',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f317': {
+        'meaning': 'last_quarter_moon_symbol',
+        'sentiment_score': 0.611,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f316': {
+        'meaning': 'waning_gibbous_moon_symbol',
+        'sentiment_score': 0.611,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f505': {
+        'meaning': 'low_brightness_symbol',
+        'sentiment_score': 0.833,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f45c': {
+        'meaning': 'handbag',
+        'sentiment_score': 0.235,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f40c': {
+        'meaning': 'snail',
+        'sentiment_score': 0.647,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4bc': {
+        'meaning': 'briefcase',
+        'sentiment_score': 0.529,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f695': {
+        'meaning': 'taxi',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f439': {
+        'meaning': 'hamster_face',
+        'sentiment_score': 0.294,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f320': {
+        'meaning': 'shooting_star',
+        'sentiment_score': 0.529,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f408': {
+        'meaning': 'cat',
+        'sentiment_score': 0.294,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u21e7': {
+        'meaning': 'upwards_white_arrow',
+        'sentiment_score': 0.118,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u260e': {
+        'meaning': 'black_telephone',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f301': {
+        'meaning': 'foggy',
+        'sentiment_score': 0.176,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u26ab': {
+        'meaning': 'medium_black_circle',
+        'sentiment_score': 0.235,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2667': {
+        'meaning': 'white_club_suit',
+        'sentiment_score': 0.471,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3f0': {
+        'meaning': 'european_castle',
+        'sentiment_score': 0.294,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f6b5': {
+        'meaning': 'mountain_bicyclist',
+        'sentiment_score': 0.353,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3a2': {
+        'meaning': 'roller_coaster',
+        'sentiment_score': 0.471,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3b7': {
+        'meaning': 'saxophone',
+        'sentiment_score': 0.647,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f390': {
+        'meaning': 'wind_chime',
+        'sentiment_score': 0.176,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2508': {
+        'meaning': 'box_drawings_light_quadruple_dash_horizontal',
+        'sentiment_score': -0.588,
+        'emoji_tkn': ':negative:'
+        },
+    '\\u2557': {
+        'meaning': 'box_drawings_double_down_and_left',
+        'sentiment_score': 0.353,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2571': {
+        'meaning': 'box_drawings_light_diagonal_upper_right_to_lower_left',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f307': {
+        'meaning': 'sunset_over_buildings',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u23f0': {
+        'meaning': 'alarm_clock',
+        'sentiment_score': 0.438,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u21e9': {
+        'meaning': 'downwards_white_arrow',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f682': {
+        'meaning': 'steam_locomotive',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u25e0': {
+        'meaning': 'upper_half_circle',
+        'sentiment_score': 0.438,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3bf': {
+        'meaning': 'ski_and_ski_boot',
+        'sentiment_score': 0.375,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2726': {
+        'meaning': 'black_four_pointed_star',
+        'sentiment_score': 0.063,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f194': {
+        'meaning': 'squared_id',
+        'sentiment_score': 0.75,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u26ea': {
+        'meaning': 'church',
+        'sentiment_score': 0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f312': {
+        'meaning': 'waxing_crescent_moon_symbol',
+        'sentiment_score': 0.563,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f42a': {
+        'meaning': 'dromedary_camel',
+        'sentiment_score': 0.563,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2554': {
+        'meaning': 'box_drawings_double_down_and_right',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u255d': {
+        'meaning': 'box_drawings_double_up_and_left',
+        'sentiment_score': 0.438,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f454': {
+        'meaning': 'necktie',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f531': {
+        'meaning': 'trident_emblem',
+        'sentiment_score': 0.067,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f193': {
+        'meaning': 'squared_free',
+        'sentiment_score': 0.2,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f40b': {
+        'meaning': 'whale',
+        'sentiment_score': 0.2,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u25bd': {
+        'meaning': 'white_down-pointing_triangle',
+        'sentiment_score': 0.4,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2582': {
+        'meaning': 'lower_one_quarter_block',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f41b': {
+        'meaning': 'bug',
+        'sentiment_score': 0.267,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f455': {
+        'meaning': 't-shirt',
+        'sentiment_score': 0.4,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f68b': {
+        'meaning': 'tram_car',
+        'sentiment_score': 0.067,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4b3': {
+        'meaning': 'credit_card',
+        'sentiment_score': 0.4,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f306': {
+        'meaning': 'cityscape_at_dusk',
+        'sentiment_score': 0.133,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3e7': {
+        'meaning': 'automated_teller_machine',
+        'sentiment_score': 0.8,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4a1': {
+        'meaning': 'electric_light_bulb',
+        'sentiment_score': 0.6,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f539': {
+        'meaning': 'small_blue_diamond',
+        'sentiment_score': 0.133,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2b05': {
+        'meaning': 'leftwards_black_arrow',
+        'sentiment_score': 0.467,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f360': {
+        'meaning': 'roasted_sweet_potato',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f42b': {
+        'meaning': 'bactrian_camel',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3ea': {
+        'meaning': 'convenience_store',
+        'sentiment_score': 0.067,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u06e9': {
+        'meaning': 'arabic_place_of_sajdah',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f1f1': {
+        'meaning': 'regional_indicator_symbol_letter_l',
+        'sentiment_score': 0.4,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4f9': {
+        'meaning': 'video_camera',
+        'sentiment_score': 0.429,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f45e': {
+        'meaning': 'mans_shoe',
+        'sentiment_score': 0.429,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f691': {
+        'meaning': 'ambulance',
+        'sentiment_score': 0.071,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f198': {
+        'meaning': 'squared_sos',
+        'sentiment_score': 0.071,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f45a': {
+        'meaning': 'womans_clothes',
+        'sentiment_score': 0.571,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f68d': {
+        'meaning': 'oncoming_bus',
+        'sentiment_score': 0.071,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u25a1': {
+        'meaning': 'white_square',
+        'sentiment_score': -0.214,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f402': {
+        'meaning': 'ox',
+        'sentiment_score': 0.143,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f6a3': {
+        'meaning': 'rowboat',
+        'sentiment_score': 0.571,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2733': {
+        'meaning': 'eight_spoked_asterisk',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3c9': {
+        'meaning': 'rugby_football',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f5fb': {
+        'meaning': 'mount_fuji',
+        'sentiment_score': 0.571,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f400': {
+        'meaning': 'rat',
+        'sentiment_score': 0.143,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2566': {
+        'meaning': 'box_drawings_double_down_and_horizontal',
+        'sentiment_score': 0.357,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u26fa': {
+        'meaning': 'tent',
+        'sentiment_score': 0.462,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f415': {
+        'meaning': 'dog',
+        'sentiment_score': 0.231,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3c2': {
+        'meaning': 'snowboarder',
+        'sentiment_score': 0.385,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f461': {
+        'meaning': 'womans_sandal',
+        'sentiment_score': 0.385,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4fb': {
+        'meaning': 'radio',
+        'sentiment_score': 0.308,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2712': {
+        'meaning': 'black_nib',
+        'sentiment_score': 0.231,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f330': {
+        'meaning': 'chestnut',
+        'sentiment_score': 0.538,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3e2': {
+        'meaning': 'office_building',
+        'sentiment_score': 0.154,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f392': {
+        'meaning': 'school_satchel',
+        'sentiment_score': 0.462,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2312': {
+        'meaning': 'arc',
+        'sentiment_score': 0.538,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3eb': {
+        'meaning': 'school',
+        'sentiment_score': -0.231,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f4f4': {
+        'meaning': 'mobile_phone_off',
+        'sentiment_score': 0.615,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f6a2': {
+        'meaning': 'ship',
+        'sentiment_score': 0.231,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f69a': {
+        'meaning': 'delivery_truck',
+        'sentiment_score': -0.077,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f409': {
+        'meaning': 'dragon',
+        'sentiment_score': 0.154,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2752': {
+        'meaning': 'upper_right_shadowed_white_square',
+        'sentiment_score': 0.231,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f40a': {
+        'meaning': 'crocodile',
+        'sentiment_score': 0.077,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f514': {
+        'meaning': 'bell',
+        'sentiment_score': 0.769,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u25e2': {
+        'meaning': 'black_lower_right_triangle',
+        'sentiment_score': 0.615,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3e5': {
+        'meaning': 'hospital',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2754': {
+        'meaning': 'white_question_mark_ornament',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f696': {
+        'meaning': 'oncoming_taxi',
+        'sentiment_score': -0.083,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f0cf': {
+        'meaning': 'playing_card_black_joker',
+        'sentiment_score': 0.083,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u25bc': {
+        'meaning': 'black_down-pointing_triangle',
+        'sentiment_score': 0.083,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u258c': {
+        'meaning': 'left_half_block',
+        'sentiment_score': -0.25,
+        'emoji_tkn': ':negative:'
+        },
+    '\\u261b': {
+        'meaning': 'black_right_pointing_index',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2729': {
+        'meaning': 'stress_outlined_white_star',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f492': {
+        'meaning': 'wedding',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f6a4': {
+        'meaning': 'speedboat',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f410': {
+        'meaning': 'goat',
+        'sentiment_score': 0.417,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u25a0': {
+        'meaning': 'black_square',
+        'sentiment_score': -0.25,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f51a': {
+        'meaning': 'end_with_leftwards_arrow_above',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3bb': {
+        'meaning': 'violin',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f537': {
+        'meaning': 'large_blue_diamond',
+        'sentiment_score': 0.167,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f6a6': {
+        'meaning': 'vertical_traffic_light',
+        'sentiment_score': 0.083,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f513': {
+        'meaning': 'open_lock',
+        'sentiment_score': 0.083,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3bd': {
+        'meaning': 'running_shirt_with_sash',
+        'sentiment_score': 0.417,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4c5': {
+        'meaning': 'calendar',
+        'sentiment_score': 0.167,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3ba': {
+        'meaning': 'trumpet',
+        'sentiment_score': 0.583,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u272f': {
+        'meaning': 'pinwheel_star',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f348': {
+        'meaning': 'melon',
+        'sentiment_score': -0.333,
+        'emoji_tkn': ':negative:'
+        },
+    '\\u2709': {
+        'meaning': 'envelope',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2563': {
+        'meaning': 'box_drawings_double_vertical_and_left',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u25e4': {
+        'meaning': 'black_upper_left_triangle',
+        'sentiment_score': 0.75,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u25cb': {
+        'meaning': 'white_circle',
+        'sentiment_score': 0.455,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f37c': {
+        'meaning': 'baby_bottle',
+        'sentiment_score': 0.455,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4c0': {
+        'meaning': 'dvd',
+        'sentiment_score': 0.091,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f69b': {
+        'meaning': 'articulated_lorry',
+        'sentiment_score': -0.182,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4d3': {
+        'meaning': 'notebook',
+        'sentiment_score': 0.182,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2609': {
+        'meaning': 'sun',
+        'sentiment_score': 0.182,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4b4': {
+        'meaning': 'banknote_with_yen_sign',
+        'sentiment_score': -0.182,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u253c': {
+        'meaning': 'box_drawings_light_vertical_and_horizontal',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f403': {
+        'meaning': 'water_buffalo',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u27b0': {
+        'meaning': 'curly_loop',
+        'sentiment_score': -0.091,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f50c': {
+        'meaning': 'electric_plug',
+        'sentiment_score': -0.091,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f344': {
+        'meaning': 'mushroom',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4d5': {
+        'meaning': 'closed_book',
+        'sentiment_score': 0.182,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4e3': {
+        'meaning': 'cheering_megaphone',
+        'sentiment_score': 0.364,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f693': {
+        'meaning': 'police_car',
+        'sentiment_score': 0.273,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f417': {
+        'meaning': 'boar',
+        'sentiment_score': 0.455,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u21aa': {
+        'meaning': 'rightwards_arrow_with_hook',
+        'sentiment_score': 0.091,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u26f3': {
+        'meaning': 'flag_in_hole',
+        'sentiment_score': 0.636,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u253b': {
+        'meaning': 'box_drawings_heavy_up_and_horizontal',
+        'sentiment_score': -0.364,
+        'emoji_tkn': ':negative:'
+        },
+    '\\u251b': {
+        'meaning': 'box_drawings_heavy_up_and_left',
+        'sentiment_score': 0.545,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2503': {
+        'meaning': 'box_drawings_heavy_vertical',
+        'sentiment_score': 0.364,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f471': {
+        'meaning': 'person_with_blond_hair',
+        'sentiment_score': 0.1,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u23f3': {
+        'meaning': 'hourglass_with_flowing_sand',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4ba': {
+        'meaning': 'seat',
+        'sentiment_score': 0.2,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3c7': {
+        'meaning': 'horse_racing',
+        'sentiment_score': -0.1,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u263b': {
+        'meaning': 'black_smiling_face',
+        'sentiment_score': 0.2,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4de': {
+        'meaning': 'telephone_receiver',
+        'sentiment_score': 0.4,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u24b6': {
+        'meaning': 'circled_latin_capital_letter_a',
+        'sentiment_score': -0.1,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f309': {
+        'meaning': 'bridge_at_night',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f6a9': {
+        'meaning': 'triangular_flag_on_post',
+        'sentiment_score': -0.2,
+        'emoji_tkn': ':negative:'
+        },
+    '\\u270e': {
+        'meaning': 'lower_right_pencil',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4c3': {
+        'meaning': 'page_with_curl',
+        'sentiment_score': 0.4,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3e8': {
+        'meaning': 'hotel',
+        'sentiment_score': 0.2,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4cc': {
+        'meaning': 'pushpin',
+        'sentiment_score': -0.4,
+        'emoji_tkn': ':negative:'
+        },
+    '\\u264e': {
+        'meaning': 'libra',
+        'sentiment_score': -0.1,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4b7': {
+        'meaning': 'banknote_with_pound_sign',
+        'sentiment_score': 0.4,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f684': {
+        'meaning': 'high-speed_train',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u25b2': {
+        'meaning': 'black_up-pointing_triangle',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u26f5': {
+        'meaning': 'sailboat',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f538': {
+        'meaning': 'small_orange_diamond',
+        'sentiment_score': 0.2,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u231b': {
+        'meaning': 'hourglass',
+        'sentiment_score': 0.1,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f69c': {
+        'meaning': 'tractor',
+        'sentiment_score': 0.7,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f406': {
+        'meaning': 'leopard',
+        'sentiment_score': 0.3,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f452': {
+        'meaning': 'womans_hat',
+        'sentiment_score': 0.2,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2755': {
+        'meaning': 'white_exclamation_mark_ornament',
+        'sentiment_score': 0.2,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f51b': {
+        'meaning': 'on_with_exclamation_mark_with_left_right_arrow_above',
+        'sentiment_score': 0.4,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2662': {
+        'meaning': 'white_diamond_suit',
+        'sentiment_score': 0.3,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f1f2': {
+        'meaning': 'regional_indicator_symbol_letter_m',
+        'sentiment_score': 0.4,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2745': {
+        'meaning': 'tight_trifoliate_snowflake',
+        'sentiment_score': 0.6,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f45d': {
+        'meaning': 'pouch',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u271e': {
+        'meaning': 'shadowed_white_latin_cross',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u25e1': {
+        'meaning': 'lower_half_circle',
+        'sentiment_score': 0.222,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f38b': {
+        'meaning': 'tanabata_tree',
+        'sentiment_score': 0.444,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f465': {
+        'meaning': 'busts_in_silhouette',
+        'sentiment_score': 0.222,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4f5': {
+        'meaning': 'no_mobile_phones',
+        'sentiment_score': 0.111,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f421': {
+        'meaning': 'blowfish',
+        'sentiment_score': 0.222,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u25c6': {
+        'meaning': 'black_diamond',
+        'sentiment_score': 0.556,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3ef': {
+        'meaning': 'japanese_castle',
+        'sentiment_score': 0.111,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2602': {
+        'meaning': 'umbrella',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f52d': {
+        'meaning': 'telescope',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f3aa': {
+        'meaning': 'circus_tent',
+        'sentiment_score': 0.222,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f41c': {
+        'meaning': 'ant',
+        'sentiment_score': 0.444,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u264c': {
+        'meaning': 'leo',
+        'sentiment_score': 0.556,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2610': {
+        'meaning': 'ballot_box',
+        'sentiment_score': -0.667,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f477': {
+        'meaning': 'construction_worker',
+        'sentiment_score': 0.222,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u21b3': {
+        'meaning': 'downwards_arrow_with_tip_rightwards',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f508': {
+        'meaning': 'speaker',
+        'sentiment_score': 0.222,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4c4': {
+        'meaning': 'page_facing_up',
+        'sentiment_score': 0.667,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4cd': {
+        'meaning': 'round_pushpin',
+        'sentiment_score': 0.111,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f690': {
+        'meaning': 'minibus',
+        'sentiment_score': 0.556,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f694': {
+        'meaning': 'oncoming_police_car',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f30b': {
+        'meaning': 'volcano',
+        'sentiment_score': 0.444,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4e1': {
+        'meaning': 'satellite_antenna',
+        'sentiment_score': 0.222,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u23e9': {
+        'meaning': 'black_right-pointing_double_triangle',
+        'sentiment_score': 0.111,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f6b3': {
+        'meaning': 'no_bicycles',
+        'sentiment_score': 0.667,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2718': {
+        'meaning': 'heavy_ballot_x',
+        'sentiment_score': 0.556,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u06de': {
+        'meaning': 'arabic_start_of_rub_el_hizb',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u263e': {
+        'meaning': 'last_quarter_moon',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f170': {
+        'meaning': 'negative_squared_latin_capital_letter_a',
+        'sentiment_score': 0.222,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4e5': {
+        'meaning': 'inbox_tray',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f1fc': {
+        'meaning': 'regional_indicator_symbol_letter_w',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2513': {
+        'meaning': 'box_drawings_heavy_down_and_left',
+        'sentiment_score': 0.444,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u2523': {
+        'meaning': 'box_drawings_heavy_vertical_and_right',
+        'sentiment_score': 0.444,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u24c1': {
+        'meaning': 'circled_latin_capital_letter_l',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u24ba': {
+        'meaning': 'circled_latin_capital_letter_e',
+        'sentiment_score': 0.333,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f526': {
+        'meaning': 'electric_torch',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f464': {
+        'meaning': 'bust_in_silhouette',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f681': {
+        'meaning': 'helicopter',
+        'sentiment_score': 0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3a0': {
+        'meaning': 'carousel_horse',
+        'sentiment_score': 0.375,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f401': {
+        'meaning': 'mouse',
+        'sentiment_score': -0.25,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4d7': {
+        'meaning': 'green_book',
+        'sentiment_score': 0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2510': {
+        'meaning': 'box_drawings_light_down_and_left',
+        'sentiment_score': -0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u262e': {
+        'meaning': 'peace_symbol',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2642': {
+        'meaning': 'male_sign',
+        'sentiment_score': 0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u25de': {
+        'meaning': 'lower_right_quadrant_circular_arc',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4ef': {
+        'meaning': 'postal_horn',
+        'sentiment_score': -0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f529': {
+        'meaning': 'nut_and_bolt',
+        'sentiment_score': 0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f462': {
+        'meaning': 'womans_boots',
+        'sentiment_score': 0.5,
+        'emoji_tkn': ':positive:'
+        },
+    '\\u25c2': {
+        'meaning': 'black_left-pointing_small_triangle',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f4f0': {
+        'meaning': 'newspaper',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f4f6': {
+        'meaning': 'antenna_with_bars',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f6a5': {
+        'meaning': 'horizontal_traffic_light',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f304': {
+        'meaning': 'sunrise_over_mountains',
+        'sentiment_score': 0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f5fe': {
+        'meaning': 'silhouette_of_japan',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f536': {
+        'meaning': 'large_orange_diamond',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3e4': {
+        'meaning': 'european_post_office',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f3a9': {
+        'meaning': 'top_hat',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u24c2': {
+        'meaning': 'circled_latin_capital_letter_m',
+        'sentiment_score': 0.25,
+        'emoji_tkn': ':positive:'
+        },
+    '\\U0001f527': {
+        'meaning': 'wrench',
+        'sentiment_score': -0.375,
+        'emoji_tkn': ':negative:'
+        },
+    '\\U0001f405': {
+        'meaning': 'tiger',
+        'sentiment_score': 0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u266e': {
+        'meaning': 'music_natural_sign',
+        'sentiment_score': 0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f17e': {
+        'meaning': 'negative_squared_latin_capital_letter_o',
+        'sentiment_score': -0.125,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\U0001f504': {
+        'meaning': 'anticlockwise_downwards_and_upwards_open_circle_arrows',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2604': {
+        'meaning': 'comet',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        },
+    '\\u2628': {
+        'meaning': 'cross_of_lorraine',
+        'sentiment_score': 0.0,
+        'emoji_tkn': ':neutral:'
+        }
+    }
