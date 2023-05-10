@@ -7,16 +7,17 @@ from gensim.parsing.porter import PorterStemmer
 import emot
 import time
 
-from text_utils import PUNCTUATIONS, STOPWORDS, EMOTICONS, POS_EMOT, NEG_EMOT, POS_EMOJI, NEG_EMOJI
-from text_utils import SLANG, CONTRACTIONS
+from text_utils import PUNCTUATIONS, STOPWORDS, EMOTICONS, POS_EMOT, NEG_EMOT
+from text_utils import SLANG, CONTRACTIONS, STMT_EMOJI, ADDITIONAL_EMOJI
 
 def extract_hashtag(text:str)->List[str]:
-    """It extracts all the hashtags from the text and it collects all of them in a list
+    """It extracts all the hashtags from the text and it collects all of them in
+    a list.
 
     Parameters
     ----------
     text : str
-        Text to preprocess
+        Text to preprocess.
 
     Returns
     -------
@@ -66,11 +67,30 @@ def convert_emoticons(text:str)->str:
             text = re.sub(fr"((\b|^|\s){e})", tkn, text)
     return text
 
-def convert_emoji(text):
-    for e in POS_EMOJI:
-        text = re.sub(r'(' + e + ')', 'positive', text)
-    for e in NEG_EMOJI:
-        text = re.sub(r'(' + e + ')', 'negative', text)
+def convert_emoji(text:str)->str:
+    """Converts all the emojis in the input text into the corresponding token,
+    according to the emoji dictionaries. Token value can be `:positive:`,
+    `:neutral:` or `:negative:`.
+
+    Parameters
+    ----------
+    text : str
+        Input text in which to apply the conversion.
+
+    Returns
+    -------
+    str
+        If emojis were found in the text, the output will contain the
+        corresponding tokens instead of symbols. If instead nothing was found,
+        the output string matches the input one.
+    """
+    for k, v in STMT_EMOJI.items():
+        if re.search(f"{k}", text, flags=re.U):
+            text = re.sub(f"{k}", v["emoji_tkn"], text)
+
+    for k, v in ADDITIONAL_EMOJI.items():
+        if re.search(f"{k}", text, flags=re.U):
+            text = re.sub(f"{k}", v["emoji_tkn"], text)
     return text
 
 def remove_neutral_emoji(text):
@@ -115,7 +135,7 @@ def remove_punctuation(text:str, extra_punc:str = None, wanted_punc:str = None)-
     Parameters
     ----------
     text : str
-        _description_
+        Input text in which to apply the removal.
     extra_punc : str, optional
         _description_, by default None
     wanted_punc : str, optional
@@ -141,9 +161,9 @@ def remove_stopwords(text:str, s_w:set = STOPWORDS)->str:
     Parameters
     ----------
     text : str
-        _description_
+        Input text in which to apply the stopwords removal.
     s_w : set, optional
-        _description_, by default STOPWORDS
+        Set of the stopwords to remove, by default STOPWORDS
 
     Returns
     -------
@@ -163,7 +183,7 @@ def convert_slang(text:str)->str:
     Parameters
     ----------
     text : str
-        _description_
+        Input text in which to apply the conversion.
 
     Returns
     -------
@@ -179,8 +199,8 @@ def convert_slang(text:str)->str:
     return " ".join(new_text)
 
 def decontract_text(text:str)->str:
-  """
-  Decontract english contracted forms to the extended ones e.g. I'm -> I am
+  """ Decontract english contracted forms to the extended ones.
+  e.g. I'm -> I am
   """
   for c in CONTRACTIONS.keys():
     text = re.sub(c, CONTRACTIONS[c], text)
@@ -194,7 +214,7 @@ def stemming(text:str)->str:
     stemmer = PorterStemmer()
     return stemmer.stem_sentence(text)
 
-#########################
+##############################
 def clean_text(text:str)->str:
     # Remove URLs
     t = time.time()
@@ -205,6 +225,12 @@ def clean_text(text:str)->str:
     out_text = convert_emoticons(out_text)
     d2 = time.time() - t
     # Conversion emoji
+    t = time.time()
+    out_text = convert_emoji(out_text)
+    d10 = time.time() - t
+    t = time.time()
+    out_text = remove_neutral_emoji(out_text)
+    d11 = time.time() - t
     # Decontraction slangs
     t = time.time()
     out_text = convert_slang(out_text)
@@ -214,9 +240,9 @@ def clean_text(text:str)->str:
     out_text = lowercase(out_text)
     d4 = time.time() - t
     # Decontractions of short english form
-    #t = time.time()
+    t = time.time()
     out_text = decontract_text(out_text)
-    #d = time.time() - t
+    d9 = time.time() - t
     # Remove digits
     t = time.time()
     out_text = remove_digits(out_text)
@@ -233,7 +259,8 @@ def clean_text(text:str)->str:
     t = time.time()
     out_text = remove_whitespaces(out_text)
     d8 = time.time() - t
-    print(f"URLs:\t{d1}\n", f"Emoticons:\t{d2}\n", f"Slang:\t{d3}\n",
-          f"Lowercase:\t{d4}\n", f"Digits:\t{d5}\n", f"Stopwords:\t{d6}\n",
-          f"Punctuations:\t{d7}\n", f"Whitespaces:\t{d8}\n")
+    print(f"URLs:\t{d1}\n", f"Emoticons:\t{d2}\n", f"Emojis:\t{d10}\n",
+          f"Neutral Emojis:\t{d11}\n", f"Slang:\t{d3}\n", f"Lowercase:\t{d4}\n",
+          f"Digits:\t{d5}\n", f"Stopwords:\t{d6}\n", f"Punctuations:\t{d7}\n",
+          f"Whitespaces:\t{d8}\n")
     return out_text
