@@ -11,6 +11,10 @@ def remove_urls(text:str)->str:
     """ The URLs are removed from the input text. """
     return re.sub(r'http\S+', '', text)
 
+def remove_tags(text:str)->str:
+    """ The account tags are removed from the input text. """
+    return re.sub("(?<!\S)(@.*?)(?=\s)", "", text)
+
 def convert_emoticons(text:str)->str:
     """Converts all the emoticons present in the input text into the
     corresponding token. Token value can be `:positive:`, `:neutral:` or
@@ -182,6 +186,10 @@ def clean_text(text:str, verbose:bool=False)->str:
     t = time.time()
     out_text = remove_urls(text)
     d1 = time.time() - t
+    # Remove tweet tags
+    t = time.time()
+    out_text = remove_tags(out_text)
+    d12 = time.time() - t
     # Conversion emoticons
     t = time.time()
     out_text = convert_emoticons(out_text)
@@ -223,11 +231,12 @@ def clean_text(text:str, verbose:bool=False)->str:
     d8 = time.time() - t
 
     if verbose:
-        print(f"URLs:\t{d1}\n", f"Emoticons:\t{d2}\n", f"Emojis:\t{d10}\n",
-            f"Neutral Emojis:\t{d11}\n", f"Slang:\t{d3}\n",
-            f"Lowercase:\t{d4}\n", f"Decontractions:\t{d9}", f"Digits:\t{d5}\n",
-            f"Stopwords:\t{d6}\n", f"Punctuations:\t{d7}\n",
-            f"Whitespaces:\t{d8}\n")
+        print(f"URLs:\t{d1}\n", f"TAGs:\t{d1}\n", f"Emoticons:\t{d2}\n",
+              f"Emojis:\t{d10}\n", f"Neutral Emojis:\t{d11}\n",
+              f"Slang:\t{d3}\n", f"Lowercase:\t{d4}\n",
+              f"Decontractions:\t{d9}", f"Digits:\t{d5}\n",
+              f"Stopwords:\t{d6}\n", f"Punctuations:\t{d7}\n",
+              f"Whitespaces:\t{d8}\n")
 
     return out_text
 
