@@ -226,7 +226,7 @@ def clean_text(text:str, verbose:bool=False)->str:
     out_text = remove_punctuation(out_text)
     d7 = time.time() - t
     # Remove special substring
-    out_text = re.sub("\\u0089\\u00DB(\\u00D2|\\u00D3)", "", out_text, re.I)
+    out_text = re.sub("\\u0089\\u00FB(\\u00F2|\\u00F3)", "", out_text, re.I)
     # Remove whitespaces
     t = time.time()
     out_text = remove_whitespaces(out_text)
