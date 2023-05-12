@@ -16,7 +16,7 @@ def extract_hashtags(text:str)->List[str]:
     hashtag = re.findall(r"#(\w+)", text)
     if hashtag:
         #check if list is not empty
-        hashtag = [w.lower() for w in hashtag] #lower case
+        hashtag = [w.lower() for w in hashtag] #lowercase
     return hashtag
 
 def extract_tags(text:str)->List[str]:
@@ -211,16 +211,42 @@ def remove_whitespaces(text):
     """ The blank spaces are removed from the input text. """
     return " ".join(text.split())
 
-def clean_text(text:str, verbose:bool=False)->str:
+def clean_text(text:str, execution_time:bool=False, verbose:bool=False)->str:
+    """Function for processing and cleaning the input text that collects all the
+    defined functions.
+
+    Parameters
+    ----------
+    text : str
+        Input text to cleanup on.
+    execution_time : bool, optional
+        If you want to save the execution times of the individual steps, by
+        default False
+    verbose : bool, optional
+        If you want to view the execution times of the individual steps, by
+        default False
+
+    Returns
+    -------
+    str
+        If `execution_time=False`, it returns the text processed through the
+        various functions. Conversely, if `execution_time=True`, in addition to
+        the processed text, a dictionary is returned whose keys represent the
+        various steps performed and the respective times are the values.
+    """
+    exe_times = {}
+
     # Remove URLs
     t = time.time()
     out_text = remove_urls(text)
     d1 = time.time() - t
+    exe_times['urls'] = d1
 
     # Remove tweet tags
     t = time.time()
     out_text = remove_tags(out_text)
     d12 = time.time() - t
+    exe_times['tags'] = d12
 
     # Remove special substring
     out_text = convert_special_char(out_text)
@@ -229,6 +255,7 @@ def clean_text(text:str, verbose:bool=False)->str:
     t = time.time()
     out_text = convert_emoticons(out_text)
     d2 = time.time() - t
+    exe_times['emoticons'] = d2
     
     # Conversion emoji
     t = time.time()
@@ -237,41 +264,50 @@ def clean_text(text:str, verbose:bool=False)->str:
     t = time.time()
     out_text = remove_neutral_emoji(out_text)
     d11 = time.time() - t
+    exe_times['emojis'] = d10
+    exe_times['neutral_emojis'] = d11
 
     # Decontraction slangs
     t = time.time()
     out_text = convert_slang(out_text)
     d3 = time.time() - t
+    exe_times['slang'] = d3
 
     # Text to lowercase
     t = time.time()
     out_text = lowercase(out_text)
     d4 = time.time() - t
+    exe_times['lowercase'] = d4
 
     # Decontractions of short english form
     t = time.time()
     out_text = decontract_text(out_text)
     d9 = time.time() - t
+    exe_times['decontractions'] = d9
 
     # Remove digits
     t = time.time()
     out_text = remove_digits(out_text)
     d5 = time.time() - t
+    exe_times['digits'] = d5
 
     # Remove stopwords
     t = time.time()
     out_text = remove_stopwords(out_text)
     d6 = time.time() - t
+    exe_times['stopwords'] = d6
 
     # Remove punctuation
     t = time.time()
     out_text = remove_punctuation(out_text)
     d7 = time.time() - t
+    exe_times['punctuations'] = d7
 
     # Remove whitespaces
     t = time.time()
     out_text = remove_whitespaces(out_text)
     d8 = time.time() - t
+    exe_times['whitespaces'] = d8
 
     if verbose:
         print(f"URLs:\t{d1}\n", f"TAGs:\t{d12}\n", f"Emoticons:\t{d2}\n",
@@ -281,6 +317,8 @@ def clean_text(text:str, verbose:bool=False)->str:
               f"Stopwords:\t{d6}\n", f"Punctuations:\t{d7}\n",
               f"Whitespaces:\t{d8}\n")
 
+    if execution_time:
+        return out_text, exe_times
     return out_text
 
 ##############################
