@@ -39,9 +39,9 @@ def convert_special_char(text:str)->str:
     """ The function recognizes and eliminates special characters that are not
     recognized in the preprocessing phase. Among these subsets of characters
     there are for example substrings such as: `x89ûï` or `x89û x9`"""
-    out_text = re.sub("\\u0089\\u00FB\\u00AA", "'", text)
-    out_text = re.sub("(\\u00E5\\u00EA|\\u009D)", " ", out_text)
-    out_text = re.sub("\\u0089\\u00FB(\\u00F2|\\u00F3|\\u00A2|\\u00EF)?",
+    out_text = re.sub("\\u0089\\u00DB\\u00AA", "'", text)
+    out_text = re.sub("(\\u00E5\\u00CA|\\u009D)", " ", out_text)
+    out_text = re.sub("\\u0089\\u00FB(\\u00D2|\\u00D3|\\u00A2|\\u00CF)?",
                       "", out_text)
     return out_text
 
