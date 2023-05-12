@@ -41,7 +41,7 @@ def convert_special_char(text:str)->str:
     there are for example substrings such as: `x89ûï` or `x89û x9`"""
     out_text = re.sub("\\u0089\\u00DB\\u00AA", "'", text)
     out_text = re.sub("(\\u00E5\\u00CA|\\u009D)", " ", out_text)
-    out_text = re.sub("\\u0089\\u00FB(\\u00D2|\\u00D3|\\u00A2|\\u00CF)?",
+    out_text = re.sub("\\u0089\\u00FB(\\u00D2|\\u00D3|\\u00A2|\\u00CF|\\u005F)?",
                       "", out_text)
     return out_text
 
