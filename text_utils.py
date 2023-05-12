@@ -5,9 +5,6 @@ from nltk.corpus import stopwords
 import requests
 from bs4 import BeautifulSoup
 
-import emot
-from emot.emo_unicode import EMOTICONS_EMO
-
 nltk.download('stopwords')
 
 PUNCTUATIONS = string.punctuation
