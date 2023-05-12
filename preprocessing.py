@@ -7,6 +7,9 @@ import time
 from text_utils import PUNCTUATIONS, STOPWORDS, EMOTICONS, POS_EMOT, NEG_EMOT
 from text_utils import SLANG, CONTRACTIONS, STMT_EMOJI, ADDITIONAL_EMOJI
 
+# ======================================
+# Extraction of metadata from tweet text
+# ======================================
 def extract_hashtags(text:str)->List[str]:
     """It extracts all the hashtags from the text and it collects all of them in
     a list. It returns a list of lowercase hashtags without the `#`. """
@@ -21,6 +24,9 @@ def extract_tags(text:str)->List[str]:
     in a list. It returns a list of tags without the `@`. """
     return re.findall(r"@(\w+)", text)
 
+# ===================================
+# Tweets text processing and cleaning
+# ===================================
 def remove_urls(text:str)->str:
     """ The URLs are removed from the input text. """
     return re.sub(r'http\S+', '', text)
@@ -28,6 +34,16 @@ def remove_urls(text:str)->str:
 def remove_tags(text:str)->str:
     """ The account tags are removed from the input text. """
     return re.sub("(?<!\S)(@.*?)(?=\s)", "", text)
+
+def convert_special_char(text:str)->str:
+    """ The function recognizes and eliminates special characters that are not
+    recognized in the preprocessing phase. Among these subsets of characters
+    there are for example substrings such as: `\x89ûï` or `\x89û\x9`"""
+    out_text = re.sub("\\u0089\\u00FB\\u00AA", "'", text)
+    out_text = re.sub("(\\u00E5\\u00EA|\\u009D)", " ", out_text)
+    out_text = re.sub("\\u0089\\u00FB(\\u00F2|\\u00F3|\\u00A2|\\u00EF)?",
+                      "", out_text)
+    return out_text
 
 def convert_emoticons(text:str)->str:
     """Converts all the emoticons present in the input text into the
@@ -200,14 +216,20 @@ def clean_text(text:str, verbose:bool=False)->str:
     t = time.time()
     out_text = remove_urls(text)
     d1 = time.time() - t
+
     # Remove tweet tags
     t = time.time()
     out_text = remove_tags(out_text)
     d12 = time.time() - t
+
+    # Remove special substring
+    out_text = convert_special_char(out_text)
+
     # Conversion emoticons
     t = time.time()
     out_text = convert_emoticons(out_text)
     d2 = time.time() - t
+    
     # Conversion emoji
     t = time.time()
     out_text = convert_emoji(out_text)
@@ -215,39 +237,44 @@ def clean_text(text:str, verbose:bool=False)->str:
     t = time.time()
     out_text = remove_neutral_emoji(out_text)
     d11 = time.time() - t
+
     # Decontraction slangs
     t = time.time()
     out_text = convert_slang(out_text)
     d3 = time.time() - t
+
     # Text to lowercase
     t = time.time()
     out_text = lowercase(out_text)
     d4 = time.time() - t
+
     # Decontractions of short english form
     t = time.time()
     out_text = decontract_text(out_text)
     d9 = time.time() - t
+
     # Remove digits
     t = time.time()
     out_text = remove_digits(out_text)
     d5 = time.time() - t
+
     # Remove stopwords
     t = time.time()
     out_text = remove_stopwords(out_text)
     d6 = time.time() - t
+
     # Remove punctuation
     t = time.time()
     out_text = remove_punctuation(out_text)
     d7 = time.time() - t
-    # Remove special substring
-    out_text = re.sub("\\u0089\\u00FB(\\u00F2|\\u00F3|\\u00AA|\\u00A2|\\u00EF)", "", out_text, re.I)
+
     # Remove whitespaces
     t = time.time()
     out_text = remove_whitespaces(out_text)
     d8 = time.time() - t
 
     if verbose:
-        print(f"URLs:\t{d1}\n", f"TAGs:\t{d1}\n", f"Emoticons:\t{d2}\n",
+        print(f"URLs:\t{d1}\n", f"TAGs:\t{d12}\n", f"Emoticons:\t{d2}\n",
               f"Emojis:\t{d10}\n", f"Neutral Emojis:\t{d11}\n",
               f"Slang:\t{d3}\n", f"Lowercase:\t{d4}\n",
               f"Decontractions:\t{d9}", f"Digits:\t{d5}\n",
