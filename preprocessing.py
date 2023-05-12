@@ -44,6 +44,7 @@ def convert_special_char(text:str)->str:
     out_text = re.sub("\\u0089\\u00DB(\\u00D2|\\u00D3|\\u00A2|\\u00CF|\\u005F)?",
                       "", out_text)
     out_text = re.sub("\\u0089\\u00E3\\u00A2", "", out_text)
+    out_text = re.sub("\\u0089\\u00E2\\u00C2", "", out_text)
     return out_text
 
 def convert_emoticons(text:str)->str:
