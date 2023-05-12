@@ -7,6 +7,20 @@ import time
 from text_utils import PUNCTUATIONS, STOPWORDS, EMOTICONS, POS_EMOT, NEG_EMOT
 from text_utils import SLANG, CONTRACTIONS, STMT_EMOJI, ADDITIONAL_EMOJI
 
+def extract_hashtags(text:str)->List[str]:
+    """It extracts all the hashtags from the text and it collects all of them in
+    a list. It returns a list of lowercase hashtags without the `#`. """
+    hashtag = re.findall(r"#(\w+)", text)
+    if hashtag:
+        #check if list is not empty
+        hashtag = [w.lower() for w in hashtag] #lower case
+    return hashtag
+
+def extract_tags(text:str)->List[str]:
+    """ It extracts all the account tags from text and it collects all of them
+    in a list. It returns a list of tags without the `@`. """
+    return re.findall(r"@(\w+)", text)
+
 def remove_urls(text:str)->str:
     """ The URLs are removed from the input text. """
     return re.sub(r'http\S+', '', text)
@@ -226,7 +240,7 @@ def clean_text(text:str, verbose:bool=False)->str:
     out_text = remove_punctuation(out_text)
     d7 = time.time() - t
     # Remove special substring
-    out_text = re.sub("\\u0089\\u00FB(\\u00F2|\\u00F3|\\u00AA)", "", out_text, re.I)
+    out_text = re.sub("\\u0089\\u00FB(\\u00F2|\\u00F3|\\u00AA|\\u00A2|\\u00EF)", "", out_text, re.I)
     # Remove whitespaces
     t = time.time()
     out_text = remove_whitespaces(out_text)
@@ -252,23 +266,3 @@ def lemmatization(text:str)->str:
 def stemming(text:str)->str:
     stemmer = PorterStemmer()
     return stemmer.stem_sentence(text)
-
-def extract_hashtag(text:str)->List[str]:
-    """It extracts all the hashtags from the text and it collects all of them in
-    a list.
-
-    Parameters
-    ----------
-    text : str
-        Text to preprocess.
-
-    Returns
-    -------
-    List[str]
-        List of hashtag without the '#'
-    """
-    hashtag = re.findall(r"#(\w+)", text)
-    if hashtag:
-        #check if list is not empty
-        hashtag = [w.lower() for w in hashtag] #lower case
-    return hashtag
