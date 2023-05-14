@@ -2,43 +2,124 @@ import numpy as np
 import pandas as pd
 import gensim
 from scipy.spatial.distance import euclidean
+from sklearn.model_selection import train_test_split
+from keras.preprocessing.text import Tokenizer
+from tensorflow.python.keras.utils import pad_sequences
 
-def load_glove(path:str)->dict:
-    """ Loads Glove word embeddings in memory from the file stored in `path`. """
-    embeddings_dict={}
-    with open(path,'rb') as f:
-        for line in f:
-            values = line.split()
-            word = values[0]
-            vector = np.asarray(values[1:], "float32")
-            embeddings_dict[word] = vector
-    return embeddings_dict
+class GloVe(object):
 
-def find_closest_embeddings(tgt_embedding:np.ndarray,
-                            embeddings_dict:dict,
-                            n_words:int=5)->list:
-    """Generates an ordered list of the `n_words` words in `embeddings_dict`
-    most similar to the target word `tgt_embedding` given as input.
+    MAX_SEQUENCE_LENGTH = 20
 
-    Parameters
-    ----------
-    tgt_embedding : np.ndarray
-        Target word from which to find the most similar words
-    embeddings_dict : dict
-        Dictionary of all vocabulary embeddings
-    n_words : int, optional
-        Desired number of similar words to be returned, by default 5
+    def __init__(self, path:str) -> None:
+        self.__glove_embeddings = self.__load_glove__(path)
+        self.EMBEDDING_DIM = self.__glove_embeddings.get(b'Z').shape[0]
 
-    Returns
-    -------
-    list
-        It collects the `n_words` words most similar to the target word, ordered
-        by their Euclidean distance from `tgt_embedding`.
-    """
-    sorted_embeddings = sorted(embeddings_dict.keys(),
-                               key=lambda word: euclidean(embeddings_dict[word],
-                                                          tgt_embedding))
-    return sorted_embeddings[:n_words]
+    def __load_glove__(path:str)->dict:
+        """ Loads Glove word embeddings in memory from the file stored in
+        `path`. """
+        embeddings_dict={}
+        with open(path,'rb') as f:
+            for line in f:
+                values = line.split()
+                word = values[0]
+                vector = np.asarray(values[1:], "float32")
+                embeddings_dict[word] = vector
+        return embeddings_dict
+
+    def find_closest_embeddings(self,
+                                tgt_embedding:np.ndarray,
+                                n_words:int=5)->list:
+        """Generates an ordered list of the `n_words` words in the embeddings
+        dictionary most similar to the target word `tgt_embedding` given as
+        input.
+
+        Parameters
+        ----------
+        tgt_embedding : np.ndarray
+            Target word from which to find the most similar words
+        n_words : int, optional
+            Desired number of similar words to be returned, by default 5
+
+        Returns
+        -------
+        list
+            It collects the `n_words` words most similar to the target word,
+            ordered by their Euclidean distance from `tgt_embedding`.
+        """
+        sorted_embeddings = sorted(self.__glove_embeddings.keys(),
+                                   key=lambda word:
+                                   euclidean(self.__glove_embeddings[word],
+                                             tgt_embedding))
+        return sorted_embeddings[:n_words]
+    
+    def __create_matrix__(self)->np.ndarray:
+        """Starting from the stored vocabulary, it defines and populates the 
+        embedding matrix where each entry corresponds to a vocabulary token.
+
+        Returns
+        -------
+        np.ndarray
+            The embedding matrix has shape `(vocabulary length, embedding
+            length)`, where the embedding vector length corresponds to the value
+            stored in `self.EMBEDDING_DIM`. 
+        """
+        num_words = len(self.vocabulary) + 1
+        matrix = np.zeros((num_words, self.EMBEDDING_DIM))
+        for i, word in self.vocabulary.items():
+            matrix[i] = self.__glove_embeddings.get(
+                word.encode("utf-8"),
+                np.zeros(self.EMBEDDING_DIM))
+        return matrix
+
+    def prepare_data(self,
+                     x:pd.Series,
+                     y:pd.Series,
+                     split_size:float=0.3,
+                     rnd_state:bool=True):
+
+        data = {}
+        if rnd_state:
+            rs = 42
+        else:
+            rs=None
+
+        # Splitting input data
+        (X_train, X_test,
+         y_train, y_test) = train_test_split(x, y,
+                                             test_size=split_size,
+                                             random_state=rs)
+
+        data['x_train'] = X_train
+        data['x_test'] = X_test
+        data['y_train'] = y_train
+        data['y_test'] = y_test
+        
+        # Data tokenization
+        tokenizer = Tokenizer()
+        tokenizer.fit_on_texts(pd.concat([X_train, X_test]))
+
+        # Vectorizing data to keep `MAX_SEQUENCE_LENGTH` words per sample
+        X_train_vect = pad_sequences(tokenizer.texts_to_sequences(X_train),
+                                     maxlen = self.MAX_SEQUENCE_LENGTH,
+                                     padding = "post",
+                                     truncating = "post",
+                                     value = 0.)
+        X_test_vect = pad_sequences(tokenizer.texts_to_sequences(X_test),
+                                    maxlen = self.MAX_SEQUENCE_LENGTH,
+                                    padding = "post",
+                                    truncating = "post",
+                                    value = 0.)
+        
+        data['embed_x_train'] = X_train_vect
+        data['embed_x_test'] = X_test_vect
+        self.data = data
+
+        # Vocabulary
+        index_word = tokenizer.index_word
+        self.vocabulary = index_word
+        
+        embedding_matrix = self.__create_matrix__()
+        self.embedding_matrix = embedding_matrix
 
 ################################################################################
 # Word2Vec
