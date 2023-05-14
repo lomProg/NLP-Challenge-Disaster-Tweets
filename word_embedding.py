@@ -4,7 +4,7 @@ import gensim
 from scipy.spatial.distance import euclidean
 from sklearn.model_selection import train_test_split
 from keras.preprocessing.text import Tokenizer
-from tensorflow.python.keras.utils import pad_sequences
+from tensorflow.keras.utils import pad_sequences
 
 class GloVe(object):
 
