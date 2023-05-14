@@ -14,6 +14,7 @@ class GloVe(object):
         self.__glove_embeddings = self.__load_glove__(path)
         self.EMBEDDING_DIM = self.__glove_embeddings.get(b'Z').shape[0]
 
+    @staticmethod
     def __load_glove__(path:str)->dict:
         """ Loads Glove word embeddings in memory from the file stored in
         `path`. """
