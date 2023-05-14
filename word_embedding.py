@@ -12,7 +12,7 @@ class GloVe(object):
 
     def __init__(self, path:str) -> None:
         self.__glove_embeddings = self.__load_glove__(path)
-        self.EMBEDDING_DIM = self.__glove_embeddings.get(b'Z').shape[0]
+        self.EMBEDDING_DIM = self.__glove_embeddings.get(b'a').shape[0]
 
     @staticmethod
     def __load_glove__(path:str)->dict:
