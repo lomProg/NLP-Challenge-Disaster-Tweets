@@ -18,13 +18,13 @@ class DataGenerator(object):
 
         train_sz = None
         if any(re.search("test_size", k) for k in kwargs.keys()):
-            test_sz = kwargs["test_size"]
+            test_sz = kwargs.pop("test_size")
         elif any(re.search("train_size", k) for k in kwargs.keys()):
-            train_sz = kwargs["train_size"]
+            train_sz = kwargs.pop("train_size")
             test_sz = 1.0 - train_sz
         else:
             test_sz = 0.3
-        rnd_st = kwargs.get("random_state", None)
+        rnd_st = kwargs.pop("random_state", None)
 
         # Splitting input data
         (X_train, X_test,
