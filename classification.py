@@ -69,6 +69,10 @@ class DataGenerator(object):
                 value = 0.)
         self.data = data
 
+        # Vocabulary
+        index_word = tokenizer.index_word
+        self.vocabulary = index_word
+
 def split_train_test(data, test_size = 0.3, shuffle = True):
     X_train, X_test, Y_train, Y_test = train_test_split(data[['cleaned_text',
                                                               'lemmatized_text',
