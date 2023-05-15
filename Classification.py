@@ -47,10 +47,13 @@ class DataGenerator(object):
     
     def tokenize_data(self, *args, max_sequence_length:int=50) -> None:
 
-        if not hasattr(self, "data"):
+        if not args and not hasattr(self, "data"):
+            raise AttributeError("No text to tokenize")
+        elif not hasattr(self, "data"):
             data = {}
         else:
             data = self.data
+            args = (data["x_train"], data["x_test"])
 
         # Data tokenization
         tokenizer = Tokenizer()
