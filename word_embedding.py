@@ -16,8 +16,8 @@ class GloVe(object):
 
     @staticmethod
     def __load_glove__(path:str)->dict:
-        """ Loads Glove word embeddings in memory from the file stored in
-        `path`. """
+        """ Loads Glove word embeddings in memory from the file stored
+        in `path`. """
         embeddings_dict={}
         with open(path,'rb') as f:
             for line in f:
@@ -30,9 +30,9 @@ class GloVe(object):
     def find_closest_embeddings(self,
                                 tgt_embedding:np.ndarray,
                                 n_words:int=5)->list:
-        """Generates an ordered list of the `n_words` words in the embeddings
-        dictionary most similar to the target word `tgt_embedding` given as
-        input.
+        """Generates an ordered list of the `n_words` words in the
+        embeddings dictionary most similar to the target word
+        `tgt_embedding` given as input.
 
         Parameters
         ----------
@@ -44,8 +44,9 @@ class GloVe(object):
         Returns
         -------
         list
-            It collects the `n_words` words most similar to the target word,
-            ordered by their Euclidean distance from `tgt_embedding`.
+            It collects the `n_words` words most similar to the target
+            word, ordered by their Euclidean distance from
+            `tgt_embedding`.
         """
         sorted_embeddings = sorted(self.__glove_embeddings.keys(),
                                    key=lambda word:
@@ -54,15 +55,16 @@ class GloVe(object):
         return sorted_embeddings[:n_words]
     
     def __create_matrix__(self)->np.ndarray:
-        """Starting from the stored vocabulary, it defines and populates the 
-        embedding matrix where each entry corresponds to a vocabulary token.
+        """Starting from the stored vocabulary, it defines and populates
+        the embedding matrix where each entry corresponds to a
+        vocabulary token.
 
         Returns
         -------
         np.ndarray
-            The embedding matrix has shape `(vocabulary length, embedding
-            length)`, where the embedding vector length corresponds to the value
-            stored in `self.EMBEDDING_DIM`. 
+            The embedding matrix has shape `(vocabulary length,
+            embedding length)`, where the embedding vector length
+            corresponds to the value stored in `self.EMBEDDING_DIM`. 
         """
         num_words = len(self.vocabulary) + 1
         matrix = np.zeros((num_words, self.EMBEDDING_DIM))

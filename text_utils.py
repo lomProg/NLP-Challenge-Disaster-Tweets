@@ -163,10 +163,11 @@ NEG_EMOT = [
 
 EMOJI_URL = "https://kt.ijs.si/data/Emoji_sentiment_ranking/"
 def scrape_emojis(url:str=EMOJI_URL)->dict:
-    """Through scraping from site [1], site related to the article [2], it
-    extracts from the emoji sentiment ranking: the relative unicode code, the
-    name associated with the emoji and the sentiment values. Each emoji is also
-    assigned a token tag relating to its value based on the formula [1].
+    """Through scraping from site [1], site related to the article [2],
+    it extracts from the emoji sentiment ranking: the relative unicode
+    code, the name associated with the emoji and the sentiment values.
+    Each emoji is also assigned a token tag relating to its value based
+    on the formula [1].
 
     Parameters
     ----------
@@ -185,8 +186,8 @@ def scrape_emojis(url:str=EMOJI_URL)->dict:
     References
     ----------
     .. [1] https://kt.ijs.si/data/Emoji_sentiment_ranking/
-    .. [2] Kralj Novak P., Smailović J., Sluban B., Mozetič I. (2015) "Sentiment
-       of Emojis". PLOS ONE 10(12): e0144296.
+    .. [2] Kralj Novak P., Smailović J., Sluban B., Mozetič I. (2015)
+       "Sentiment of Emojis". PLOS ONE 10(12): e0144296.
        https://doi.org/10.1371/journal.pone.0144296
     """
     page = requests.get(url, timeout = 15)

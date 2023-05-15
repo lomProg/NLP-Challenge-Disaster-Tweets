@@ -11,8 +11,9 @@ from text_utils import SLANG, CONTRACTIONS, STMT_EMOJI, ADDITIONAL_EMOJI
 # Extraction of metadata from tweet text
 # ======================================
 def extract_hashtags(text:str)->List[str]:
-    """It extracts all the hashtags from the text and it collects all of them in
-    a list. It returns a list of lowercase hashtags without the `#`. """
+    """ It extracts all the hashtags from the text and it collects all
+    of them in a list. It returns a list of lowercase hashtags without
+    the `#`. """
     hashtag = re.findall(r"#(\w+)", text)
     if hashtag:
         #check if list is not empty
@@ -20,8 +21,8 @@ def extract_hashtags(text:str)->List[str]:
     return hashtag
 
 def extract_tags(text:str)->List[str]:
-    """ It extracts all the account tags from text and it collects all of them
-    in a list. It returns a list of tags without the `@`. """
+    """ It extracts all the account tags from text and it collects all
+    of them in a list. It returns a list of tags without the `@`. """
     return re.findall(r"@(\w+)", text)
 
 # ===================================
@@ -36,9 +37,10 @@ def remove_tags(text:str)->str:
     return re.sub("(?<!\S)(@.*?)(?=\s)", "", text)
 
 def convert_special_char(text:str)->str:
-    """ The function recognizes and eliminates special characters that are not
-    recognized in the preprocessing phase. Among these subsets of characters
-    there are for example substrings such as: `x89ûï` or `x89û x9`"""
+    """ The function recognizes and eliminates special characters that
+    are not recognized in the preprocessing phase. Among these subsets
+    of characters there are for example substrings such as: `x89ûï` or
+    `x89û x9`"""
     out_text = re.sub("\\u0089\\u00DB\\u00AA", "'", text)
     out_text = re.sub("(\\u00E5\\u00CA|\\u009D)", " ", out_text)
     out_text = re.sub("\\u0089\\u00DB(\\u00D2|\\u00D3|\\u00A2|\\u00CF|\\u005F)?",
@@ -61,8 +63,8 @@ def convert_emoticons(text:str)->str:
     -------
     str
         If emoticons were found in the text, the output will contain the
-        corresponding tokens instead of symbols. If instead nothing was found,
-        the output string matches the input one.
+        corresponding tokens instead of symbols. If instead nothing was
+        found, the output string matches the input one.
     """
     for e,m in list(EMOTICONS.items()):
         if re.search(fr"((\b|^|\s){e})", text):
@@ -76,9 +78,9 @@ def convert_emoticons(text:str)->str:
     return text
 
 def convert_emoji(text:str)->str:
-    """Converts all the emojis in the input text into the corresponding token,
-    according to the emoji dictionaries. Token value can be `:positive:`,
-    `:neutral:` or `:negative:`.
+    """Converts all the emojis in the input text into the corresponding
+    token, according to the emoji dictionaries. Token value can be
+    `:positive:`, `:neutral:` or `:negative:`.
 
     Parameters
     ----------
@@ -89,8 +91,8 @@ def convert_emoji(text:str)->str:
     -------
     str
         If emojis were found in the text, the output will contain the
-        corresponding tokens instead of symbols. If instead nothing was found,
-        the output string matches the input one.
+        corresponding tokens instead of symbols. If instead nothing was
+        found, the output string matches the input one.
     """
     for k, v in STMT_EMOJI.items():
         if re.search(f"{k}", text, flags=re.U):
@@ -183,8 +185,8 @@ def remove_stopwords(text:str, s_w:set = STOPWORDS)->str:
 def remove_punctuation(text:str,
                        extra_punc:str = None,
                        wanted_punc:str = None)->str:
-    """It removes punctuations marks from input text, adding an additional
-    set of symbols if specified.
+    """It removes punctuations marks from input text, adding an
+    additional set of symbols if specified.
 
     Parameters
     ----------
@@ -214,27 +216,28 @@ def remove_whitespaces(text):
     return " ".join(text.split())
 
 def clean_text(text:str, execution_time:bool=False, verbose:bool=False)->str:
-    """Function for processing and cleaning the input text that collects all the
-    defined functions.
+    """Function for processing and cleaning the input text that collects
+    all the defined functions.
 
     Parameters
     ----------
     text : str
         Input text to cleanup on.
     execution_time : bool, optional
-        If you want to save the execution times of the individual steps, by
-        default False
+        If you want to save the execution times of the individual steps,
+        by default False
     verbose : bool, optional
-        If you want to view the execution times of the individual steps, by
-        default False
+        If you want to view the execution times of the individual steps,
+        by default False
 
     Returns
     -------
     str
-        If `execution_time=False`, it returns the text processed through the
-        various functions. Conversely, if `execution_time=True`, in addition to
-        the processed text, a dictionary is returned whose keys represent the
-        various steps performed and the respective times are the values.
+        If `execution_time=False`, it returns the text processed through
+        the various functions. Conversely, if `execution_time=True`, in
+        addition to the processed text, a dictionary is returned whose
+        keys represent the various steps performed and the respective
+        times are the values.
     """
     exe_times = {}
 
