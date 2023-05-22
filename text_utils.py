@@ -11,6 +11,37 @@ PUNCTUATIONS = string.punctuation
 
 STOPWORDS = set(stopwords.words('english'))
 
+SPECIAL_CHARS = [
+    '\\u005F', # LOW LINE: `_`
+    '\\u0089', # CHARACTER TABULATION WITH JUSTIFICATION
+    '\\u009D', # OPERATING SYSTEM COMMAND
+    '\\u00A1', # INVERTED EXCLAMATION MARK: `¡`
+    '\\u00A2', # CENT SIGN: `¢`
+    '\\u00A3', # POUND SIGN: `£`
+    '\\u00A4', # CURRENCY SIGN: `¤`
+    '\\u00A8', # DIAERESIS: `¨`
+    '\\u00AA', # FEMININE ORDINAL INDICATOR: `ª`
+    '\\u00AB', # LEFT-POINTING DOUBLE ANGLE QUOTATION MARK: `«`
+    '\\u00AC', # NOT SIGN: `¬`
+    '\\u00B4', # ACUTE ACCENT: `´`
+    '\\u00BC', # VULGAR FRACTION ONE QUARTER: `¼`
+    '\\u00C2', # LATIN CAPITAL LETTER A WITH CIRCUMFLEX: `Â`
+    '\\u00CA', # LATIN CAPITAL LETTER E WITH CIRCUMFLEX: `Ê`
+    '\\u00CF', # LATIN CAPITAL LETTER I WITH DIAERESIS: `Ï`
+    '\\u00D2', # LATIN CAPITAL LETTER O WITH GRAVE: `Ò`
+    '\\u00D3', # LATIN CAPITAL LETTER O WITH ACUTE: `Ó`
+    '\\u00DB', # LATIN CAPITAL LETTER U WITH CIRCUMFLEX: `Û`
+    '\\u00E2', # LATIN SMALL LETTER A WITH CIRCUMFLEX: `â`
+    '\\u00E3', # LATIN SMALL LETTER A WITH TILDE: `ã`
+    '\\u00E5', # LATIN SMALL LETTER A WITH RING ABOVE: `å`
+    '\\u00E7', # LATIN SMALL LETTER C WITH CEDILLA: `ç`
+    '\\u00E8', # LATIN SMALL LETTER E WITH GRAVE: `è`
+    '\\u00EC', # LATIN SMALL LETTER I WITH GRAVE: `ì`
+    '\\u00F1', # LATIN SMALL LETTER N WITH TILDE: `ñ`
+    '\\u00F7', # DIVISION SIGN: `÷`
+    '\\u00FC'  # LATIN SMALL LETTER U WITH DIAERESIS: `ü`
+    ]
+
 EMOTICONS = {
     ":(-|‑)?(\)+|\])":"Happy face or very happy face or smiley",
     ":(-|‑)?(3|>)":"Happy face smiley",
