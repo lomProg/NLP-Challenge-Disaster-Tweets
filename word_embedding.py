@@ -6,6 +6,15 @@ from scipy.spatial.distance import euclidean
 
 from classification import DataGenerator as dg
 
+class WordEmbedding(object):
+
+
+    def __init__(self,
+                 model_name:str="model",
+                 model_path:str=None) -> None:
+        self.path = model_path
+        self.name = model_name
+
 class GloVe(object):
 
     MAX_SEQUENCE_LENGTH = 20
@@ -15,7 +24,7 @@ class GloVe(object):
         self.EMBEDDING_DIM = self.__glove_embeddings.get(b'a').shape[0]
 
     @staticmethod
-    def __load_glove__(path:str)->dict:
+    def __load_glove__(path:str) -> dict:
         """ Loads Glove word embeddings in memory from the file stored
         in `path`. """
         embeddings_dict={}
@@ -29,7 +38,7 @@ class GloVe(object):
 
     def find_closest_embeddings(self,
                                 tgt_embedding:np.ndarray,
-                                n_words:int=5)->list:
+                                n_words:int=5) -> list:
         """Generates an ordered list of the `n_words` words in the
         embeddings dictionary most similar to the target word
         `tgt_embedding` given as input.
@@ -77,7 +86,7 @@ class GloVe(object):
     def prepare_data(self,
                      x:pd.Series,
                      y:pd.Series,
-                     **kwargs):
+                     **kwargs) -> None:
 
         gen = dg()
         # Splitting input data
