@@ -195,3 +195,4 @@ class W2V(object):
                     line1 = ",".join([str(0) for i in range(vector_size)])
                 word2vec_file.write(line1)
                 word2vec_file.write('\n')
+                
