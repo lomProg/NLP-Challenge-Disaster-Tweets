@@ -4,6 +4,9 @@ import pandas as pd
 from gensim.models import Word2Vec
 from scipy.spatial.distance import euclidean
 
+import inspect
+from sklearn.model_selection import train_test_split
+
 from classification import DataGenerator as dg
 
 class WordEmbedding:
@@ -45,7 +48,7 @@ class GloVe(WordEmbedding):
                 embeddings_dict[word] = vector
         return embeddings_dict
 
-    def __create_matrix__(self)->np.ndarray:
+    def __create_matrix__(self) -> np.ndarray:
         """Starting from the stored vocabulary, it defines and populates
         the embedding matrix where each entry corresponds to a
         vocabulary token.
@@ -117,15 +120,16 @@ class W2V(WordEmbedding):
 
     # Constructor
     def __init__(self,
-                 model_name:str) -> None:
-        super().__init__(model_name)
+                 model_name:str,
+                 model_path:str=None) -> None:
+        super().__init__(model_name, model_path)
 
-    @property
-    def model(self):
-        return self._model
-    @model.setter
-    def model(self, w2v_model):
-        self._model = w2v_model
+    # @property
+    # def model(self):
+    #     return self._model
+    # @model.setter
+    # def model(self, w2v_model):
+    #     self._model = w2v_model
 
     @classmethod
     def load_model(cls,
@@ -136,15 +140,14 @@ class W2V(WordEmbedding):
         w2v_obj.model = Word2Vec.load(w2v_obj.path)
         return w2v_obj
 
-    def build_model(self, #chiamata a me stesso
+    def build_model(self,
                     x:pd.Series,
                     y:pd.Series,
-                    #feature:str,
-                    model_path:str,
-                    #model_name:str,
+                    # model_path:str,
                     vector_size:int=200,
-                    window:int=2,            
+                    # window:int=2,
                     save_model = True,
+                    dst_model_path=None,
                     **kwargs) -> None:
         """ It builds, trains and saves a Word2vec model based on the
         parameter in input.
@@ -162,40 +165,65 @@ class W2V(WordEmbedding):
         model_path : str        
             Path where to save the model
         """
+        self.EMBEDDING_DIM = vector_size
+
+        splitting_args = list(inspect.signature(train_test_split).parameters)
+        splitting_dict = {k: kwargs.pop(k)
+                          for k in dict(kwargs) if k in splitting_args}
         gen = dg()
         # Splitting input data
-        gen.split_data(x, y, **kwargs)
+        gen.split_data(x, y, **splitting_dict)
         self.data = gen.data
 
+        # Get the X train generated via DataGenerator object
         data = gen.data['x_train']
 
+        w2v_args = list(inspect.signature(Word2Vec).parameters)
+        w2v_args = list(filter(lambda x: x not in ["min_alpha", "vector_size"],
+                               w2v_args))
+        w2v_dict = {k: kwargs.pop(k) for k in dict(kwargs) if k in w2v_args}
         model_w2v = Word2Vec(
             data,
-            vector_size = vector_size,
-            window = window,
-            min_count = 3, # Ignores all words with total frequency lower than 3                               
-            sg = 0, # 1 for skip-gram model, 0 for CBOW model
-            hs = 0,
-            seed = 34,
-            min_alpha = 0.05
-        ) 
+            vector_size = self.EMBEDDING_DIM,
+            min_alpha = 0.05,
+            **w2v_dict
+            )
+        # model_w2v = Word2Vec(
+        #     data,
+        #     vector_size = self.EMBEDDING_DIM,
+        #     window = window,
+        #     min_count = 3, # Ignores all words with total frequency lower than 3
+        #     sg = 0, # 1 for skip-gram model, 0 for CBOW model
+        #     hs = 0,
+        #     seed = 34,
+        #     min_alpha = 0.05
+        # )
 
-        model_w2v.train(data, total_examples = len(data), epochs = 25)
+        model_w2v.train(data, total_examples=len(data), epochs=25)
         self.model = model_w2v
 
         words = list(model_w2v.wv.index_to_key)
         self.vocabulary = words
-        print('Number of words in the vocabulary:')
-        print(len(words))
+        print(f'Number of words in the vocabulary:\t{len(words)}')
 
-    def write_w2v_csv(
-            self,
-            data:pd.DataFrame,
-            model, path:str,
-            feature:str,
-            vector_size:int=200):
-        """ It creates and saves a pd.DataFrame() containing the embedding
-        vector of each tokenized document present in the Dataframe in input.
+        # Saving model
+        if save_model:
+            if hasattr(self, "path") or dst_model_path:
+                word2vec_model_path = self.path + self.name + '.model'
+                model_w2v.save(word2vec_model_path)
+                print("The word2vec model has been trained and saved")
+            else:
+                err_msg = "No destination path in which to save the model"
+                raise AttributeError(err_msg)
+
+    def vectorization(self,
+                      data,
+                      save_dataframe:bool=True,
+                      dst_df_path:str="./",
+                      dst_df_name:str="embedding_data") -> pd.Series:
+        """ It creates and saves a pd.DataFrame() containing the
+        embedding vector of each tokenized document present in the
+        Dataframe in input.
 
         Parameters
         ----------
@@ -211,24 +239,18 @@ class W2V(WordEmbedding):
         vector_size : int, optional
             Number of columns of the embedding dataset, by default 200
         """
-    # Store the vectors for data in .csv file saved in a specific path
-        words = self.vocabulary
+        vectors = []
+        for index, row in data.iterrows():
+            vec = (np.mean([self.model.wv[token]
+                            if token in self.vocabulary
+                            else np.array([0]*self.EMBEDDING_DIM)
+                            for token in row['tokenized_text']], axis = 0))
+            vectors.append(vec)
 
-        with open(path, 'w+') as word2vec_file:
-            for index, row in data.iterrows():
-                # Text embedding computed as the mean of the embedding
-                # vector of each word in the document
-                model_vector = (np.mean([model.wv[token] for token in row[feature] if token in words],
-                                        axis=0)).tolist()
-                if index == 0:
-                    header = ",".join(str(ele) for ele in range(vector_size))
-                    word2vec_file.write(header)
-                    word2vec_file.write("\n")
-                # Check if the line exists else it is vector of zeros
-                if type(model_vector) is list:  
-                    line1 = ",".join( [str(vector_element) for vector_element in model_vector] )
-                else:
-                    line1 = ",".join([str(0) for i in range(vector_size)])
-                word2vec_file.write(line1)
-                word2vec_file.write('\n')
+        if save_dataframe:
+            df = pd.DataFrame({'vector':pd.Series(vectors)})
+            df_path = dst_df_path + dst_df_name + '.csv'
+            df.to_csv(df_path, header = True, index = False)
+
+        return pd.Series(vectors)
                 
