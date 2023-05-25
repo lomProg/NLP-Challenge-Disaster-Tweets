@@ -6,35 +6,64 @@ from scipy.spatial.distance import euclidean
 
 from classification import DataGenerator as dg
 
-class WordEmbedding(object):
+class WordEmbedding:
 
 
     def __init__(self,
-                 model_name:str="model",
+                 model_name:str,
                  model_path:str=None) -> None:
-        self.path = model_path
         self.name = model_name
+        self.path = model_path
 
-class GloVe(object):
+    def __str__(self):
+        if self.path:
+            return f"Model {self.name} stored at {self.path}"
+        else:
+            return f"Model {self.name}"
+
+
+class GloVe(WordEmbedding):
 
     MAX_SEQUENCE_LENGTH = 20
 
-    def __init__(self, path:str) -> None:
-        self.__glove_embeddings = self.__load_glove__(path)
-        self.EMBEDDING_DIM = self.__glove_embeddings.get(b'a').shape[0]
+    def __init__(self,
+                 model_path:str,
+                 model_name:str="model") -> None:
+        super().__init__(model_name, model_path)
+        self.glove_embeddings = self.__load_glove__()
+        self.EMBEDDING_DIM = self.glove_embeddings.get(b'a').shape[0]
 
-    @staticmethod
-    def __load_glove__(path:str) -> dict:
+    def __load_glove__(self) -> dict:
         """ Loads Glove word embeddings in memory from the file stored
-        in `path`. """
+        in `self.path`. """
         embeddings_dict={}
-        with open(path,'rb') as f:
+        with open(self.path,'rb') as f:
             for line in f:
                 values = line.split()
                 word = values[0]
                 vector = np.asarray(values[1:], "float32")
                 embeddings_dict[word] = vector
         return embeddings_dict
+
+    def __create_matrix__(self)->np.ndarray:
+        """Starting from the stored vocabulary, it defines and populates
+        the embedding matrix where each entry corresponds to a
+        vocabulary token.
+
+        Returns
+        -------
+        np.ndarray
+            The embedding matrix has shape `(vocabulary length,
+            embedding length)`, where the embedding vector length
+            corresponds to the value stored in `self.EMBEDDING_DIM`. 
+        """
+        num_words = len(self.vocabulary) + 1
+        matrix = np.zeros((num_words, self.EMBEDDING_DIM))
+        for i, word in self.vocabulary.items():
+            matrix[i] = self.glove_embeddings.get(
+                word.encode("utf-8"),
+                np.zeros(self.EMBEDDING_DIM))
+        return matrix
 
     def find_closest_embeddings(self,
                                 tgt_embedding:np.ndarray,
@@ -57,31 +86,11 @@ class GloVe(object):
             word, ordered by their Euclidean distance from
             `tgt_embedding`.
         """
-        sorted_embeddings = sorted(self.__glove_embeddings.keys(),
+        sorted_embeddings = sorted(self.glove_embeddings.keys(),
                                    key=lambda word:
-                                   euclidean(self.__glove_embeddings[word],
+                                   euclidean(self.glove_embeddings[word],
                                              tgt_embedding))
         return sorted_embeddings[:n_words]
-    
-    def __create_matrix__(self)->np.ndarray:
-        """Starting from the stored vocabulary, it defines and populates
-        the embedding matrix where each entry corresponds to a
-        vocabulary token.
-
-        Returns
-        -------
-        np.ndarray
-            The embedding matrix has shape `(vocabulary length,
-            embedding length)`, where the embedding vector length
-            corresponds to the value stored in `self.EMBEDDING_DIM`. 
-        """
-        num_words = len(self.vocabulary) + 1
-        matrix = np.zeros((num_words, self.EMBEDDING_DIM))
-        for i, word in self.vocabulary.items():
-            matrix[i] = self.__glove_embeddings.get(
-                word.encode("utf-8"),
-                np.zeros(self.EMBEDDING_DIM))
-        return matrix
 
     def prepare_data(self,
                      x:pd.Series,
@@ -100,25 +109,43 @@ class GloVe(object):
         embedding_matrix = self.__create_matrix__()
         self.embedding_matrix = embedding_matrix
 
+
 ########################################################################
 # Word2Vec
-class W2V(object):
+class W2V(WordEmbedding):
 
 
-    def __init__(self, model_name:str) -> None: #costruttore
-        self.name = model_name
+    # Constructor
+    def __init__(self,
+                 model_name:str) -> None:
+        super().__init__(model_name)
 
-    def build_model(
-            self, #chiamata a me stesso
-            x:pd.Series,
-            y:pd.Series,
-            #feature:str,
-            model_path:str,
-            #model_name:str,
-            vector_size:int=200,
-            window:int=2,            
-            save_model = True,
-            **kwargs) -> None:
+    @property
+    def model(self):
+        return self._model
+    @model.setter
+    def model(self, w2v_model):
+        self._model = w2v_model
+
+    @classmethod
+    def load_model(cls,
+                   model_name:str,
+                   model_path:str):
+        w2v_obj = cls(model_name)
+        w2v_obj.path = model_path
+        w2v_obj.model = Word2Vec.load(w2v_obj.path)
+        return w2v_obj
+
+    def build_model(self, #chiamata a me stesso
+                    x:pd.Series,
+                    y:pd.Series,
+                    #feature:str,
+                    model_path:str,
+                    #model_name:str,
+                    vector_size:int=200,
+                    window:int=2,            
+                    save_model = True,
+                    **kwargs) -> None:
         """ It builds, trains and saves a Word2vec model based on the
         parameter in input.
 
