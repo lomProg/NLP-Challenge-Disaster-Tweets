@@ -9,6 +9,8 @@ from sklearn.model_selection import train_test_split
 
 from classification import DataGenerator as dg
 
+__all__ = ["WordEmbedding", "GloVe", "W2V"]
+
 class WordEmbedding:
 
 
@@ -113,8 +115,7 @@ class GloVe(WordEmbedding):
         self.embedding_matrix = embedding_matrix
 
 
-########################################################################
-# Word2Vec
+
 class W2V(WordEmbedding):
 
 
@@ -123,13 +124,6 @@ class W2V(WordEmbedding):
                  model_name:str,
                  model_path:str=None) -> None:
         super().__init__(model_name, model_path)
-
-    # @property
-    # def model(self):
-    #     return self._model
-    # @model.setter
-    # def model(self, w2v_model):
-    #     self._model = w2v_model
 
     @classmethod
     def load_model(cls,
@@ -143,9 +137,7 @@ class W2V(WordEmbedding):
     def build_model(self,
                     x:pd.Series,
                     y:pd.Series,
-                    # model_path:str,
                     vector_size:int=200,
-                    # window:int=2,
                     save_model = True,
                     dst_model_path=None,
                     **kwargs) -> None:
@@ -188,16 +180,6 @@ class W2V(WordEmbedding):
             min_alpha = 0.05,
             **w2v_dict
             )
-        # model_w2v = Word2Vec(
-        #     data,
-        #     vector_size = self.EMBEDDING_DIM,
-        #     window = window,
-        #     min_count = 3, # Ignores all words with total frequency lower than 3
-        #     sg = 0, # 1 for skip-gram model, 0 for CBOW model
-        #     hs = 0,
-        #     seed = 34,
-        #     min_alpha = 0.05
-        # )
 
         model_w2v.train(data, total_examples=len(data), epochs=25)
         self.model = model_w2v
