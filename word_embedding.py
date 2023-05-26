@@ -106,10 +106,19 @@ class GloVe(WordEmbedding):
         splitting_dict = {k: kwargs.pop(k)
                           for k in dict(kwargs) if k in splitting_args}
         gen = dg()
-        # Splitting input data
-        gen.split_data(x, y, **splitting_dict)
-        # Data tokenization
-        gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH)
+        if ((hasattr(splitting_dict, "test_size")
+             and int(splitting_dict["test_size"]) == 0)
+             or (hasattr(splitting_dict, "train_size")
+                 and int(splitting_dict["train_size"]) == 1)):
+            # If splitting of data into train and test is not required,
+            # the split value for train or test equals 1 or 0
+            # respectively.
+            gen.tokenize_data(x, max_sequence_length=self.MAX_SEQUENCE_LENGTH)
+        else:
+            # Splitting input data
+            gen.split_data(x, y, **splitting_dict)
+            # Data tokenization
+            gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH)
 
         self.data = gen.data
         self.vocabulary = gen.vocabulary
