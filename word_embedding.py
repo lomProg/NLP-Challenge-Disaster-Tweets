@@ -102,9 +102,12 @@ class GloVe(WordEmbedding):
                      y:pd.Series,
                      **kwargs) -> None:
 
+        splitting_args = list(inspect.signature(train_test_split).parameters)
+        splitting_dict = {k: kwargs.pop(k)
+                          for k in dict(kwargs) if k in splitting_args}
         gen = dg()
         # Splitting input data
-        gen.split_data(x, y, **kwargs)
+        gen.split_data(x, y, **splitting_dict)
         # Data tokenization
         gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH)
 
