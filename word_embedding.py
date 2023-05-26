@@ -111,7 +111,7 @@ class GloVe(WordEmbedding):
              or (hasattr(splitting_dict, "train_size")
                  and int(splitting_dict["train_size"]) == 1)):
             # If splitting of data into train and test is not required,
-            # the split value for train or test equals 1 or 0
+            # the split value for train or test will equal 1 or 0
             # respectively.
             gen.tokenize_data(x, max_sequence_length=self.MAX_SEQUENCE_LENGTH)
         else:
