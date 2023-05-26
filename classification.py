@@ -1,8 +1,10 @@
 import re
+import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from keras.preprocessing.text import Tokenizer
-from tensorflow.keras.utils import pad_sequences
+# from keras.preprocessing.text import Tokenizer
+# from tensorflow.keras.utils import pad_sequences
+from tensorflow.keras.layers import TextVectorization
 
 class DataGenerator(object):
 
@@ -49,7 +51,8 @@ class DataGenerator(object):
     
     def tokenize_data(self,
                       *args,
-                      max_sequence_length:int=50) -> None:
+                      max_sequence_length:int=50,
+                      **kwargs) -> None:
 
         if not args and not hasattr(self, "data"):
             raise AttributeError("No text to tokenize")
@@ -62,20 +65,28 @@ class DataGenerator(object):
             args = (data["x_train"], data["x_test"])
 
         # Data tokenization
-        tokenizer = Tokenizer()
-        tokenizer.fit_on_texts(pd.concat([*args]))
+        # tokenizer = Tokenizer()
+        # tokenizer.fit_on_texts(pd.concat([*args]))
+        vectorizer = TextVectorization(
+            output_sequence_length = max_sequence_length,
+            **kwargs)
+        vectorizer.adapt(pd.concat([*args]))
 
         # Vectorizing data to keep `max_sequence_length` words per sample
         for i, arg in enumerate(args):
-            seqs = tokenizer.texts_to_sequences(arg)
-            data[f'vect_set_{i}'] = pad_sequences(
-                seqs,
-                maxlen = max_sequence_length,
-                padding = "post",
-                truncating = "post",
-                value = 0.)
+            # seqs = tokenizer.texts_to_sequences(arg)
+            # data[f'vect_set_{i}'] = pad_sequences(
+            #     seqs,
+            #     maxlen = max_sequence_length,
+            #     padding = "post",
+            #     truncating = "post",
+            #     value = 0.)
+            data[f'vect_set_{i}'] = vectorizer(
+                np.array([[s] for s in arg])).numpy()
         self.data = data
 
         # Vocabulary
-        index_word = tokenizer.index_word
+        # index_word = tokenizer.index_word
+        index_word = dict(zip(range(len(vectorizer.get_vocabulary())),
+                              vectorizer.get_vocabulary()))
         self.vocabulary = index_word
