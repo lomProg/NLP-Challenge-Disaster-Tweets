@@ -113,9 +113,9 @@ class GloVe(WordEmbedding):
                       for k in dict(kwargs) if k in token_args}
         gen = dg()
         if (("test_size" in splitting_dict and
-             int(splitting_dict["test_size"]) == 0) or
+             splitting_dict["test_size"] == 0) or
              ("train_size" in splitting_dict and
-              int(splitting_dict["train_size"]) == 1)):
+              splitting_dict["train_size"] == 1)):
             # If splitting of data into train and test is not required,
             # the split value for train or test will equal 1 or 0
             # respectively.
