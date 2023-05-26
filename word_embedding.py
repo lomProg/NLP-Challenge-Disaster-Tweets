@@ -194,6 +194,11 @@ class W2V(WordEmbedding):
         model_w2v.train(data, total_examples=len(data), epochs=25)
         self.model = model_w2v
 
+        gen = dg()
+        # Splitting input data
+        gen.split_data(x, y, **splitting_dict)
+        self.data = gen.data
+
         words = list(model_w2v.wv.index_to_key)
         self.vocabulary = words
         print(f'Number of words in the vocabulary:\t{len(words)}')
