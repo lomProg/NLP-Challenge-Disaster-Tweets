@@ -237,11 +237,11 @@ class W2V(WordEmbedding):
             Number of columns of the embedding dataset, by default 200
         """
         vectors = []
-        for index, row in data.iterrows():
+        for row in data:
             vec = (np.mean([self.model.wv[token]
                             if token in self.vocabulary
                             else np.array([0]*self.EMBEDDING_DIM)
-                            for token in row['tokenized_text']], axis = 0))
+                            for token in row], axis = 0))
             vectors.append(vec)
 
         if save_dataframe:
