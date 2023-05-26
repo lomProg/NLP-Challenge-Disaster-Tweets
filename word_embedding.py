@@ -141,21 +141,26 @@ class W2V(WordEmbedding):
                     save_model = True,
                     dst_model_path=None,
                     **kwargs) -> None:
-        """ It builds, trains and saves a Word2vec model based on the
-        parameter in input.
+        """It builds, trains and saves a Word2vec model based on the
+        parameters in input.
 
         Parameters
         ----------
-        vector_size : int
-            Length of the embedding vector
-        window : int
-            Context window size
-        train_set : pd.DataFrame       
-            Dataset on which to train the Word2Vec model
-        feature : str
-            Feature of the dataset to vectorize e.g. 'tokenized_text'
-        model_path : str        
-            Path where to save the model
+        x : pd.Series
+            Data on which to train the Word2Vec model
+        y : pd.Series
+            Target data
+        vector_size : int, optional
+            Length of the embedding vector, by default 200
+        save_model : bool, optional
+            If True the trained model will be saved, by default True
+        dst_model_path : _type_, optional
+            Path where to save the model, by default None
+
+        Raises
+        ------
+        AttributeError
+            If no destination path is specified for saving the model.
         """
         self.EMBEDDING_DIM = vector_size
 
