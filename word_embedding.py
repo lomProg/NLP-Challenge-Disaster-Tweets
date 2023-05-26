@@ -112,10 +112,10 @@ class GloVe(WordEmbedding):
         token_dict = {k: kwargs.pop(k)
                       for k in dict(kwargs) if k in token_args}
         gen = dg()
-        if ((hasattr(splitting_dict, "test_size")
-             and int(splitting_dict["test_size"]) == 0)
-             or (hasattr(splitting_dict, "train_size")
-                 and int(splitting_dict["train_size"]) == 1)):
+        if (("test_size" in splitting_dict and
+             int(splitting_dict["test_size"]) == 0) or
+             ("train_size" in splitting_dict and
+              int(splitting_dict["train_size"]) == 1)):
             # If splitting of data into train and test is not required,
             # the split value for train or test will equal 1 or 0
             # respectively.
@@ -134,7 +134,6 @@ class GloVe(WordEmbedding):
 
         embedding_matrix = self.__create_matrix__()
         self.embedding_matrix = embedding_matrix
-
 
 
 class W2V(WordEmbedding):
