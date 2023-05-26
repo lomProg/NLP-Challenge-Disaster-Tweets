@@ -6,6 +6,7 @@ from scipy.spatial.distance import euclidean
 
 import inspect
 from sklearn.model_selection import train_test_split
+from tensorflow.keras.layers import TextVectorization
 
 from classification import DataGenerator as dg
 
@@ -105,6 +106,11 @@ class GloVe(WordEmbedding):
         splitting_args = list(inspect.signature(train_test_split).parameters)
         splitting_dict = {k: kwargs.pop(k)
                           for k in dict(kwargs) if k in splitting_args}
+        token_args = list(inspect.signature(TextVectorization).parameters)
+        token_args = list(filter(lambda x: x not in ["output_sequence_length"],
+                                 token_args))
+        token_dict = {k: kwargs.pop(k)
+                      for k in dict(kwargs) if k in token_args}
         gen = dg()
         if ((hasattr(splitting_dict, "test_size")
              and int(splitting_dict["test_size"]) == 0)
@@ -113,12 +119,15 @@ class GloVe(WordEmbedding):
             # If splitting of data into train and test is not required,
             # the split value for train or test will equal 1 or 0
             # respectively.
-            gen.tokenize_data(x, max_sequence_length=self.MAX_SEQUENCE_LENGTH)
+            gen.tokenize_data(x,
+                              max_sequence_length=self.MAX_SEQUENCE_LENGTH,
+                              **token_dict)
         else:
             # Splitting input data
             gen.split_data(x, y, **splitting_dict)
             # Data tokenization
-            gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH)
+            gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH,
+                              **token_dict)
 
         self.data = gen.data
         self.vocabulary = gen.vocabulary
