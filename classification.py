@@ -18,7 +18,11 @@ class DataGenerator(object):
                    **kwargs) -> None:
 
         if hasattr(self, "data") and "x_train" in self.data:
-            err_msg = "The data have already been split."
+            temp_keys = [k for k in self.data.keys()
+                         if re.match(".*(train|test)", k)]
+            err_msg = "The data have already been split. The different sets "
+            err_msg += "can be found stored in the data property "
+            err_msg += f"via {temp_keys}"
             raise AttributeError(err_msg)
         if hasattr(self, "data"):
             data = {}
@@ -56,6 +60,12 @@ class DataGenerator(object):
                       max_sequence_length:int=50,
                       **kwargs) -> None:
 
+        if (hasattr(self, "data") and
+            any(k.startswith("vect") for k in self.data.keys())):
+            temp_keys = [k for k in self.data.keys() if k.startswith("vect")]
+            err_msg = "The data have already been tokenized. They can be "
+            err_msg += f"found stored in the data property via {temp_keys}"
+            raise AttributeError(err_msg)
         if hasattr(self, "data"):
             data = self.data.copy()
             xs = (data["x_train"], data["x_test"])
