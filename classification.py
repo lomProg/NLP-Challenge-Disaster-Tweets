@@ -61,7 +61,7 @@ class DataGenerator(object):
             xs = (data["x_train"], data["x_test"])
         elif hasattr(self, "__raw_data__"):
             data = self.__raw_data__.copy()
-            xs = (data["x"])
+            xs = (data["x"],)
         data_mapping = dict(zip(range(len(data.keys())), data.keys()))
         # if not args and not hasattr(self, "data"):
         #     raise AttributeError("No text to tokenize")
