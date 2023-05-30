@@ -17,8 +17,15 @@ class DataGenerator(object):
                    reset_index:bool=False,
                    **kwargs) -> None:
 
-        x, y = self.__raw_data__.values()
-        data = {}
+        if hasattr(self, "data") and "x_train" in self.data:
+            err_msg = "The data have already been split."
+            raise AttributeError(err_msg)
+        if hasattr(self, "data"):
+            data = {}
+            x, y, x_vect = self.data.values()
+        elif hasattr(self, "__raw_data__") and not hasattr(self, "data"):
+            data = {}
+            x, y = self.__raw_data__.values()
 
         # Splitting input data
         X_train, X_test, y_train, y_test = train_test_split(x, y, **kwargs)
@@ -33,6 +40,15 @@ class DataGenerator(object):
         data['x_test'] = X_test
         data['y_train'] = y_train
         data['y_test'] = y_test
+        if hasattr(self, "data"):
+            train_idx = X_train.index
+            test_idx = X_test.index
+            X_train_vect = [elm for i, elm in enumerate(x_vect)
+                            if i in train_idx]
+            X_test_vect = [elm for i, elm in enumerate(x_vect)
+                            if i in test_idx]
+            data['vect_x_train'] = pd.Series(X_train_vect, index=train_idx)
+            data['vect_x_test'] = pd.Series(X_test_vect, index=test_idx)
         self.data = data
     
     def tokenize_data(self,
@@ -40,11 +56,13 @@ class DataGenerator(object):
                       max_sequence_length:int=50,
                       **kwargs) -> None:
 
-        data = {}
         if hasattr(self, "data"):
-            xs = (self.data["x_train"], self.data["x_test"])
+            data = self.data.copy()
+            xs = (data["x_train"], data["x_test"])
         elif hasattr(self, "__raw_data__"):
-            xs = (self.__raw_data__["x"])
+            data = self.__raw_data__.copy()
+            xs = (data["x"])
+        data_mapping = dict(zip(range(len(data.keys())), data.keys()))
         # if not args and not hasattr(self, "data"):
         #     raise AttributeError("No text to tokenize")
         # elif not hasattr(self, "data"):
@@ -72,8 +90,10 @@ class DataGenerator(object):
             #     padding = "post",
             #     truncating = "post",
             #     value = 0.)
-            data[f'vect_set_{i}'] = vectorizer(
-                np.array([[s] for s in arg])).numpy()
+            set_i = data_mapping[i]
+            vect_i = vectorizer(np.array([[s] for s in arg])).numpy()
+            data[f'vect_{set_i}'] = pd.Series(vect_i.tolist(),
+                                              data[set_i].index)
         self.data = data
 
         # Vocabulary
