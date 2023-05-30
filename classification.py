@@ -56,7 +56,6 @@ class DataGenerator(object):
         self.data = data
     
     def tokenize_data(self,
-                    #   *args,
                       max_sequence_length:int=50,
                       **kwargs) -> None:
 
@@ -73,15 +72,6 @@ class DataGenerator(object):
             data = self.__raw_data__.copy()
             xs = (data["x"],)
         data_mapping = dict(zip(range(len(data.keys())), data.keys()))
-        # if not args and not hasattr(self, "data"):
-        #     raise AttributeError("No text to tokenize")
-        # elif not hasattr(self, "data"):
-        #     data = {}
-        #     for i, arg in enumerate(args):
-        #         data[f'set_{i}'] = arg
-        # else:
-        #     data = self.data
-        #     args = (data["x_train"], data["x_test"])
 
         # Data tokenization
         # tokenizer = Tokenizer()
@@ -89,10 +79,10 @@ class DataGenerator(object):
         vectorizer = TextVectorization(
             output_sequence_length = max_sequence_length,
             **kwargs)
-        vectorizer.adapt(pd.concat([*xs])) #pd.concat([*args])
+        vectorizer.adapt(pd.concat([*xs]))
 
         # Vectorizing data to keep `max_sequence_length` words per sample
-        for i, arg in enumerate(xs): #args
+        for i, arg in enumerate(xs):
             # seqs = tokenizer.texts_to_sequences(arg)
             # data[f'vect_set_{i}'] = pad_sequences(
             #     seqs,
