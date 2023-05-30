@@ -138,12 +138,32 @@ class GloVe(WordEmbedding):
 
 class W2V(WordEmbedding):
 
+    MAX_SEQUENCE_LENGTH = 20
 
     # Constructor
     def __init__(self,
                  model_name:str,
                  model_path:str=None) -> None:
         super().__init__(model_name, model_path)
+
+    def __create_matrix__(self) -> np.ndarray:
+        """Starting from the stored vocabulary, it defines and populates
+        the embedding matrix where each entry corresponds to a
+        vocabulary token.
+
+        Returns
+        -------
+        np.ndarray
+            The embedding matrix has shape `(vocabulary length,
+            embedding length)`, where the embedding vector length
+            corresponds to the value stored in `self.EMBEDDING_DIM`. 
+        """
+
+        num_words = len(self.model.wv.index_to_key) + 1
+        matrix = np.zeros((num_words, self.EMBEDDING_DIM))
+        for word, i in self.vocabulary.items():
+            matrix[i] = self.model.wv[word] 
+        return matrix
 
     @classmethod
     def load_model(cls,
@@ -187,22 +207,29 @@ class W2V(WordEmbedding):
         splitting_args = list(inspect.signature(train_test_split).parameters)
         splitting_dict = {k: kwargs.pop(k)
                           for k in dict(kwargs) if k in splitting_args}
-        # gen = dg()
-        # # Splitting input data
-        # gen.split_data(x, y, **splitting_dict)
-        # self.data = gen.data
-
-        # Get the X train generated via DataGenerator object
-        #data = gen.data['x_train']
-
-        data = x #addestro w2v su tutto i dati
-
+        
+        token_args = list(inspect.signature(TextVectorization).parameters)
+        token_args = list(filter(lambda x: x not in ["output_sequence_length"],
+                                 token_args))
+        token_dict = {k: kwargs.pop(k)
+                      for k in dict(kwargs) if k in token_args}
+        gen = dg()
+        gen.tokenize_data(x, max_sequence_length=self.MAX_SEQUENCE_LENGTH,
+                              **token_dict)
+        data = pd.Series([[gen.vocabulary[i] for i in gen.data['vect_set_0'][k]
+                           if len(gen.vocabulary[i]) != 0]
+                           for k in range(len(gen.data['vect_set_0']))],
+                           index=gen.data['set_0'].index)
+        self.data = gen.data        
+        # Inspecting parameters
         w2v_args = list(inspect.signature(Word2Vec).parameters)
         w2v_args = list(filter(lambda x: x not in ["min_alpha", "vector_size"],
                                w2v_args))
         w2v_dict = {k: kwargs.pop(k) for k in dict(kwargs) if k in w2v_args}
+        # Build model
         model_w2v = Word2Vec(
             data,
+            min_count = 0, ####
             vector_size = self.EMBEDDING_DIM,
             min_alpha = 0.05,
             **w2v_dict
@@ -210,11 +237,6 @@ class W2V(WordEmbedding):
 
         model_w2v.train(data, total_examples=len(data), epochs=25)
         self.model = model_w2v
-
-        gen = dg()
-        # Splitting input data
-        gen.split_data(x, y, **splitting_dict)
-        self.data = gen.data
 
         words = list(model_w2v.wv.index_to_key)
         self.vocabulary = words
@@ -228,7 +250,7 @@ class W2V(WordEmbedding):
                 print("The word2vec model has been trained and saved")
             else:
                 err_msg = "No destination path in which to save the model"
-                raise AttributeError(err_msg)
+                raise AttributeError(err_msg)    
 
     def vectorization(self,
                       data,
@@ -267,22 +289,3 @@ class W2V(WordEmbedding):
             df.to_csv(df_path, header = True, index = False)
 
         return pd.Series(vectors)
-
-    def __create_matrix__(self) -> np.ndarray:
-        """Starting from the stored vocabulary, it defines and populates
-        the embedding matrix where each entry corresponds to a
-        vocabulary token.
-
-        Returns
-        -------
-        np.ndarray
-            The embedding matrix has shape `(vocabulary length,
-            embedding length)`, where the embedding vector length
-            corresponds to the value stored in `self.EMBEDDING_DIM`. 
-        """
-
-        num_words = len(self.model.wv.index_to_key) + 1
-        matrix = np.zeros((num_words, self.EMBEDDING_DIM))
-        for word, i in self.vocabulary.items():
-            matrix[i] = self.model.wv[word]
-        return matrix               
