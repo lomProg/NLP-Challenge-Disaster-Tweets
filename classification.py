@@ -9,34 +9,20 @@ from tensorflow.keras.layers import TextVectorization
 class DataGenerator(object):
 
 
-    def __init__(self) -> None:
-        pass
+    def __init__(self, x:pd.Series, y:pd.Series) -> None:
+        data = {"x": x, "y": y}
+        self.__raw_data__ = data
 
     def split_data(self,
-                   x:pd.Series,
-                   y:pd.Series,
                    reset_index:bool=False,
                    **kwargs) -> None:
 
+        x, y = self.__raw_data__.values()
         data = {}
 
-        # train_sz = None
-        # if any(re.search("test_size", k) for k in kwargs.keys()):
-        #     test_sz = kwargs.pop("test_size")
-        # elif any(re.search("train_size", k) for k in kwargs.keys()):
-        #     train_sz = kwargs.pop("train_size")
-        #     test_sz = 1.0 - train_sz
-        # else:
-        #     test_sz = 0.3
-        # rnd_st = kwargs.pop("random_state", None)
-
         # Splitting input data
-        (X_train, X_test,
-         y_train, y_test) = train_test_split(x, y,
-                                            #  test_size = test_sz,
-                                            #  train_size = train_sz,
-                                            #  random_state = rnd_st,
-                                             **kwargs)
+        X_train, X_test, y_train, y_test = train_test_split(x, y, **kwargs)
+
         if reset_index:
             X_train = X_train.reset_index()
             X_test = X_test.reset_index()
@@ -50,19 +36,24 @@ class DataGenerator(object):
         self.data = data
     
     def tokenize_data(self,
-                      *args,
+                    #   *args,
                       max_sequence_length:int=50,
                       **kwargs) -> None:
 
-        if not args and not hasattr(self, "data"):
-            raise AttributeError("No text to tokenize")
-        elif not hasattr(self, "data"):
-            data = {}
-            for i, arg in enumerate(args):
-                data[f'set_{i}'] = arg
-        else:
-            data = self.data
-            args = (data["x_train"], data["x_test"])
+        data = {}
+        if hasattr(self, "data"):
+            xs = (self.data["x_train"], self.data["x_test"])
+        elif hasattr(self, "__raw_data__"):
+            xs = (self.__raw_data__["x"])
+        # if not args and not hasattr(self, "data"):
+        #     raise AttributeError("No text to tokenize")
+        # elif not hasattr(self, "data"):
+        #     data = {}
+        #     for i, arg in enumerate(args):
+        #         data[f'set_{i}'] = arg
+        # else:
+        #     data = self.data
+        #     args = (data["x_train"], data["x_test"])
 
         # Data tokenization
         # tokenizer = Tokenizer()
@@ -70,10 +61,10 @@ class DataGenerator(object):
         vectorizer = TextVectorization(
             output_sequence_length = max_sequence_length,
             **kwargs)
-        vectorizer.adapt(pd.concat([*args]))
+        vectorizer.adapt(pd.concat([*xs])) #pd.concat([*args])
 
         # Vectorizing data to keep `max_sequence_length` words per sample
-        for i, arg in enumerate(args):
+        for i, arg in enumerate(xs): #args
             # seqs = tokenizer.texts_to_sequences(arg)
             # data[f'vect_set_{i}'] = pad_sequences(
             #     seqs,
