@@ -16,15 +16,13 @@ class DataGenerator(object):
     def split_data(self,
                    reset_index:bool=False,
                    **kwargs) -> None:
+        assert (not hasattr(self, "data") or
+                (hasattr(self, "data") and "x_train" not in self.data)), (
+            "The data have already been split. The different sets can be "
+            "found stored in the data property."
+                )
 
-        if hasattr(self, "data") and "x_train" in self.data:
-            temp_keys = [k for k in self.data.keys()
-                         if re.match(".*(train|test)", k)]
-            err_msg = "The data have already been split. The different sets "
-            err_msg += "can be found stored in the data property "
-            err_msg += f"via {temp_keys}"
-            raise AttributeError(err_msg)
-        elif hasattr(self, "data"):
+        if hasattr(self, "data"):
             data = {}
             x, y, x_vect = self.data.values()
         elif hasattr(self, "__raw_data__") and not hasattr(self, "data"):
@@ -58,14 +56,13 @@ class DataGenerator(object):
     def tokenize_data(self,
                       max_sequence_length:int=50,
                       **kwargs) -> None:
-
-        if (hasattr(self, "data") and
-            any(k.startswith("vect") for k in self.data.keys())):
-            temp_keys = [k for k in self.data.keys() if k.startswith("vect")]
-            err_msg = "The data have already been tokenized. They can be "
-            err_msg += f"found stored in the data property via {temp_keys}"
-            raise AttributeError(err_msg)
-        elif hasattr(self, "data"):
+        assert (not hasattr(self, "data") or
+                (hasattr(self, "data") and
+                 not any(k.startswith("vect") for k in self.data.keys()))), (
+            "The data have already been tokenized. It can be found stored in "
+            "the data property.")
+        
+        if hasattr(self, "data"):
             data = self.data.copy()
             xs = (data["x_train"], data["x_test"])
         elif hasattr(self, "__raw_data__"):
