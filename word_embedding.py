@@ -174,6 +174,16 @@ class W2V(WordEmbedding):
         w2v_obj.path = model_path
         w2v_obj.model = Word2Vec.load(w2v_obj.path)
         return w2v_obj
+    
+    def __retrieve_token_text__(self,
+                                data_dict:dict,
+                                set_name:str='x')->pd.Series:
+        token_x = pd.Series([[self.vocabulary[i]
+                              for i in data_dict[f'vect_{set_name}'].iloc[k]
+                              if len(self.vocabulary[i]) != 0]
+                              for k in range(len(data_dict[f'vect_{set_name}']))],
+                              index=data_dict[set_name].index)
+        return token_x
 
     def build_model(self,
                     x:pd.Series,
@@ -218,11 +228,7 @@ class W2V(WordEmbedding):
 
         data = gen.data.copy()
         # Re-building the tweets from the vocabulary
-        data['token_x'] = pd.Series([[gen.vocabulary[i]
-                                      for i in gen.data['vect_x'].iloc[k]
-                                      if len(gen.vocabulary[i]) != 0]
-                                      for k in range(len(gen.data['vect_x']))],
-                                      index=gen.data['x'].index)
+        data['token_x'] = self.__retrieve_token_text__(data)
         self.data = data
 
         # Inspecting `Word2Vec` parameters
@@ -245,7 +251,7 @@ class W2V(WordEmbedding):
                         epochs=25)
         self.model = model_w2v
 
-        words = list(model_w2v.wv.index_to_key)
+        words = pd.Series(model_w2v.wv.index_to_key)
         self.vocabulary = words
         print(f'Number of words in the vocabulary:\t{len(words)}')
 
@@ -267,8 +273,7 @@ class W2V(WordEmbedding):
         assert hasattr(self, 'data') or (x and y), "No input data"
 
         # Split train e test
-        if nn_classifier:
-            if not hasattr(self, 'data'):
+        if not hasattr(self, 'data'):
                 # The word2vec model was loaded from a stored model; the
                 # `load_model` method was used, so the data had to be
                 # modelled
@@ -306,13 +311,23 @@ class W2V(WordEmbedding):
                 self.data = gen.data
                 self.vocabulary = gen.vocabulary
 
+        if nn_classifier:
             embedding_matrix = self.__create_matrix__()
             self.embedding_matrix = embedding_matrix
-        # else:
-            # TODO Aggiungere parte per classificatori tradizionali, no NN
+        else:
+            token_train = self.__retrieve_token_text__(self.data, 'x_train')
+            token_test = self.__retrieve_token_text__(self.data, 'x_test')
+
+            vect_train = self.vectorization(token_train)
+            vect_test = self.vectorization(token_test)
+
+            data = self.data.copy()
+            data['w2v_x_train'] = vect_train
+            data['w2v_x_test'] = vect_test
+            self.data = data
 
     def vectorization(self,
-                      data,
+                      data:pd.Series,
                       save_dataframe:bool=True,
                       dst_df_path:str="./",
                       dst_df_name:str="embedding_data") -> pd.Series:
