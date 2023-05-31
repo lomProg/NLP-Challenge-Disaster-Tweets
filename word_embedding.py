@@ -139,37 +139,37 @@ class GloVe(WordEmbedding):
                      y:pd.Series,
                      **kwargs) -> None:
 
-        splitting_args = list(inspect.signature(train_test_split).parameters)
-        splitting_dict = {k: kwargs.pop(k)
-                          for k in dict(kwargs) if k in splitting_args}
-        token_args = list(inspect.signature(TextVectorization).parameters)
-        token_args = list(filter(lambda x: x not in ["output_sequence_length"],
-                                 token_args))
-        token_dict = {k: kwargs.pop(k)
-                      for k in dict(kwargs) if k in token_args}
+        # splitting_args = list(inspect.signature(train_test_split).parameters)
+        # splitting_dict = {k: kwargs.pop(k)
+        #                   for k in dict(kwargs) if k in splitting_args}
+        # token_args = list(inspect.signature(TextVectorization).parameters)
+        # token_args = list(filter(lambda x: x not in ["output_sequence_length"],
+        #                          token_args))
+        # token_dict = {k: kwargs.pop(k)
+        #               for k in dict(kwargs) if k in token_args}
 
-        gen = dg(x, y)
-        if (("test_size" not in splitting_dict and
-             "train_size" not in splitting_dict) or
-             ("test_size" in splitting_dict and
-              splitting_dict["test_size"] == 0) or
-              ("train_size" in splitting_dict and
-               splitting_dict["train_size"] == 1)):
-            # If splitting of data into train and test is not required,
-            # the split value for train or test will equal 1 or 0
-            # respectively.
-            gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH,
-                              **token_dict)
-        else:
-            # Splitting input data
-            gen.split_data(**splitting_dict)
-            # Data tokenization
-            gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH,
-                              **token_dict)
+        # gen = dg(x, y)
+        # if (("test_size" not in splitting_dict and
+        #      "train_size" not in splitting_dict) or
+        #      ("test_size" in splitting_dict and
+        #       splitting_dict["test_size"] == 0) or
+        #       ("train_size" in splitting_dict and
+        #        splitting_dict["train_size"] == 1)):
+        #     # If splitting of data into train and test is not required,
+        #     # the split value for train or test will equal 1 or 0
+        #     # respectively.
+        #     gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH,
+        #                       **token_dict)
+        # else:
+        #     # Splitting input data
+        #     gen.split_data(**splitting_dict)
+        #     # Data tokenization
+        #     gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH,
+        #                       **token_dict)
 
-        self.data = gen.data
-        self.vocabulary = gen.vocabulary
-
+        # self.data = gen.data
+        # self.vocabulary = gen.vocabulary
+        super().prepare_data(x, y, **kwargs)
         embedding_matrix = self.__create_matrix__()
         self.embedding_matrix = embedding_matrix
 
@@ -314,40 +314,41 @@ class W2V(WordEmbedding):
             # The word2vec model was loaded from a stored model; the
             # `load_model` method was used, so the data had to be
             # modelled
-            splitting_args = list(
-                inspect.signature(train_test_split).parameters)
-            splitting_dict = {k: kwargs.pop(k)
-                              for k in dict(kwargs) if k in splitting_args}
-            token_args = list(
-                inspect.signature(TextVectorization).parameters)
-            token_args = list(filter(
-                lambda x: x not in ["output_sequence_length"], token_args))
-            token_dict = {k: kwargs.pop(k)
-                          for k in dict(kwargs) if k in token_args}
+            # splitting_args = list(
+            #     inspect.signature(train_test_split).parameters)
+            # splitting_dict = {k: kwargs.pop(k)
+            #                   for k in dict(kwargs) if k in splitting_args}
+            # token_args = list(
+            #     inspect.signature(TextVectorization).parameters)
+            # token_args = list(filter(
+            #     lambda x: x not in ["output_sequence_length"], token_args))
+            # token_dict = {k: kwargs.pop(k)
+            #               for k in dict(kwargs) if k in token_args}
 
-            gen = dg(x, y)
-            if (("test_size" not in splitting_dict and
-                 "train_size" not in splitting_dict) or
-                 ("test_size" in splitting_dict and
-                  splitting_dict["test_size"] == 0) or
-                  ("train_size" in splitting_dict and
-                   splitting_dict["train_size"] == 1)):
-                # If splitting of data into train and test is not
-                # required, the split value for train or test will
-                # equal 1 or 0 respectively.
-                gen.tokenize_data(
-                    max_sequence_length=self.MAX_SEQUENCE_LENGTH,
-                    **token_dict)
-            else:
-                # Splitting input data
-                gen.split_data(**splitting_dict)
-                # Data tokenization
-                gen.tokenize_data(
-                    max_sequence_length=self.MAX_SEQUENCE_LENGTH,
-                    **token_dict)
+            # gen = dg(x, y)
+            # if (("test_size" not in splitting_dict and
+            #      "train_size" not in splitting_dict) or
+            #      ("test_size" in splitting_dict and
+            #       splitting_dict["test_size"] == 0) or
+            #       ("train_size" in splitting_dict and
+            #        splitting_dict["train_size"] == 1)):
+            #     # If splitting of data into train and test is not
+            #     # required, the split value for train or test will
+            #     # equal 1 or 0 respectively.
+            #     gen.tokenize_data(
+            #         max_sequence_length=self.MAX_SEQUENCE_LENGTH,
+            #         **token_dict)
+            # else:
+            #     # Splitting input data
+            #     gen.split_data(**splitting_dict)
+            #     # Data tokenization
+            #     gen.tokenize_data(
+            #         max_sequence_length=self.MAX_SEQUENCE_LENGTH,
+            #         **token_dict)
 
-            self.data = gen.data
-            self.vocabulary = gen.vocabulary
+            # self.data = gen.data
+            # self.vocabulary = gen.vocabulary
+            super().prepare_data(x, y, **kwargs)
 
         if nn_classifier:
             embedding_matrix = self.__create_matrix__()
