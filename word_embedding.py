@@ -111,6 +111,7 @@ class GloVe(WordEmbedding):
                                  token_args))
         token_dict = {k: kwargs.pop(k)
                       for k in dict(kwargs) if k in token_args}
+
         gen = dg(x, y)
         if (("test_size" not in splitting_dict and
              "train_size" not in splitting_dict) or
@@ -159,8 +160,6 @@ class W2V(WordEmbedding):
             embedding length)`, where the embedding vector length
             corresponds to the value stored in `self.EMBEDDING_DIM`. 
         """
-        if not hasattr(self, 'vocabulary'):
-            self.vocabulary = list(self.model.wv.index_to_key)
         num_words = len(self.model.wv.index_to_key) + 1
         matrix = np.zeros((num_words, self.EMBEDDING_DIM))
         for word, i in self.vocabulary.items():
@@ -169,12 +168,8 @@ class W2V(WordEmbedding):
 
     @classmethod
     def load_model(cls,
-                   x:pd.Series,
-                   y:pd.Series,
                    model_name:str,
                    model_path:str):
-        
-
         w2v_obj = cls(model_name)
         w2v_obj.path = model_path
         w2v_obj.model = Word2Vec.load(w2v_obj.path)
@@ -209,18 +204,18 @@ class W2V(WordEmbedding):
             If no destination path is specified for saving the model.
         """
         self.EMBEDDING_DIM = vector_size
-        # splitting_args = list(inspect.signature(train_test_split).parameters)
-        # splitting_dict = {k: kwargs.pop(k)
-        #                  for k in dict(kwargs) if k in splitting_args}
-        
+
+        # Inspecting `TextVectorization` parameters
         token_args = list(inspect.signature(TextVectorization).parameters)
         token_args = list(filter(lambda x: x not in ["output_sequence_length"],
                                  token_args))
         token_dict = {k: kwargs.pop(k)
                       for k in dict(kwargs) if k in token_args}
+
         gen = dg(x, y)
         gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH,
-                              **token_dict)
+                          **token_dict)
+
         data = gen.data.copy()
         # Re-building the tweets from the vocabulary
         data['token_x'] = pd.Series([[gen.vocabulary[i]
@@ -229,11 +224,13 @@ class W2V(WordEmbedding):
                                       for k in range(len(gen.data['vect_x']))],
                                       index=gen.data['x'].index)
         self.data = data
-        # Inspecting parameters
+
+        # Inspecting `Word2Vec` parameters
         w2v_args = list(inspect.signature(Word2Vec).parameters)
         w2v_args = list(filter(lambda x: x not in ["min_alpha", "vector_size"],
                                w2v_args))
         w2v_dict = {k: kwargs.pop(k) for k in dict(kwargs) if k in w2v_args}
+
         # Build model
         model_w2v = Word2Vec(
             data['token_x'],
@@ -243,7 +240,8 @@ class W2V(WordEmbedding):
             **w2v_dict
             )
 
-        model_w2v.train(data['token_x'], total_examples=len(data['token_x']),
+        model_w2v.train(data['token_x'],
+                        total_examples=len(data['token_x']),
                         epochs=25)
         self.model = model_w2v
 
@@ -262,14 +260,56 @@ class W2V(WordEmbedding):
                 raise AttributeError(err_msg)
             
     def prepare_data(self,
-                     nn_classifier:bool=True):
+                     x:pd.Series=None,
+                     y:pd.Series=None,
+                     nn_classifier:bool=True,
+                     **kwargs):
+        assert hasattr(self, 'data') or (x and y), "No input data"
+
         # Split train e test
         if nn_classifier:
-            if hasattr(self, 'data'):
-                embedding_matrix = self.__create_matrix__()
-            #else: 
+            if not hasattr(self, 'data'):
+                # The word2vec model was loaded from a stored model; the
+                # `load_model` method was used, so the data had to be
+                # modelled
+                splitting_args = list(
+                    inspect.signature(train_test_split).parameters)
+                splitting_dict = {k: kwargs.pop(k)
+                                  for k in dict(kwargs) if k in splitting_args}
+                token_args = list(
+                    inspect.signature(TextVectorization).parameters)
+                token_args = list(filter(
+                    lambda x: x not in ["output_sequence_length"], token_args))
+                token_dict = {k: kwargs.pop(k)
+                              for k in dict(kwargs) if k in token_args}
 
+                gen = dg(x, y)
+                if (("test_size" not in splitting_dict and
+                     "train_size" not in splitting_dict) or
+                     ("test_size" in splitting_dict and
+                      splitting_dict["test_size"] == 0) or
+                      ("train_size" in splitting_dict and
+                       splitting_dict["train_size"] == 1)):
+                    # If splitting of data into train and test is not
+                    # required, the split value for train or test will
+                    # equal 1 or 0 respectively.
+                    gen.tokenize_data(
+                        max_sequence_length=self.MAX_SEQUENCE_LENGTH,
+                        **token_dict)
+                else:
+                    # Splitting input data
+                    gen.split_data(**splitting_dict)
+                    # Data tokenization
+                    gen.tokenize_data(
+                        max_sequence_length=self.MAX_SEQUENCE_LENGTH,
+                        **token_dict)
+                self.data = gen.data
+                self.vocabulary = gen.vocabulary
+
+            embedding_matrix = self.__create_matrix__()
             self.embedding_matrix = embedding_matrix
+        # else:
+            # TODO Aggiungere parte per classificatori tradizionali, no NN
 
     def vectorization(self,
                       data,
