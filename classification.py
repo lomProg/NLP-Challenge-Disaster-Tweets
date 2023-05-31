@@ -25,7 +25,7 @@ class DataGenerator(object):
         if hasattr(self, "data"):
             data = {}
             x, y, x_vect = self.data.values()
-        elif hasattr(self, "__raw_data__") and not hasattr(self, "data"):
+        elif hasattr(self, "__raw_data__"):
             data = {}
             x, y = self.__raw_data__.values()
 
