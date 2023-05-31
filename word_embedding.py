@@ -213,14 +213,14 @@ class W2V(WordEmbedding):
                                  token_args))
         token_dict = {k: kwargs.pop(k)
                       for k in dict(kwargs) if k in token_args}
-        gen = dg()
+        gen = dg(x, y)
         gen.tokenize_data(x, max_sequence_length=self.MAX_SEQUENCE_LENGTH,
                               **token_dict)
         data = pd.Series([[gen.vocabulary[i] for i in gen.data['vect_set_0'][k]
                            if len(gen.vocabulary[i]) != 0]
                            for k in range(len(gen.data['vect_set_0']))],
                            index=gen.data['set_0'].index)
-        self.data = gen.data        
+        self.data = gen.data
         # Inspecting parameters
         w2v_args = list(inspect.signature(Word2Vec).parameters)
         w2v_args = list(filter(lambda x: x not in ["min_alpha", "vector_size"],
