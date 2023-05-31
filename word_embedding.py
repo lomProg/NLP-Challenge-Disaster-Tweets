@@ -175,12 +175,13 @@ class W2V(WordEmbedding):
         w2v_obj.model = Word2Vec.load(w2v_obj.path)
         return w2v_obj
     
-    def __retrieve_token_text__(self,
-                                data_dict:dict,
+    @staticmethod
+    def __retrieve_token_text__(data_dict:dict,
+                                vocabulary:dict,
                                 set_name:str='x')->pd.Series:
-        token_x = pd.Series([[self.vocabulary[i]
+        token_x = pd.Series([[vocabulary[i]
                               for i in data_dict[f'vect_{set_name}'].iloc[k]
-                              if len(self.vocabulary[i]) != 0]
+                              if len(vocabulary[i]) != 0]
                               for k in range(len(data_dict[f'vect_{set_name}']))],
                               index=data_dict[set_name].index)
         return token_x
@@ -228,7 +229,7 @@ class W2V(WordEmbedding):
 
         data = gen.data.copy()
         # Re-building the tweets from the vocabulary
-        data['token_x'] = self.__retrieve_token_text__(data)
+        data['token_x'] = self.__retrieve_token_text__(data, gen.vocabulary)
         self.data = data
 
         # Inspecting `Word2Vec` parameters
@@ -315,8 +316,12 @@ class W2V(WordEmbedding):
             embedding_matrix = self.__create_matrix__()
             self.embedding_matrix = embedding_matrix
         else:
-            token_train = self.__retrieve_token_text__(self.data, 'x_train')
-            token_test = self.__retrieve_token_text__(self.data, 'x_test')
+            token_train = self.__retrieve_token_text__(self.data,
+                                                       self.vocabulary,
+                                                       'x_train')
+            token_test = self.__retrieve_token_text__(self.data,
+                                                      self.vocabulary,
+                                                      'x_test')
 
             vect_train = self.vectorization(token_train)
             vect_test = self.vectorization(token_test)
