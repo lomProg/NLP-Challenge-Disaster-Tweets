@@ -159,7 +159,8 @@ class W2V(WordEmbedding):
             embedding length)`, where the embedding vector length
             corresponds to the value stored in `self.EMBEDDING_DIM`. 
         """
-
+        if not hasattr(self, 'vocabulary'):
+            self.vocabulary = list(self.model.wv.index_to_key)
         num_words = len(self.model.wv.index_to_key) + 1
         matrix = np.zeros((num_words, self.EMBEDDING_DIM))
         for word, i in self.vocabulary.items():
@@ -168,8 +169,12 @@ class W2V(WordEmbedding):
 
     @classmethod
     def load_model(cls,
+                   x:pd.Series,
+                   y:pd.Series,
                    model_name:str,
                    model_path:str):
+        
+
         w2v_obj = cls(model_name)
         w2v_obj.path = model_path
         w2v_obj.model = Word2Vec.load(w2v_obj.path)
@@ -204,9 +209,9 @@ class W2V(WordEmbedding):
             If no destination path is specified for saving the model.
         """
         self.EMBEDDING_DIM = vector_size
-        splitting_args = list(inspect.signature(train_test_split).parameters)
-        splitting_dict = {k: kwargs.pop(k)
-                         for k in dict(kwargs) if k in splitting_args}
+        # splitting_args = list(inspect.signature(train_test_split).parameters)
+        # splitting_dict = {k: kwargs.pop(k)
+        #                  for k in dict(kwargs) if k in splitting_args}
         
         token_args = list(inspect.signature(TextVectorization).parameters)
         token_args = list(filter(lambda x: x not in ["output_sequence_length"],
@@ -216,11 +221,14 @@ class W2V(WordEmbedding):
         gen = dg(x, y)
         gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH,
                               **token_dict)
-        data = pd.Series([[gen.vocabulary[i] for i in gen.data['vect_x_train'][k]
-                           if len(gen.vocabulary[i]) != 0]
-                           for k in range(len(gen.data['vect_x_train']))],
-                           index=gen.data['set_0'].index)
-        self.data = gen.data
+        data = gen.data.copy()
+        # Re-building the tweets from the vocabulary
+        data['token_x'] = pd.Series([[gen.vocabulary[i]
+                                      for i in gen.data['vect_x'].iloc[k]
+                                      if len(gen.vocabulary[i]) != 0]
+                                      for k in range(len(gen.data['vect_x']))],
+                                      index=gen.data['x'].index)
+        self.data = data
         # Inspecting parameters
         w2v_args = list(inspect.signature(Word2Vec).parameters)
         w2v_args = list(filter(lambda x: x not in ["min_alpha", "vector_size"],
@@ -228,14 +236,15 @@ class W2V(WordEmbedding):
         w2v_dict = {k: kwargs.pop(k) for k in dict(kwargs) if k in w2v_args}
         # Build model
         model_w2v = Word2Vec(
-            data,
+            data['token_x'],
             min_count = 0, ####
             vector_size = self.EMBEDDING_DIM,
             min_alpha = 0.05,
             **w2v_dict
             )
 
-        model_w2v.train(data, total_examples=len(data), epochs=25)
+        model_w2v.train(data['token_x'], total_examples=len(data['token_x']),
+                        epochs=25)
         self.model = model_w2v
 
         words = list(model_w2v.wv.index_to_key)
@@ -255,9 +264,12 @@ class W2V(WordEmbedding):
     def prepare_data(self,
                      nn_classifier:bool=True):
         # Split train e test
-        
-        embedding_matrix = self.__create_matrix__()
-        self.embedding_matrix = embedding_matrix
+        if nn_classifier:
+            if hasattr(self, 'data'):
+                embedding_matrix = self.__create_matrix__()
+            #else: 
+
+            self.embedding_matrix = embedding_matrix
 
     def vectorization(self,
                       data,
