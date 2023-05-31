@@ -20,6 +20,7 @@ class WordEmbedding:
                  model_path:str=None) -> None:
         self.name = model_name
         self.path = model_path
+        self.MAX_SEQUENCE_LENGTH = 20
 
     def __str__(self):
         if self.path:
@@ -30,7 +31,6 @@ class WordEmbedding:
 
 class GloVe(WordEmbedding):
 
-    MAX_SEQUENCE_LENGTH = 20
 
     def __init__(self,
                  model_path:str,
@@ -140,7 +140,6 @@ class GloVe(WordEmbedding):
 
 class W2V(WordEmbedding):
 
-    MAX_SEQUENCE_LENGTH = 20
 
     # Constructor
     def __init__(self,
