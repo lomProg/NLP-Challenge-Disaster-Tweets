@@ -24,7 +24,7 @@ class DataGenerator(object):
             err_msg += "can be found stored in the data property "
             err_msg += f"via {temp_keys}"
             raise AttributeError(err_msg)
-        if hasattr(self, "data"):
+        elif hasattr(self, "data"):
             data = {}
             x, y, x_vect = self.data.values()
         elif hasattr(self, "__raw_data__") and not hasattr(self, "data"):
@@ -65,7 +65,7 @@ class DataGenerator(object):
             err_msg = "The data have already been tokenized. They can be "
             err_msg += f"found stored in the data property via {temp_keys}"
             raise AttributeError(err_msg)
-        if hasattr(self, "data"):
+        elif hasattr(self, "data"):
             data = self.data.copy()
             xs = (data["x_train"], data["x_test"])
         elif hasattr(self, "__raw_data__"):
