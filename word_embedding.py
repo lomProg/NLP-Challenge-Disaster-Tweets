@@ -204,10 +204,9 @@ class W2V(WordEmbedding):
             If no destination path is specified for saving the model.
         """
         self.EMBEDDING_DIM = vector_size
-
         splitting_args = list(inspect.signature(train_test_split).parameters)
         splitting_dict = {k: kwargs.pop(k)
-                          for k in dict(kwargs) if k in splitting_args}
+                         for k in dict(kwargs) if k in splitting_args}
         
         token_args = list(inspect.signature(TextVectorization).parameters)
         token_args = list(filter(lambda x: x not in ["output_sequence_length"],
@@ -251,7 +250,14 @@ class W2V(WordEmbedding):
                 print("The word2vec model has been trained and saved")
             else:
                 err_msg = "No destination path in which to save the model"
-                raise AttributeError(err_msg)    
+                raise AttributeError(err_msg)
+            
+    def prepare_data(self,
+                     nn_classifier:bool=True):
+        # Split train e test
+        
+        embedding_matrix = self.__create_matrix__()
+        self.embedding_matrix = embedding_matrix
 
     def vectorization(self,
                       data,
