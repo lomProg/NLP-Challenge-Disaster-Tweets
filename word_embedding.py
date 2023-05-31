@@ -214,7 +214,7 @@ class W2V(WordEmbedding):
         token_dict = {k: kwargs.pop(k)
                       for k in dict(kwargs) if k in token_args}
         gen = dg(x, y)
-        gen.tokenize_data(x, max_sequence_length=self.MAX_SEQUENCE_LENGTH,
+        gen.tokenize_data(max_sequence_length=self.MAX_SEQUENCE_LENGTH,
                               **token_dict)
         data = pd.Series([[gen.vocabulary[i] for i in gen.data['vect_set_0'][k]
                            if len(gen.vocabulary[i]) != 0]
