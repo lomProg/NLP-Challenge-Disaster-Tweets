@@ -15,6 +15,32 @@ class DataGenerator(object):
     def split_data(self,
                    reset_index:bool=False,
                    **kwargs) -> None:
+        """Through the parameters passed with `kwargs`, it generates
+        train and test subsets. The splitting of the data is stored in
+        the `data` attribute.\\
+        In cases where tokenization has already been carried out, in
+        addition to the subdivision of the original sets x and y, the
+        tokenized sets are also splitted.
+
+        Parameters
+        ----------
+        reset_index : bool, optional
+            When series indices need to be reset, set to True. By
+            default False
+        **kwargs: dict, optional
+            Extra arguments for `train_test_split`: see the
+            documentation of train_test_split in the sklearn package for
+            a list of all possible arguments.
+
+        Raises
+        ------
+        AssertionError
+            If no data is passed to the object.
+
+        See Also
+        --------
+        `sklearn.model_selection.train_test_split`
+        """
         assert (not hasattr(self, "data") or
                 (hasattr(self, "data") and "x_train" not in self.data)), (
             "The data have already been split. The different sets can be "
