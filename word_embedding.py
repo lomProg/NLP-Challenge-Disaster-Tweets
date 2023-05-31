@@ -160,9 +160,9 @@ class W2V(WordEmbedding):
             embedding length)`, where the embedding vector length
             corresponds to the value stored in `self.EMBEDDING_DIM`. 
         """
-        num_words = len(self.model.wv.index_to_key) + 1
+        num_words = len(self.vocabulary) + 1
         matrix = np.zeros((num_words, self.EMBEDDING_DIM))
-        for word, i in self.vocabulary.items():
+        for i, word in self.vocabulary.items():
             matrix[i] = self.model.wv[word] 
         return matrix
 
@@ -252,7 +252,8 @@ class W2V(WordEmbedding):
                         epochs=25)
         self.model = model_w2v
 
-        words = pd.Series(model_w2v.wv.index_to_key)
+        words = dict(zip(range(len(self.model.wv.index_to_key)),
+                         self.model.wv.index_to_key))
         self.vocabulary = words
         print(f'Number of words in the vocabulary:\t{len(words)}')
 
