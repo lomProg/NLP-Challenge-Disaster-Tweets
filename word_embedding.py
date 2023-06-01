@@ -296,6 +296,22 @@ class W2V(WordEmbedding):
             # `load_model` method was used, so the data had to be
             # modelled
             super().prepare_data(x, y, **kwargs)
+        else:
+            splitting_args = list(
+                inspect.signature(train_test_split).parameters)
+            splitting_dict = {k: kwargs.pop(k)
+                              for k in dict(kwargs) if k in splitting_args}
+
+            # The tokenized series is excluded
+            data = self.data.copy()
+            data = {k: data.pop(k)
+                    for k in dict(data) if k != "token_x"}
+
+            # Subset generation for X, Y and vect_X:
+            # => (x_train,x_test,y_train,y_test,vect_x_train,vect_x_test)
+            gen = dg(x, y)
+            gen.data = data
+            gen.split_data(**splitting_dict)
 
         if nn_classifier:
             embedding_matrix = self.__create_matrix__()
